@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Machine Learning | Mayank Goyal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Global site styles -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Page-specific styles -->
+  <link rel="stylesheet" href="machine-learning.css" />
+</head>
+
+<body>
+  <!-- 🌌 BACKGROUND LAYERS -->
+  <div class="background-layers">
+    <div class="layer-stars"></div>
+    <div class="layer-stars layer-stars-2"></div>
+    <div class="layer-stars layer-stars-3"></div>
+    <div class="layer-moon"></div>
+    <div class="layer-planet"></div>
+    <div class="layer-planet-ring"></div>
+    <div class="layer-comet"></div>
+    <div class="layer-clouds"></div>
+  </div>
+
+  <!-- 🌠 FOREGROUND ANIMATIONS -->
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="satellite-layer"></div>
+
+  <!-- 🟢 MAIN CONTENT -->
+  <!-- Removed 'projects-collapsed' from here so it doesn't hide everything globally -->
+  <main class="ml-page" id="ml-page">
+    
+    <!-- HERO SECTION -->
+    <header class="ml-header">
+      <section class="ml-hero-card">
+        <div class="ml-hero-top">
+          <div>
+            <p class="ml-eyebrow">COSMIC COMMAND INTERFACE · MODULE 03</p>
+            <h1 class="ml-heading">Machine Learning Lab</h1>
+          </div>
+        </div>
+        <p class="ml-subtitle">
+          Real-world ML systems across supervised and unsupervised learning, pulled into a single command deck.
+        </p>
+        <a href="index.html" class="ml-home-btn">
+  ← Go to Home
+</a>
+      </section>
+
+      <!-- PULL HANDLE FOR SUPERVISED -->
+      <div class="pull-wrapper">
+        <button class="pull-handle" id="pull-handle-supervised" type="button" aria-label="Reveal supervised projects">
+          <span class="pull-line"></span>
+          <span class="pull-knob"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ========================== -->
+    <!-- 1. SUPERVISED LEARNING     -->
+    <!-- ========================== -->
+    <section class="ml-section" id="supervised-learning">
+      <div class="section-header">
+        <h2 class="ml-section-title">Supervised Learning</h2>
+        <p class="ml-section-desc">
+          Models trained on labeled data to make predictions and classifications in domains like agriculture, healthcare, and finance.
+        </p>
+      </div>
+
+      <!-- Added ID 'supervised-grid' and moved the collapsed class here -->
+      <div class="project-grid projects-collapsed" id="supervised-grid">
+        
+        <!-- 1. SmartHarvest -->
+        <article class="project-card">
+          <div class="badge-row">
+            <span class="badge badge--primary">Supervised</span>
+            <span class="badge">Classification</span>
+            <span class="badge">Agriculture</span>
+            <span class="badge">Random Forest</span>
+          </div>
+          <h3 class="project-title">SmartHarvest – Crop Recommendation Engine</h3>
+          <p class="project-one-liner">
+            End‑to‑end ML system recommending the most suitable crop using soil nutrients (NPK), climate, and soil properties.
+          </p>
+          <p class="project-meta">
+            <span>Stack:</span> Python · Scikit‑learn · Pandas · Streamlit<br />
+            <span>Highlights:</span> ~95% accuracy with feature‑engineered agronomic variables.
+          </p>
+          <div class="project-actions">
+            <a class="btn-link btn-link--primary" href="https://smartharvest-project.streamlit.app" target="_blank" rel="noopener">Live App</a>
+            <a class="btn-link" href="https://github.com/mayank-goyal09/SmartHarvest" target="_blank" rel="noopener">View Code</a>
+          </div>
+        </article>
+
+        <!-- 2. Mr. Cardio Disease Astrologer -->
+        <article class="project-card">
+          <div class="badge-row">
+            <span class="badge badge--primary">Supervised</span>
+            <span class="badge">Classification</span>
+            <span class="badge">Healthcare</span>
+            <span class="badge">KNN</span>
+          </div>
+          <h3 class="project-title">Mr. Cardio Disease Astrologer</h3>
+          <p class="project-one-liner">
+            KNN‑based heart disease prediction using indicators like cholesterol, blood pressure and heart rate.
+          </p>
+          <p class="project-meta">
+            <span>Stack:</span> Python · Scikit‑learn · Streamlit<br />
+            <span>Highlights:</span> Interactive UI for risk estimation with explainable inputs.
+          </p>
+          <div class="project-actions">
+            <a class="btn-link btn-link--primary" href="https://mr-cardio-disease-astrologer-project.streamlit.app" target="_blank" rel="noopener">Live App</a>
+            <a class="btn-link" href="https://github.com/mayank-goyal09/Mr.-cardio-disease-astrologer" target="_blank" rel="noopener">View Code</a>
+          </div>
+        </article>
+
+        <!-- 3. Lending Logic -->
+        <article class="project-card">
+          <div class="badge-row">
+            <span class="badge badge--primary">Supervised</span>
+            <span class="badge">Classification</span>
+            <span class="badge">Finance</span>
+            <span class="badge">Naïve Bayes</span>
+          </div>
+          <h3 class="project-title">Lending Logic – Loan Approval System</h3>
+          <p class="project-one-liner">
+            Gaussian Naïve Bayes model predicting loan approval probability using engineered financial features.
+          </p>
+          <p class="project-meta">
+            <span>Stack:</span> Python · Scikit‑learn · Streamlit<br />
+            <span>Highlights:</span> ~92% accuracy with focus on reducing false positives.
+          </p>
+          <div class="project-actions">
+            <a class="btn-link btn-link--primary" href="https://lending-logic-project.streamlit.app" target="_blank" rel="noopener">Live App</a>
+            <a class="btn-link" href="https://github.com/mayank-goyal09/lending-logic" target="_blank" rel="noopener">View Code</a>
+          </div>
+        </article>
+
+        <!-- 4. CardioPredict (SVM) -->
+        <article class="project-card">
+          <div class="badge-row">
+            <span class="badge badge--primary">Supervised</span>
+            <span class="badge">Classification</span>
+            <span class="badge">Healthcare</span>
+            <span class="badge">SVM</span>
+          </div>
+          <h3 class="project-title">CardioPredict – SVM Heart Risk Model</h3>
+          <p class="project-one-liner">
+            Support Vector Machine model predicting heart disease risk from clinical features with a Streamlit front-end.
+          </p>
+          <p class="project-meta">
+            <span>Stack:</span> Python · Scikit‑learn · Streamlit<br />
+            <span>Highlights:</span> Margin‑based classifier tuned for medical risk prediction.
+          </p>
+          <div class="project-actions">
+            <a class="btn-link btn-link--primary" href="https://cardiopredict-svm-project.streamlit.app" target="_blank" rel="noopener">Live App</a>
+            <a class="btn-link" href="https://github.com/mayank-goyal09/CardioPredict-SVM" target="_blank" rel="noopener">View Code</a>
+          </div>
+        </article>
+
+        <!-- 5. Mobile Market Segmenter -->
+        <article class="project-card">
+          <div class="badge-row">
+            <span class="badge badge--primary">Supervised</span>
+            <span class="badge">Classification</span>
+            <span class="badge">Marketing</span>
+            <span class="badge">KNN</span>
+          </div>
+          <h3 class="project-title">Mobile Market Segmenter</h3>
+          <p class="project-one-liner">
+            KNN model classifying mobile users into market segments using usage behaviour and demographic patterns.
+          </p>
+          <p class="project-meta">
+            <span>Stack:</span> Python · Scikit‑learn · Streamlit<br />
+            <span>Highlights:</span> Simple, interpretable clustering-style segmentation via supervised labels.
+          </p>
+          <div class="project-actions">
+            <a class="btn-link btn-link--primary" href="https://mobile-market-segmenter-project.streamlit.app" target="_blank" rel="noopener">Live App</a>
+            <a class="btn-link" href="https://github.com/mayank-goyal09/mobile-market-segmenter" target="_blank" rel="noopener">View Code</a>
+          </div>
+        </article>
+
+        <!-- 6. Personality Type Predictor -->
+        <article class="project-card">
+          <div class="badge-row">
+            <span class="badge badge--primary">Supervised</span>
+            <span class="badge">Classification</span>
+            <span class="badge">Behavior</span>
+            <span class="badge">Logistic Regression</span>
+          </div>
+          <h3 class="project-title">Personality Type Predictor</h3>
+          <p class="project-one-liner">
+            Logistic Regression model mapping behavioural traits to personality categories with an interactive UI.
+          </p>
+          <p class="project-meta">
+            <span>Stack:</span> Python · Scikit‑learn · Pandas · Streamlit<br />
+            <span>Highlights:</span> Clean feature pipeline for survey‑style inputs.
+          </p>
+          <div class="project-actions">
+            <a class="btn-link btn-link--primary" href="https://personality-type-predictor-project.streamlit.app" target="_blank" rel="noopener">Live App</a>
+            <a class="btn-link" href="https://github.com/mayank-goyal09/personality-type-predictor" target="_blank" rel="noopener">View Code</a>
+          </div>
+        </article>
+
+        <!-- 7. Ride Price Predictor -->
+        <article class="project-card">
+          <div class="badge-row">
+            <span class="badge badge--primary">Supervised</span>
+            <span class="badge">Regression</span>
+            <span class="badge">Mobility</span>
+            <span class="badge">Linear Regression</span>
+          </div>
+          <h3 class="project-title">Ride Price Predictor</h3>
+          <p class="project-one-liner">
+            Linear Regression estimator for ride fares using distance, duration, time of day and ride type.
+          </p>
+          <p class="project-meta">
+            <span>Stack:</span> Python · Scikit‑learn · Pandas · Streamlit<br />
+            <span>Highlights:</span> Baseline pricing model for ride‑hailing style apps.
+          </p>
+          <div class="project-actions">
+            <a class="btn-link btn-link--primary" href="https://ride-price-predictor-project.streamlit.app" target="_blank" rel="noopener">Live App</a>
+            <a class="btn-link" href="https://github.com/mayank-goyal09/ride-price-predictor" target="_blank" rel="noopener">View Code</a>
+          </div>
+        </article>
+
+        <!-- 8. Experience to Earnings -->
+        <article class="project-card">
+          <div class="badge-row">
+            <span class="badge badge--primary">Supervised</span>
+            <span class="badge">Regression</span>
+            <span class="badge">HR / Salary</span>
+            <span class="badge">KNN Regression</span>
+          </div>
+          <h3 class="project-title">Experience to Earnings</h3>
+          <p class="project-one-liner">
+            KNN regression model predicting salary from years of experience as an intuitive career analytics tool.
+          </p>
+          <p class="project-meta">
+            <span>Stack:</span> Python · Scikit‑learn · Streamlit<br />
+            <span>Highlights:</span> Non‑linear salary curve captured via neighbor‑based regression.
+          </p>
+          <div class="project-actions">
+            <a class="btn-link btn-link--primary" href="https://experience-to-earnings-project.streamlit.app" target="_blank" rel="noopener">Live App</a>
+            <a class="btn-link" href="https://github.com/mayank-goyal09/experience-to-earnings" target="_blank" rel="noopener">View Code</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========================== -->
+    <!-- 2. UNSUPERVISED LEARNING   -->
+    <!-- ========================== -->
+    <section class="ml-section" id="unsupervised-learning">
+      <div class="section-header">
+        <h2 class="ml-section-title">Unsupervised Learning</h2>
+        <p class="ml-section-desc">
+          Clustering and dimensionality reduction projects uncovering natural structure in data without labels.
+        </p>
+      </div>
+
+      <!-- PULL HANDLE FOR UNSUPERVISED -->
+      <div class="pull-wrapper">
+        <button class="pull-handle pull-handle-unsupervised" id="pull-handle-unsupervised" type="button" aria-label="Reveal unsupervised projects">
+          <span class="pull-line"></span>
+          <span class="pull-knob"></span>
+        </button>
+      </div>
+
+      <!-- UNSUPERVISED GRID -->
+      <div class="project-grid unsupervised-grid projects-collapsed" id="unsupervised-grid">
+        
+        <!-- 1. Vineyard Voyager -->
+        <article class="project-card project-card-unsupervised">
+          <div class="badge-row">
+            <span class="badge badge--unsupervised">Unsupervised</span>
+            <span class="badge">Clustering</span>
+            <span class="badge">Agriculture</span>
+            <span class="badge">K-Means</span>
+          </div>
+          <h3 class="project-title">Vineyard Voyager – Wine Classification</h3>
+          <p class="project-one-liner">
+            K-Means clustering identifying wine quality tiers from chemical properties without labels.
+          </p>
+          <p class="project-meta">
+            <span>Stack:</span> Python · Scikit‑learn · Pandas<br />
+            <span>Highlights:</span> 3 distinct clusters with silhouette optimization.
+          </p>
+          <div class="project-actions">
+            <a class="btn-link btn-link--unsupervised" href="https://github.com/mayank-goyal09/vineyard-voyager" target="_blank" rel="noopener">View Code</a>
+          </div>
+        </article>
+
+        <!-- 2. Retail Radar -->
+        <article class="project-card project-card-unsupervised">
+          <div class="badge-row">
+            <span class="badge badge--unsupervised">Unsupervised</span>
+            <span class="badge">Clustering</span>
+            <span class="badge">Retail</span>
+            <span class="badge">Hierarchical Clustering</span>
+          </div>
+          <h3 class="project-title">Retail Radar – Customer Segmentation</h3>
+          <p class="project-one-liner">
+            Hierarchical clustering grouping customers into natural purchase behaviour segments.
+          </p>
+          <p class="project-meta">
+            <span>Stack:</span> Python · Scikit‑learn · Dendrogram<br />
+            <span>Highlights:</span> Dendrogram-based optimal cluster detection.
+          </p>
+          <div class="project-actions">
+            <a class="btn-link btn-link--unsupervised" href="https://github.com/mayank-goyal09/retail-radar-engine" target="_blank" rel="noopener">View Code</a>
+          </div>
+        </article>
+
+        <!-- 3. PCA Prism -->
+        <article class="project-card project-card-unsupervised">
+          <div class="badge-row">
+            <span class="badge badge--unsupervised">Unsupervised</span>
+            <span class="badge">Dimensionality Reduction</span>
+            <span class="badge">Visualization</span>
+            <span class="badge">PCA</span>
+          </div>
+          <h3 class="project-title">PCA Prism – High-D Data Visualization</h3>
+          <p class="project-one-liner">
+            Principal Component Analysis reducing 30+ dimensions to 2D while retaining 95% variance.
+          </p>
+          <p class="project-meta">
+            <span>Stack:</span> Python · Scikit‑learn · Matplotlib<br />
+            <span>Highlights:</span> 2D interactive scatter plot of high-dimensional datasets.
+          </p>
+          <div class="project-actions">
+            <a class="btn-link btn-link--unsupervised" href="https://github.com/mayank-goyal09/pca-prism" target="_blank" rel="noopener">View Code</a>
+          </div>
+        </article>
+
+        <!-- 4. DBSCAN Explorer -->
+        <article class="project-card project-card-unsupervised">
+          <div class="badge-row">
+            <span class="badge badge--unsupervised">Unsupervised</span>
+            <span class="badge">Geospatial ML</span>
+            <span class="badge">DBSCAN</span>
+            <span class="badge">Production</span>
+          </div>
+          <h3 class="project-title">🌍 Geo-Pulse – Smart City Traffic Intelligence</h3>
+          <p class="project-one-liner">
+            Production-ready geospatial ML system identifying traffic accident hotspots using DBSCAN clustering, deployed on Streamlit with 3D Pydeck visualizations for city planning and insurance risk assessment.
+          </p>
+          <p class="project-meta">
+            <span>Stack:</span> Python · Scikit-learn · Pydeck · Streamlit · Pandas · Joblib<br />
+            <span>Impact:</span> Analyzed 3M+ US accident records | 87 hotspot clusters in LA | 15% noise detection | 3km optimal radius<br />
+            <span>Features:</span> Interactive 3D maps · State/city filtering · Haversine geodesic distance · Pre-trained model
+          </p>
+          <div class="project-actions">
+            <a class="btn-link btn-link--unsupervised" href="https://geo-pulse-project.streamlit.app" target="_blank" rel="noopener">Live Demo</a>
+            <a class="btn-link btn-link--unsupervised" href="https://github.com/mayank-goyal09/Geo-Pulse" target="_blank" rel="noopener">💻 GitHub</a>
+            <a class="btn-link btn-link--unsupervised" href="https://www.kaggle.com/code/mayankdataanalyst/main-ipynb-dbscan" target="_blank" rel="noopener">📓 Kaggle</a>
+          </div>
+        </article>
+
+        <!-- 5. Gaussian Mixture Model -->
+        <article class="project-card project-card-unsupervised">
+          <div class="badge-row">
+            <span class="badge badge--unsupervised">Unsupervised</span>
+            <span class="badge">Probabilistic Clustering</span>
+            <span class="badge">Statistics</span>
+            <span class="badge">GMM</span>
+          </div>
+          <h3 class="project-title">Gaussian Mixture Model – Soft Clustering</h3>
+          <p class="project-one-liner">
+            Probabilistic clustering assigning soft labels (probabilities) instead of hard clusters.
+          </p>
+          <p class="project-meta">
+            <span>Stack:</span> Python · Scikit‑learn · SciPy<br />
+            <span>Highlights:</span> BIC-optimized component selection with convergence tracking.
+          </p>
+          <div class="project-actions">
+            <a class="btn-link btn-link--unsupervised" href="https://github.com/mayank-goyal09/gmm-clustering" target="_blank" rel="noopener">View Code</a>
+          </div>
+        </article>
+
+        <!-- 6. Feature Extraction Engine -->
+        <article class="project-card project-card-unsupervised">
+          <div class="badge-row">
+            <span class="badge badge--unsupervised">Unsupervised</span>
+            <span class="badge">Dimensionality Reduction</span>
+            <span class="badge">ICA</span>
+            <span class="badge">t-SNE</span>
+          </div>
+          <h3 class="project-title">Feature Extraction Engine – ICA & t-SNE</h3>
+          <p class="project-one-liner">
+            Independent Component Analysis and t-SNE for non-linear feature extraction and visualization.
+          </p>
+          <p class="project-meta">
+            <span>Stack:</span> Python · Scikit‑learn · Plotly<br />
+            <span>Highlights:</span> Interactive 3D t-SNE visualizations with perplexity tuning.
+          </p>
+          <div class="project-actions">
+            <a class="btn-link btn-link--unsupervised" href="https://github.com/mayank-goyal09/feature-extraction" target="_blank" rel="noopener">View Code</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 🟢 SCRIPT TO HANDLE SEPARATE THREADS -->
+  <script>
+    // 1. SELECT BOTH HANDLES AND BOTH GRIDS
+    const handleSupervised = document.getElementById('pull-handle-supervised');
+    const gridSupervised = document.getElementById('supervised-grid');
+
+    const handleUnsupervised = document.getElementById('pull-handle-unsupervised');
+    const gridUnsupervised = document.getElementById('unsupervised-grid');
+
+    // 2. HELPER FUNCTION TO TOGGLE
+    function toggleSection(handle, grid) {
+      if (handle && grid) {
+        handle.addEventListener('click', () => {
+          // Instead of toggling the whole page, we just toggle the specific grid
+          grid.classList.toggle('projects-visible');
+          grid.classList.toggle('projects-collapsed');
+          
+          // Optional: Add a class to the handle for animation if needed
+          handle.classList.toggle('active');
+        });
+      }
+    }
+
+    // 3. ACTIVATE LISTENERS
+    toggleSection(handleSupervised, gridSupervised);
+    toggleSection(handleUnsupervised, gridUnsupervised);
+  </script>
+</body>
+</html>

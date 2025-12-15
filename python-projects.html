@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python OOP Projects | Mayank Goyal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* ===== ACHIEVEMENT BADGE ===== */
+        .achievement-badge {
+            display: inline-block;
+            margin-left: 15px;
+            font-size: 2.5rem;
+            animation: glowPulse 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 10px #ffd700);
+            -webkit-text-fill-color: initial; 
+            background: none;                 
+            -webkit-background-clip: border-box;
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { filter: drop-shadow(0 0 5px #ffd700); transform: scale(1); }
+            50% { filter: drop-shadow(0 0 15px #ffd700); transform: scale(1.15); }
+        }
+
+        /* ===== FLOATING CARDS LAYOUT ===== */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 40px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* ===== FLOATING CARD STYLES ===== */
+        .floating-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1.5px solid rgba(0, 234, 255, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            animation: float 6s ease-in-out infinite;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* STAGGERED FLOATING ANIMATION */
+        .floating-card:nth-child(1) { animation-delay: 0s; }
+        .floating-card:nth-child(2) { animation-delay: 0.5s; }
+        .floating-card:nth-child(3) { animation-delay: 1s; }
+        .floating-card:nth-child(4) { animation-delay: 1.5s; }
+        .floating-card:nth-child(5) { animation-delay: 2s; }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) translateX(0px);
+            }
+            25% {
+                transform: translateY(-15px) translateX(5px);
+            }
+            50% {
+                transform: translateY(-25px) translateX(-5px);
+            }
+            75% {
+                transform: translateY(-10px) translateX(8px);
+            }
+        }
+
+        /* HOVER EFFECTS */
+        .floating-card:hover {
+            border-color: rgba(0, 234, 255, 0.8);
+            box-shadow: 0 0 40px rgba(0, 234, 255, 0.4), 
+                        0 0 80px rgba(0, 234, 255, 0.2),
+                        inset 0 0 20px rgba(0, 234, 255, 0.1);
+            transform: scale(1.05) translateY(-30px);
+            background: rgba(0, 234, 255, 0.08);
+        }
+
+        /* BACKGROUND GRADIENT GLOW */
+        .floating-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 234, 255, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* CONTENT WRAPPER */
+        .card-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* EMOJI/ICON */
+        .card-emoji {
+            font-size: 3.5rem;
+            text-align: center;
+            filter: drop-shadow(0 0 10px rgba(0, 234, 255, 0.3));
+            animation: emojiFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes emojiFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+
+        /* PROJECT TITLE */
+        .card-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #fff;
+            text-align: center;
+            background: linear-gradient(135deg, #00eaff 0%, #8b47ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* PROJECT DESCRIPTION */
+        .card-description {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* TECH TAGS */
+        .card-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            padding: 15px 0;
+            border-top: 1px solid rgba(0, 234, 255, 0.2);
+            border-bottom: 1px solid rgba(0, 234, 255, 0.2);
+        }
+
+        .tech-badge {
+            background: rgba(0, 234, 255, 0.1);
+            border: 1px solid rgba(0, 234, 255, 0.3);
+            color: #00eaff;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .floating-card:hover .tech-badge {
+            background: rgba(0, 234, 255, 0.3);
+            box-shadow: 0 0 10px rgba(0, 234, 255, 0.4);
+        }
+
+        /* GITHUB LINK */
+        .card-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, rgba(0, 234, 255, 0.2) 0%, rgba(139, 71, 255, 0.2) 100%);
+            border: 1.5px solid rgba(0, 234, 255, 0.4);
+            color: #00eaff;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 234, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .floating-card:hover .card-link {
+            background: linear-gradient(135deg, rgba(0, 234, 255, 0.4) 0%, rgba(139, 71, 255, 0.3) 100%);
+            box-shadow: 0 0 20px rgba(0, 234, 255, 0.4);
+            border-color: rgba(0, 234, 255, 0.8);
+            transform: translateY(-3px);
+        }
+
+        .floating-card:hover .card-link::before {
+            left: 100%;
+        }
+
+        /* FEATURES LIST */
+        .card-features {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 3px solid var(--accent-purple);
+        }
+
+        .card-features h4 {
+            color: var(--accent-purple);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card-features ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .card-features li {
+            font-size: 0.85rem;
+            color: #ccc;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .card-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-cyan);
+            font-weight: bold;
+        }
+
+        /* PAGE LAYOUT */
+        .page-header {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, rgba(0, 234, 255, 0.1) 0%, rgba(139, 71, 255, 0.1) 100%);
+            margin-top: 60px;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            text-shadow: 0 0 10px rgba(0, 234, 255, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="space-bg">
+        <div class="layer starfield"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">MG_AI</a>
+            <div class="nav-menu">
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#skills" class="nav-link">Skills</a>
+                <a href="index.html#projects" class="nav-link">Projects</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <h1>Python OOP & Backend <span class="achievement-badge">🐍</span></h1>
+        <p>Enterprise-grade applications built with Python OOP, Streamlit, and SQLite</p>
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </section>
+
+    <section style="background: var(--bg-main); padding: 40px 0;">
+        <div class="projects-container">
+
+            <!-- Project 1: LedgerAPI -->
+            <div class="floating-card">
+                <div class="card-content">
+                    <div class="card-emoji">🏦</div>
+                    <h3 class="card-title">LedgerAPI</h3>
+                    <p class="card-description">Enterprise Bank Management System with production-ready backend architecture</p>
+                    
+                    <div class="card-tech">
+                        <span class="tech-badge">Python OOP</span>
+                        <span class="tech-badge">SQLite</span>
+                        <span class="tech-badge">Backend</span>
+                    </div>
+
+                    <div class="card-features">
+                        <h4>🎯 Features</h4>
+                        <ul>
+                            <li>Account Management</li>
+                            <li>Transaction Processing</li>
+                            <li>Audit Trails</li>
+                            <li>Inter-transfers</li>
+                        </ul>
+                    </div>
+
+                    <a href="https://github.com/mayank-goyal09/LedgerAPI" target="_blank" class="card-link">View on GitHub →</a>
+                </div>
+            </div>
+
+            <!-- Project 2: Smart Inventory Billing System -->
+            <div class="floating-card">
+                <div class="card-content">
+                    <div class="card-emoji">🛍️</div>
+                    <h3 class="card-title">Smart Inventory Billing</h3>
+                    <p class="card-description">Complete inventory and billing solution for retail management</p>
+                    
+                    <div class="card-tech">
+                        <span class="tech-badge">Streamlit</span>
+                        <span class="tech-badge">SQLite</span>
+                        <span class="tech-badge">OOP</span>
+                    </div>
+
+                    <div class="card-features">
+                        <h4>🎯 Features</h4>
+                        <ul>
+                            <li>Stock Management</li>
+                            <li>Billing System</li>
+                            <li>Multi-payment</li>
+                            <li>Dashboard</li>
+                        </ul>
+                    </div>
+
+                    <a href="https://github.com/mayank-goyal09/smart-inventory-billing-system" target="_blank" class="card-link">View on GitHub →</a>
+                </div>
+            </div>
+
+            <!-- Project 3: Maygal Book Vault -->
+            <div class="floating-card">
+                <div class="card-content">
+                    <div class="card-emoji">📚</div>
+                    <h3 class="card-title">Maygal Book Vault</h3>
+                    <p class="card-description">Digital library management system with advanced book tracking</p>
+                    
+                    <div class="card-tech">
+                        <span class="tech-badge">Streamlit</span>
+                        <span class="tech-badge">Python OOP</span>
+                        <span class="tech-badge">SQLite</span>
+                    </div>
+
+                    <div class="card-features">
+                        <h4>🎯 Features</h4>
+                        <ul>
+                            <li>Book Cataloging</li>
+                            <li>Member Management</li>
+                            <li>Issue/Return</li>
+                            <li>Fine Calculation</li>
+                        </ul>
+                    </div>
+
+                    <a href="https://github.com/mayank-goyal09/Maygal-book-vault" target="_blank" class="card-link">View on GitHub →</a>
+                </div>
+            </div>
+
+            <!-- Project 4: The File Forge -->
+            <div class="floating-card">
+                <div class="card-content">
+                    <div class="card-emoji">🗂️</div>
+                    <h3 class="card-title">The File Forge</h3>
+                    <p class="card-description">Advanced file management system with batch processing capabilities</p>
+                    
+                    <div class="card-tech">
+                        <span class="tech-badge">Streamlit</span>
+                        <span class="tech-badge">File Handling</span>
+                        <span class="tech-badge">Python</span>
+                    </div>
+
+                    <div class="card-features">
+                        <h4>🎯 Features</h4>
+                        <ul>
+                            <li>File Operations</li>
+                            <li>Batch Processing</li>
+                            <li>Format Conversion</li>
+                            <li>Auto Organization</li>
+                        </ul>
+                    </div>
+
+                    <a href="https://github.com/mayank-goyal09/the-file-forge" target="_blank" class="card-link">View on GitHub →</a>
+                </div>
+            </div>
+
+            <!-- Project 5: Bank Management System -->
+            <div class="floating-card">
+                <div class="card-content">
+                    <div class="card-emoji">🏤</div>
+                    <h3 class="card-title">Bank Management System</h3>
+                    <p class="card-description">User-friendly bank account system with modern UI and transaction history</p>
+                    
+                    <div class="card-tech">
+                        <span class="tech-badge">Streamlit</span>
+                        <span class="tech-badge">Python OOP</span>
+                        <span class="tech-badge">Data Persistence</span>
+                    </div>
+
+                    <div class="card-features">
+                        <h4>🎯 Features</h4>
+                        <ul>
+                            <li>Account Creation</li>
+                            <li>Deposits/Withdrawals</li>
+                            <li>Balance Inquiry</li>
+                            <li>Transaction Log</li>
+                        </ul>
+                    </div>
+
+                    <a href="https://github.com/mayank-goyal09/bank-management-system" target="_blank" class="card-link">View on GitHub →</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

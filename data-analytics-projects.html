@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Analyst Projects | Mayank Goyal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* ===== ACHIEVEMENT BADGE STYLES ===== */
+        .achievement-badge {
+            display: inline-block;
+            margin-left: 15px;
+            font-size: 2.5rem;
+            animation: glowPulse 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 10px #ffd700);
+            
+            /* FIXED: Ensures the emoji shows properly */
+            -webkit-text-fill-color: initial; 
+            background: none;                 
+            -webkit-background-clip: border-box; 
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { filter: drop-shadow(0 0 5px #ffd700); transform: scale(1); }
+            50% { filter: drop-shadow(0 0 15px #ffd700); transform: scale(1.15); }
+        }
+
+        /* ===== EXPERIENCE SECTION STYLES ===== */
+        .experience-section {
+            max-width: 1000px;
+            margin: 0 auto 60px auto;
+        }
+        
+        .experience-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 234, 255, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 4px; height: 100%;
+            background: var(--accent-cyan);
+            box-shadow: 0 0 15px var(--accent-cyan);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .exp-role {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .exp-company {
+            font-size: 1.2rem;
+            color: var(--accent-cyan);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .exp-date {
+            background: rgba(0, 234, 255, 0.1);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--accent-cyan);
+            border: 1px solid rgba(0, 234, 255, 0.2);
+        }
+
+        .exp-details {
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+
+        .exp-projects {
+            margin-top: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 2px solid var(--accent-purple);
+        }
+
+        .exp-projects h4 {
+            color: var(--accent-purple);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .exp-projects ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .exp-projects li {
+            position: relative;
+            padding-left: 20px;
+            color: #ccc;
+            font-size: 0.95rem;
+        }
+
+        .exp-projects li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent-purple);
+        }
+
+        /* CARD STYLES */
+        .project-card {
+            border: 2px solid var(--accent-cyan) !important;
+            box-shadow: 0 0 20px rgba(0, 234, 255, 0.3), inset 0 0 20px rgba(0, 234, 255, 0.1) !important;
+        }
+        .project-card:hover {
+            box-shadow: 0 0 40px rgba(0, 234, 255, 0.6), inset 0 0 30px rgba(0, 234, 255, 0.2) !important;
+            border-color: var(--accent-cyan) !important;
+        }
+        .card-stats {
+            display: flex;
+            gap: 30px;
+            margin: 25px 0;
+            padding: 20px 0;
+            border-top: 1px solid rgba(0, 234, 255, 0.2);
+            border-bottom: 1px solid rgba(0, 234, 255, 0.2);
+        }
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+        .stat-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            margin-bottom: 4px;
+        }
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="space-bg">
+        <div class="layer starfield"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">MG_AI</a>
+            <div class="nav-menu">
+                <a href="index.html#home" class="nav-link">Home</a>
+                <!-- ✨ NEW: Added Experience Link ✨ -->
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="index.html#projects" class="nav-link">Projects</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section style="text-align: center; padding: 80px 20px; background: linear-gradient(135deg, rgba(0, 234, 255, 0.1) 0%, rgba(139, 71, 255, 0.1) 100%); margin-top: 60px;">
+        <h1 style="font-size: 3rem; font-weight: 700; background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 15px;">   Data Analyst Projects   <span class="achievement-badge">🏆</span> </h1>
+        <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 30px;">Comprehensive collection of data-driven projects showcasing analytics expertise</p>
+        <a href="index.html" style="display: inline-block; color: var(--accent-cyan); text-decoration: none; font-weight: 600;">← Back to Home</a>
+    </section>
+
+    <section class="section-padding" style="background: var(--bg-main);">
+        <div class="container">
+            
+            <!-- ✨ NEW: EXPERIENCE SECTION ✨ -->
+            <div id="experience" class="experience-section">
+                <h2 style="color:white; margin-bottom: 30px; border-left: 5px solid var(--accent-cyan); padding-left: 15px;">Professional Experience</h2>
+                
+                <div class="experience-card">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-role">Data Analyst Intern</div>
+                            <div class="exp-company">🏢 SpaceECE, Pune</div>
+                        </div>
+                        <div class="exp-date">📅 Jul 2025 - Oct 2025</div>
+                    </div>
+                    
+                    <div class="exp-details">
+                        Successfully completed a Business Analysis internship focusing on data-driven dashboard creation. Recognized by leadership for diligence and inquisitive analytical approach.
+                    </div>
+
+                    <div class="exp-projects">
+                        <h4>🚀 Key Dashboards Developed:</h4>
+                        <ul>
+                            <li>Umang & Udaan Dashboard</li>
+                            <li>Intern Exit Analysis</li>
+                            <li>Education & Test Analysis</li>
+                            <li>Process Optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- ✨ END EXPERIENCE SECTION ✨ -->
+
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <article class="project-card glass-panel">
+                    <h3 class="card-title">Marketing Analytics Dashboard</h3>
+                    <div class="card-tags">
+                        <span class="tag">Power BI</span>
+                        <span class="tag">Marketing</span>
+                    </div>
+                    <p class="card-description">Comprehensive marketing performance dashboard tracking campaign ROI and customer engagement.</p>
+                    <div class="card-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">10+</span>
+                            <span class="stat-label">KPIs Tracked</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">Real-time</span>
+                            <span class="stat-label">Data Refresh</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/mayank-goyal09/Marketing-PowerBI-Dashboard" target="_blank" class="card-link">View on GitHub →</a>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card glass-panel">
+                    <h3 class="card-title">E-commerce Revenue Intelligence</h3>
+                    <div class="card-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">SQL</span>
+                    </div>
+                    <p class="card-description">Deep-dive analysis on Target's e-commerce sales patterns and customer behavior.</p>
+                    <div class="card-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">100K+</span>
+                            <span class="stat-label">Records Analyzed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">15+</span>
+                            <span class="stat-label">Key Insights</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/mayank-goyal09/target-ecommerce-sales-analysis" target="_blank" class="card-link">View on GitHub →</a>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card glass-panel">
+                    <h3 class="card-title">Aviation Operations Analytics</h3>
+                    <div class="card-tags">
+                        <span class="tag">Excel</span>
+                        <span class="tag">Data Visualization</span>
+                    </div>
+                    <p class="card-description">Interactive Excel dashboard analyzing 1,701 flight records for delay patterns and trends.</p>
+                    <div class="card-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">1.7K</span>
+                            <span class="stat-label">Flights Analyzed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">5 Years</span>
+                            <span class="stat-label">Historical Data</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/mayank-goyal09/flight-delay-analysis-dashboard" target="_blank" class="card-link">View on GitHub →</a>
+                </article>
+
+                <!-- Project 4 -->
+                <article class="project-card glass-panel">
+                    <h3 class="card-title">Workforce Intelligence Dashboard</h3>
+                    <div class="card-tags">
+                        <span class="tag">Excel</span>
+                        <span class="tag">HR Analytics</span>
+                    </div>
+                    <p class="card-description">Strategic HR dashboard monitoring 2,458+ employees across demographics and performance.</p>
+                    <div class="card-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">2.5K+</span>
+                            <span class="stat-label">Employees Tracked</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">8+</span>
+                            <span class="stat-label">Departments</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/mayank-goyal09/hr-analytics-dashboard" target="_blank" class="card-link">View on GitHub →</a>
+                </article>
+
+                <!-- Project 5 -->
+                <article class="project-card glass-panel">
+                    <h3 class="card-title">Olympic Performance Analytics</h3>
+                    <div class="card-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Pandas</span>
+                    </div>
+                    <p class="card-description">Analyzed 32 years of Olympic data to reveal athletic dominance patterns and trends.</p>
+                    <div class="card-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">32 Years</span>
+                            <span class="stat-label">Data Coverage</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">200+</span>
+                            <span class="stat-label">Countries</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/mayank-goyal09/olympic-legacy-1976-2008" target="_blank" class="card-link">View on GitHub →</a>
+                </article>
+
+                <!-- Project 6 -->
+                <article class="project-card glass-panel">
+                    <h3 class="card-title">Real-Time Safety Intelligence</h3>
+                    <div class="card-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Streamlit</span>
+                    </div>
+                    <p class="card-description">Environmental monitoring dashboard analyzing real-time weather data for daily safety risks.</p>
+                    <div class="card-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">6+</span>
+                            <span class="stat-label">Safety Metrics</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">Live</span>
+                            <span class="stat-label">API Data</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/mayank-goyal09/environmental-safety-dashboard" target="_blank" class="card-link">View on GitHub →</a>
+                </article>
+
+                <!-- Project 7 -->
+                <article class="project-card glass-panel">
+                    <h3 class="card-title">Pizza Sales SQL Analysis</h3>
+                    <div class="card-tags">
+                        <span class="tag">SQL</span>
+                        <span class="tag">Revenue Analysis</span>
+                    </div>
+                    <p class="card-description">SQL analysis extracting revenue trends and customer ordering patterns from sales data.</p>
+                    <div class="card-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">1000+</span>
+                            <span class="stat-label">Transactions</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">20+</span>
+                            <span class="stat-label">SQL Queries</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/mayank-goyal09/pizza-sales-sql-analysis" target="_blank" class="card-link">View on GitHub →</a>
+                </article>
+
+                <!-- Project 8 -->
+                <article class="project-card glass-panel">
+                    <h3 class="card-title">Query Optimization & Data Manipulation</h3>
+                    <div class="card-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">SQL</span>
+                    </div>
+                    <p class="card-description">Comprehensive notebook demonstrating advanced SQL optimization and Python data manipulation.</p>
+                    <div class="card-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">50+</span>
+                            <span class="stat-label">Code Examples</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">10+</span>
+                            <span class="stat-label">Topics Covered</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/mayank-goyal09/python-SQL-notebook" target="_blank" class="card-link">View on GitHub →</a>
+                </article>
+
+                <!-- Project 9 -->
+                <article class="project-card glass-panel">
+                    <h3 class="card-title">Titanic Survival Analytics</h3>
+                    <div class="card-tags">
+                        <span class="tag">Excel</span>
+                        <span class="tag">Predictive Analytics</span>
+                    </div>
+                    <p class="card-description">Interactive Excel dashboard analyzing 891 Titanic passengers to predict survival outcomes.</p>
+                    <div class="card-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">891</span>
+                            <span class="stat-label">Passengers Analyzed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">8+</span>
+                            <span class="stat-label">Predictive Factors</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/mayank-goyal09/titanic-survival-dashboard" target="_blank" class="card-link">View on GitHub →</a>
+                </article>
+
+                <!-- Project 10 -->
+                <article class="project-card glass-panel">
+                    <h3 class="card-title">IPL Cricket Analytics</h3>
+                    <div class="card-tags">
+                        <span class="tag">Power BI</span>
+                        <span class="tag">Sports Analytics</span>
+                    </div>
+                    <p class="card-description">Power BI dashboard tracking team performance and cricket statistics across IPL seasons.</p>
+                    <div class="card-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">15+</span>
+                            <span class="stat-label">Seasons</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">50+</span>
+                            <span class="stat-label">Metrics Tracked</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/mayank-goyal09/IPL-PowerBI-Dashboard" target="_blank" class="card-link">View on GitHub →</a>
+                </article>
+
+                <!-- Project 11: AI-ML-Job-Pulse -->
+                <article class="project-card glass-panel">
+                    <h3 class="card-title">AI-ML-Job-Pulse</h3>
+                    <div class="card-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Data Analysis</span>
+                        <span class="tag">Pandas</span>
+                    </div>
+                    <p class="card-description">Data Analysis project exploring AI/ML job trends, skill demand, salary patterns, and market insights using Python.</p>
+                    <div class="card-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">100+</span>
+                            <span class="stat-label">Job Listings</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">15+</span>
+                                <span class="stat-label">Skills Analyzed</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/mayank-goyal09/AI-ML-Job-Pulse" target="_blank" class="card-link">View on GitHub →</a>
+                </article>
+
+
+                <!-- Project 12: Performance Predictors EDA -->
+                <article class="project-card glass-panel">
+                    <h3 class="card-title">Performance Predictors EDA</h3>
+                    <div class="card-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">EDA</span>
+                        <span class="tag">Pandas</span>
+                    </div>
+                    <p class="card-description">Exploratory Data Analysis on Student Performance Dataset uncovering key factors influencing academic outcomes using Pandas & NumPy.</p>
+                    <div class="card-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">17</span>
+                            <span class="stat-label">Q&A Analysis</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">10+</span>
+                            <span class="stat-label">Insights Found</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/mayank-goyal09/performance-predictors-eda" target="_blank" class="card-link">View on GitHub →</a>
+                </article>
+            </div> <!-- End projects-grid -->
+        </div> <!-- End container -->
+    </section>
+</body>
+</html>
