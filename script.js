@@ -187,7 +187,7 @@ const soundBtn = document.getElementById("sound-btn");
 const soundIcon = document.getElementById("sound-icon");
 
 if(audio && soundBtn) {
-    audio.volume = 0.4;
+    audio.volume = 0.8;
     soundBtn.addEventListener("click", () => {
         if (audio.paused) {
             audio.play();
@@ -241,3 +241,4 @@ if(audio && soundBtn) {
     setTimeout(type, 600);
   });
 })();
+
