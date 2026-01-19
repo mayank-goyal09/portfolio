@@ -1,552 +1,784 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mayank Goyal | Cosmic Command Interface</title>
-  <link rel="icon" type="image/png" href="favicon.png">
+/* ============================================
+   🌌 COSMIC MACHINE LEARNING LAB THEME
+   ============================================ */
 
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+/* 1. BASE PAGE SETUP */
+body {
+  margin: 0;
+  min-height: 100vh;
+  /* Deep Space Background Gradient */
+  background: radial-gradient(circle at top, #020617 0, #050a14 40%, #000000 100%);
+  color: #e5f5e9;
+  position: relative;
+  overflow-x: hidden;
+  /* Hide satellites/comets that fly off-screen */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
 
-  <!-- Styles (cache-busted to force fresh load) -->
-  <link rel="stylesheet" href="style.css?v=20251215-FINAL" />
-</head>
+/* 2. BACKGROUND LAYERS (Fixed behind content) */
+/* IMPORTANT: This container holds all space items so they don't block clicks */
+.background-layers {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  /* Push way behind */
+  pointer-events: none;
+  /* Let mouse clicks pass through to buttons */
+  overflow: hidden;
+}
 
-<body>
-  <!-- Animated space background layers -->
-  <div class="space-bg">
-    <div class="starfield layer layer-stars"></div>
-    <div class="nebula layer layer-nebula"></div>
-    <div class="satellite layer layer-satellite layer-satellite-1"></div>
-    <div class="satellite layer layer-satellite layer-satellite-2"></div>
-    <div class="satellite layer layer-satellite layer-satellite-3"></div>
-    <div class="satellite layer layer-satellite layer-satellite-4"></div>
-    <div class="satellite layer layer-satellite layer-satellite-5"></div>
-    <div class="satellite layer layer-satellite layer-satellite-6"></div>
-    <div class="layer layer-asteroid asteroid-1"></div>
-    <div class="layer layer-asteroid asteroid-2"></div>
-    <div class="layer layer-asteroid asteroid-3"></div>
-  </div>
+.ml-home-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: linear-gradient(135deg, #22d3ee, #6366f1);
+  color: #0b1020;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.7);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+}
 
-  <!-- 🎵 Space Ambience Audio Source -->
-  <!-- This is the deep space drone engine sound -->
-  <audio id="space-audio" loop>
-    <source src="1221.MP3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+.ml-home-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.9);
+  filter: brightness(1.05);
+}
 
-  <header class="main-header">
-    <div class="logo">MG<span>_AI</span></div>
-    <nav class="nav">
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <!-- Hero Section - Command Interface Dashboard -->
-    <section id="hero" class="section hero-section">
-      <!-- Central Avatar Command Pod -->
-      <div class="command-pod">
-        <!-- Outer Glowing Rings -->
-        <div class="ring ring-outer"></div>
-        <div class="ring ring-middle"></div>
-        <div class="ring ring-inner"></div>
-        <div class="ring ring-glow"></div>
-
-        <!-- Avatar Video Container -->
-        <div class="avatar-container">
-          <!-- Update src to your actual video path if needed -->
-          <video class="avatar-video" autoplay loop muted playsinline>
-            <source src="avatar.mp4.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </div>
-
-      <!-- Command Interface Text -->
-      <div class="command-text">
-        <p class="command-tagline">WELCOME TO THE COMMAND INTERFACE</p>
-        <h1 class="command-name">
-          MAYANK <span>GOYAL</span>
-        </h1>
-
-        <!-- Typing effect container -->
-        <p class="command-role">
-          <span id="typing-text"></span>
-          <span class="cursor">|</span>
-        </p>
-      </div>
-
-      <!-- Navigation Buttons -->
-      <div class="hero-cta">
-        <a href="#skills" class="btn primary-btn">View Skills</a>
-        <a href="#contact" class="btn ghost-btn">Open Channel</a>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section section-padding">
-      <div class="section-header animate-on-scroll">
-        <h2>About <span>Me</span></h2>
-        <p></p>
-      </div>
-
-      <div class="about-grid">
-        <div class="about-box glass-panel animate-on-scroll">
-          <p>
-            I’m building the version of myself I’d want to hire. Someone who can
-            understand complex systems, break down ambiguous problems, and deliver.
-          </p>
-        </div>
-
-        <div class="about-box glass-panel highlight animate-on-scroll">
-          <p>
-            Hi, I’m Mayank — a “student” by title, but in practice a data analyst,
-            AI explorer, and builder of things that actually get used. I learn by
-            shipping real projects and listening to real feedback.
-          </p>
-        </div>
-
-        <div class="about-box glass-panel animate-on-scroll">
-          <p>
-            I’m shaping myself into someone who can think like a scientist, execute
-            like an engineer, and communicate like a storyteller. If a challenge
-            needs structure and obsession, that’s where you’ll find me.
-          </p>
-        </div>
-
-        <div class="about-box glass-panel highlight animate-on-scroll">
-          <p>
-            When I work with people, I like keeping things simple: clear goals,
-            direct communication, and a bias toward action. I’m not afraid to admit
-            what I don’t know, as long as I’m learning fast enough to move the needle.
-          </p>
-        </div>
-
-        <div class="about-box glass-panel animate-on-scroll">
-          <p>
-            If you’re building something ambitious and need someone who treats
-            problems like puzzles and deadlines like fuel, we’ll probably get along well.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section section-padding">
-      <div class="section-header animate-on-scroll">
-        <h2>Core <span>Skills</span></h2>
-        <p>Systems, tools, and capabilities loaded into this interface.</p>
-      </div>
-
-      <div class="skills-grid">
-        <!-- Data Analyst -->
-        <a
-          href="data-analytics-projects.html"
-          class="skill-tile glass-panel scan-effect animate-on-scroll"
-          style="text-decoration: none; color: inherit; cursor: pointer; transition: all 0.3s ease;"
-        >
-          <h3>📊 Data Analyst</h3>
-          <p>Exploratory analysis, cleaning, transformation, and insight extraction.</p>
-          <span style="color: var(--accent-cyan); font-size: 0.9rem; margin-top: 10px;">
-            → View Projects
-          </span>
-        </a>
-
-        <!-- Machine Learning -->
-        <a
-          href="machine-learning.html"
-          class="skill-tile glass-panel scan-effect animate-on-scroll"
-          style="text-decoration: none; color: inherit; cursor: pointer; transition: all 0.3s ease;"
-        >
-          <h3>🤖 Machine Learning</h3>
-          <p>Supervised models, evaluation, and deploying practical solutions.</p>
-          <span style="color: var(--accent-cyan); font-size: 0.9rem; margin-top: 10px;">
-            → View Projects
-          </span>
-        </a>
-
-        <!-- Python & OOP -->
-        <a
-          href="python-projects.html"
-          class="skill-tile glass-panel scan-effect animate-on-scroll"
-          style="text-decoration: none; color: inherit; cursor: pointer; transition: all 0.3s ease;"
-        >
-          <h3>🐍 Python & OOP</h3>
-          <p>Backend systems, OOP architecture, and enterprise applications.</p>
-          <span style="color: var(--accent-cyan); font-size: 0.9rem; margin-top: 10px;">
-            → View Projects
-          </span>
-        </a>
-
-        <!-- SQL & Databases -->
-        <div class="skill-tile glass-panel scan-effect animate-on-scroll">
-          <h3>💾 SQL & Databases</h3>
-          <p>Designing schemas, writing efficient queries, and managing data flows.</p>
-        </div>
-
-        <!-- Dashboards & Reporting -->
-        <div class="skill-tile glass-panel scan-effect animate-on-scroll">
-          <h3>📈 Dashboards & Reporting</h3>
-          <p>Building clear, narrative-driven reports and interactive views.</p>
-        </div>
-
-        <!-- AI & Exploration -->
-        <div class="skill-tile glass-panel scan-effect animate-on-scroll">
-          <h3>🧠 AI & Exploration</h3>
-          <p>Experimenting with NLP, deep learning, and reinforcement learning ideas.</p>
-        </div>
-
-        <!-- Data Scientist -->
-        <div class="skill-tile glass-panel scan-effect animate-on-scroll">
-          <h3>🧪 Data Scientist</h3>
-          <p>End-to-end modeling, feature engineering, and experiment-driven insights.</p>
-        </div>
-
-        <!-- Prompt Engineer -->
-        <div class="skill-tile glass-panel scan-effect animate-on-scroll">
-          <h3>💬 Prompt Engineer</h3>
-          <p>Designing effective prompts and workflows for LLM-powered systems.</p>
-        </div>
-
-        <!-- Market Researcher -->
-        <div class="skill-tile glass-panel scan-effect animate-on-scroll">
-          <h3>📊 Market Researcher</h3>
-          <p>Analyzing consumer behavior, trends, and competitive landscapes.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section section-padding">
-      <div class="section-header animate-on-scroll">
-        <h2>Featured <span>Showcase</span></h2>
-        <p>Mission logs from shipped experiments and interfaces.</p>
-      </div>
-
-      <div style="text-align: center; padding: 40px;">
-        <p
-          style="
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 30px;
-          "
-        >
-          Explore my comprehensive project collections across different domains:
-        </p>
-
-        <!-- Project Category Cards -->
-        <div
-          style="
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto 40px;
-          "
-        >
-          <!-- Data Analytics Projects Card -->
-          <div
-            class="glass-panel"
-            style="
-              padding: 30px;
-              border-radius: 15px;
-              transition: all 0.3s ease;
-              cursor: pointer;
-            "
-            onmouseover="this.style.transform='translateY(-10px)'; this.style.borderColor='rgba(0, 234, 255, 0.8)'"
-            onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 234, 255, 0.3)'"
-          >
-            <div style="font-size: 3rem; margin-bottom: 15px;">📊</div>
-            <h3 style="color: var(--accent-cyan); margin-bottom: 10px;">
-              Data Analyst
-            </h3>
-            <p
-              style="
-                color: var(--text-muted);
-                margin-bottom: 20px;
-                font-size: 0.9rem;
-              "
-            >
-              Customer analysis, market segmentation, predictive modeling & dashboards
-            </p>
-            <a
-              href="data-analytics-projects.html"
-              class="btn primary-btn"
-              style="text-decoration: none; width: 100%;"
-            >
-              Explore Analytics →
-            </a>
-          </div>
-
-          <!-- Python OOP Projects Card -->
-          <div
-            class="glass-panel"
-            style="
-              padding: 30px;
-              border-radius: 15px;
-              transition: all 0.3s ease;
-              cursor: pointer;
-            "
-            onmouseover="this.style.transform='translateY(-10px)'; this.style.borderColor='rgba(139, 71, 255, 0.8)'"
-            onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 234, 255, 0.3)'"
-          >
-            <div style="font-size: 3rem; margin-bottom: 15px;">🐍</div>
-            <h3 style="color: var(--accent-purple); margin-bottom: 10px;">
-              Python & Backend
-            </h3>
-            <p
-              style="
-                color: var(--text-muted);
-                margin-bottom: 20px;
-                font-size: 0.9rem;
-              "
-            >
-              Enterprise apps, banking systems, inventory management & OOP architecture
-            </p>
-            <a
-              href="python-projects.html"
-              class="btn ghost-btn"
-              style="text-decoration: none; width: 100%;"
-            >
-              Explore Python →
-            </a>
-          </div>
-
-          <!-- Machine Learning Projects Card -->
-          <div
-            class="glass-panel"
-            style="
-              padding: 30px;
-              border-radius: 15px;
-              transition: all 0.3s ease;
-              cursor: pointer;
-            "
-            onmouseover="this.style.transform='translateY(-10px)'; this.style.borderColor='rgba(34, 197, 94, 0.8)'"
-            onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 234, 255, 0.3)'"
-          >
-            <div style="font-size: 3rem; margin-bottom: 15px;">🤖</div>
-            <h3 style="color: var(--accent-secondary); margin-bottom: 10px;">
-              Machine Learning
-            </h3>
-            <p
-              style="
-                color: var(--text-muted);
-                margin-bottom: 20px;
-                font-size: 0.9rem;
-              "
-            >
-              Supervised & unsupervised models, pipelines, and deployable ML apps
-            </p>
-            <a
-              href="machine-learning.html"
-              class="btn primary-btn"
-              style="text-decoration: none; width: 100%;"
-            >
-              Explore ML →
-            </a>
-          </div>
-        </div>
-
-        <!-- Additional CTA Buttons -->
-        <div
-          style="
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 20px;
-          "
-        >
-          <a
-            href="https://github.com/mayank-goyal09"
-            target="_blank"
-            class="btn primary-btn"
-            style="text-decoration: none;"
-          >
-            🔗 View GitHub Profile
-          </a>
-          <a
-            href="#contact"
-            class="btn ghost-btn"
-            style="text-decoration: none;"
-          >
-            💬 Get in Touch
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section section-padding">
-      <div class="section-header animate-on-scroll">
-        <h2>Open <span>Channel</span></h2>
-        <p>Send a transmission to initiate collaboration or discussion.</p>
-      </div>
-
-      <div class="contact-grid glass-panel animate-on-scroll">
-        <form class="contact-form" name="contact" method="POST" data-netlify="true" action="https://formsubmit.co/itsmaygal09@gmail.com" method="POST" autocomplete="off">
-          <div class="form-group">
-            <input type="text" id="name" required name="name" />
-            <label for="name">Your Name</label>
-            <span class="input-border"></span>
-          </div>
-
-          <div class="form-group">
-            <input type="email" id="email" name="email" required />
-            <label for="email">Email Address</label>
-            <span class="input-border"></span>
-          </div>
-
-          <div class="form-group">
-            <textarea id="message" rows="4" name="message" required></textarea>
-            <label for="message">Your Message</label>
-            <span class="input-border"></span>
-          </div>
-
-          <button type="submit" class="btn primary-btn">
-            Send Transmission
-          </button>
-        </form>
-
-        <div class="contact-info">
-          <h3>Preferred Channels</h3>
-          <p>Connect through my primary communication relays below.</p>
-
-          <div class="channel-icons">
-            <!-- LinkedIn -->
-            <a
-              href="https://www.linkedin.com/in/mayank-goyal-4b8756363"
-              class="channel-icon linkedin"
-              target="_blank"
-              rel="noopener"
-            >
-              <span class="icon-badge">in</span>
-              <span class="channel-label">LinkedIn</span>
-            </a>
-
-            <!-- GitHub -->
-            <a
-              href="https://github.com/mayank-goyal09"
-              class="channel-icon github"
-              target="_blank"
-              rel="noopener"
-            >
-              <span class="icon-badge">{ }</span>
-              <span class="channel-label">GitHub</span>
-            </a>
-
-            <!-- X / Twitter -->
-            <a
-              href="https://x.com/mem0ews"
-              class="channel-icon x-platform"
-              target="_blank"
-              rel="noopener"
-            >
-              <span class="icon-badge">X</span>
-              <span class="channel-label">X</span>
-            </a>
-          </div>
-
-          <p>
-            I usually respond within 24 hours to collaboration ideas, data projects,
-            or research opportunities.
-          </p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- 🎛️ Sound Control Deck (Floating Button) -->
-  <button id="sound-btn" class="sound-control-deck">
-    <span id="sound-icon">🔇</span> 
-    <span class="sound-text">SYSTEM AUDIO</span>
-  </button>
-
-  <!-- AI Assistant Orb -->
-  <div class="ai-orb-wrapper">
-    <div class="ai-orb" id="aiOrb" aria-label="Open AI assistant"></div>
-
-    <div
-      class="ai-chat-window glass-panel"
-      id="aiChatWindow"
-      aria-hidden="true"
-    >
-      <div class="ai-chat-header">
-        <div class="ai-status-dot"></div>
-        <div>
-          <h3>Cosmic AI Assistant</h3>
-          <p>Online - Futuristic mode</p>
-        </div>
-        <button
-          class="ai-close-btn"
-          id="aiCloseBtn"
-          aria-label="Close assistant"
-        >
-          &times;
-        </button>
-      </div>
-
-      <div class="ai-chat-body" id="aiChatBody"></div>
-
-      <div class="ai-quick-actions">
-        <button data-intent="greeting">Greet</button>
-        <button data-intent="skills">Show Skills</button>
-        <button data-intent="projects">Show Projects</button>
-        <button data-intent="contact">Contact Info</button>
-        <button data-intent="random">Random Tip</button>
-      </div>
-
-      <form class="ai-input-row" id="aiForm">
-        <input
-          type="text"
-          id="aiInput"
-          placeholder="Type a message (demo only)..."
-        />
-        <button type="submit">Send</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- Dev badge to confirm updated file and scripts -->
-  <div
-    style="
-      position: fixed;
-      right: 14px;
-      bottom: 14px;
-      background: rgba(0, 0, 0, 0.45);
-      color: var(--text-muted);
-      padding: 8px 10px;
-      border-radius: 8px;
-      font-size: 12px;
-      backdrop-filter: blur(6px);
-      z-index: 60;
-    "
-  >
-    System Online: v2025-12-15
-  </div>
-
-  <!-- Scripts (cache-busted to force fresh load) -->
-  <script src="script.js?v=20251215-FINAL"></script>
-</body>
-</html>
+.ml-home-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.7);
+}
 
 
+/* --- SPACE OBJECTS STYLES --- */
+
+/* Stars Layer 1 (Bright, close) */
+/* ============================================
+   ✨ HIGH DENSITY STARFIELD (The "Galaxy" Look)
+   ============================================ */
+
+/* Layer 1: The Brightest, Closest Stars */
+.layer-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* 👇 MASSIVE LIST OF STARS */
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, #ffffff, transparent),
+    radial-gradient(2px 2px at 40px 70px, #ffffff, transparent),
+    radial-gradient(1px 1px at 50px 160px, #ffffff, transparent),
+    radial-gradient(2.5px 2.5px at 80px 120px, #ffffff, transparent),
+    radial-gradient(2px 2px at 110px 40px, #ffffff, transparent),
+    radial-gradient(1px 1px at 140px 80px, #ffffff, transparent),
+    radial-gradient(3px 3px at 160px 180px, #ffffff, transparent),
+    /* Big Star */
+    radial-gradient(1px 1px at 190px 40px, #ffffff, transparent),
+    radial-gradient(2px 2px at 10px 250px, #ffffff, transparent),
+    radial-gradient(1.5px 1.5px at 120px 200px, #ffffff, transparent),
+    radial-gradient(2px 2px at 220px 10px, #ffffff, transparent),
+    radial-gradient(1px 1px at 250px 280px, #ffffff, transparent);
+
+  /* 👇 Smaller size = Pattern repeats more often = MORE STARS */
+  background-size: 300px 300px;
+  opacity: 1;
+  /* Maximum Brightness */
+  animation: twinkle 3s infinite ease-in-out alternate;
+}
+
+/* Layer 2: Medium Distance (High Density) */
+.layer-stars-2 {
+  background-image:
+    radial-gradient(1.5px 1.5px at 15px 15px, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 150px 50px, #fff, transparent),
+    radial-gradient(1px 1px at 80px 180px, #fff, transparent),
+    radial-gradient(1px 1px at 220px 240px, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 40px 280px, #fff, transparent),
+    radial-gradient(1px 1px at 300px 100px, #fff, transparent);
+
+  background-size: 350px 350px;
+  opacity: 0.8;
+  /* Very bright */
+  animation-duration: 5s;
+  transform: rotate(25deg);
+}
+
+/* Layer 3: Background Dust (Tiny & Many) */
+.layer-stars-3 {
+  background-image:
+    radial-gradient(1px 1px at 100px 100px, #fff, transparent),
+    radial-gradient(1px 1px at 200px 200px, #fff, transparent),
+    radial-gradient(1px 1px at 50px 300px, #fff, transparent);
+
+  background-size: 150px 150px;
+  /* Repeats very often */
+  opacity: 0.5;
+  animation-duration: 7s;
+}
+
+/* ⚡ Intense Twinkle Animation */
+@keyframes twinkle {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
+}
 
 
+/* The Moon (Glowing Orb) */
+.layer-moon {
+  position: absolute;
+  top: 10%;
+  right: 15%;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle at 30% 30%, #fefefe, #d1d5db);
+  border-radius: 50%;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
+  opacity: 0.9;
+}
 
+/* The Planet (Big Feature) */
+.layer-planet {
+  position: absolute;
+  bottom: -10%;
+  left: -5%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 60% 40%, #4f46e5, #000);
+  box-shadow: inset -20px -20px 60px rgba(0, 0, 0, 0.8);
+  opacity: 0.6;
+}
 
+/* Planet Ring */
+.layer-planet-ring {
+  position: absolute;
+  bottom: 5%;
+  left: -5%;
+  width: 400px;
+  height: 100px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: rotate(-20deg);
+  opacity: 0.4;
+}
 
+/* The Comet */
+.layer-comet {
+  position: absolute;
+  top: 20%;
+  left: -100px;
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  box-shadow: 0 0 10px #fff, 0 0 20px #4ade80;
+  /* Green tail */
+  border-radius: 50%;
+  animation: cometFly 25s linear infinite;
+}
+
+.layer-comet::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #4ade80);
+  transform: translateX(-100%);
+}
+
+@keyframes cometFly {
+  0% {
+    transform: translate(0, 0) rotate(15deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(120vw, 40vh) rotate(15deg);
+    opacity: 0;
+  }
+}
+
+/* Space Clouds (Nebula) */
+.layer-clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 80% 20%, rgba(76, 29, 149, 0.15), transparent 40%),
+    radial-gradient(circle at 20% 80%, rgba(6, 78, 59, 0.15), transparent 40%);
+  filter: blur(40px);
+  z-index: -5;
+}
+
+/* Shooting Stars */
+.shooting-star {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, #ffffff, transparent);
+  opacity: 0;
+  z-index: -1;
+  pointer-events: none;
+  animation: meteorShoot 6s linear infinite;
+}
+
+.shooting-star:nth-child(2) {
+  top: 20%;
+  left: 20%;
+  animation-duration: 9s;
+  animation-delay: 2s;
+}
+
+@keyframes meteorShoot {
+  0% {
+    transform: translateX(0) translateY(0) rotate(-45deg);
+    opacity: 1;
+  }
+
+  20% {
+    transform: translateX(-200px) translateY(200px) rotate(-45deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(-200px) translateY(200px) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+/* Satellite Layer */
+.satellite-layer {
+  position: fixed;
+  top: 15%;
+  right: 10%;
+  width: 60px;
+  height: 60px;
+  background: rgba(100, 255, 218, 0.1);
+  border: 1px solid rgba(100, 255, 218, 0.3);
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(100, 255, 218, 0.2);
+  z-index: -1;
+  pointer-events: none;
+  animation: satOrbit 40s linear infinite;
+}
+
+.satellite-layer::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  right: -20px;
+  height: 2px;
+  background: rgba(100, 255, 218, 0.4);
+}
+
+@keyframes satOrbit {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate(-20vw, 10vh) rotate(180deg);
+  }
+
+  100% {
+    transform: translate(-40vw, 0) rotate(360deg);
+  }
+}
+
+/* ============================================
+   🟢 MAIN PAGE CONTENT (Foreground)
+   ============================================ */
+
+.ml-page {
+  position: relative;
+  z-index: 10;
+  /* Ensures content is clickable above stars */
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 3.2rem 1.5rem 4.5rem;
+  box-sizing: border-box;
+}
+
+/* HERO / HEADER CARD */
+.ml-hero-card {
+  margin-top: 3.2rem;
+  padding: 1.6rem 1.8rem;
+  border-radius: 1rem;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+
+  position: relative;
+  overflow: hidden;
+
+  /* Subtle orbit float */
+  animation: mlHeroFloat 7s ease-in-out infinite;
+}
+
+@keyframes mlHeroFloat {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+
+  25% {
+    transform: translateY(-8px) translateX(6px);
+  }
+
+  50% {
+    transform: translateY(-12px) translateX(-6px);
+  }
+
+  75% {
+    transform: translateY(-6px) translateX(4px);
+  }
+
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+.ml-hero-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(74, 222, 128, 0.18);
+  pointer-events: none;
+}
+
+.ml-hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ml-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #6ee7b7;
+  margin-bottom: 0.35rem;
+}
+
+.ml-heading {
+  font-size: 2.1rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #bbf7d0;
+  margin: 0;
+}
+
+.ml-subtitle {
+  margin-top: 0.6rem;
+  font-size: 0.94rem;
+  color: #9ca3af;
+  max-width: 640px;
+}
+
+/* PULL HANDLE / THREAD */
+.pull-wrapper {
+  margin-top: 2.2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.pull-handle {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.pull-line {
+  width: 6px;
+  height: 150px;
+  background: linear-gradient(to bottom, #22c55e, #052e16);
+  transform-origin: top;
+  /* Smooth transition for the up/down movement */
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.pull-knob {
+  width: 36px;
+  height: 40px;
+  border-radius: 999px;
+  border: 5px solid #22c55e;
+  background: transparent;
+  box-shadow: 0 0 22px rgba(34, 197, 94, 0.9);
+}
+
+/* Thread moves UP when projects are visible (active state) */
+.pull-handle.active .pull-line {
+  transform: translateY(-15px);
+}
+
+/* Thread stays at default position when inactive */
+.pull-handle:not(.active) .pull-line {
+  transform: translateY(0);
+}
+
+/* SECTION HEADERS */
+.ml-section {
+  margin-top: 3rem;
+}
+
+.section-header {
+  margin-bottom: 1.5rem;
+}
+
+.ml-section-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+  color: #bbf7d0;
+}
+
+.ml-section-desc {
+  font-size: 0.94rem;
+  color: #9ca3af;
+  max-width: 640px;
+}
+
+/* PROJECT GRID & CARDS */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Card Float Animation */
+@keyframes cardFloatOrbit {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+
+  25% {
+    transform: translateY(-8px) translateX(6px);
+  }
+
+  50% {
+    transform: translateY(-12px) translateX(-6px);
+  }
+
+  75% {
+    transform: translateY(-6px) translateX(4px);
+  }
+
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+/* Base card styles */
+.project-card {
+  background: radial-gradient(circle at top left, #022c22 0, #020617 55%);
+  border-radius: 0.9rem;
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  padding: 1.2rem 1.25rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.9);
+
+  /* Initial state (collapsed) */
+  transform: translateY(40px) scale(0.96);
+  opacity: 0.35;
+  transition:
+    transform 420ms cubic-bezier(0.23, 1, 0.32, 1),
+    opacity 380ms ease,
+    border-color 0.3s ease;
+}
+
+/* Visible State */
+.projects-visible .project-card {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  animation: cardFloatOrbit 8s ease-in-out infinite;
+}
+
+/* Staggered Animations */
+.projects-visible .project-card:nth-child(1) {
+  animation-duration: 7.5s;
+  animation-delay: 0.1s;
+}
+
+.projects-visible .project-card:nth-child(2) {
+  animation-duration: 8.2s;
+  animation-delay: 0.3s;
+}
+
+.projects-visible .project-card:nth-child(3) {
+  animation-duration: 7.8s;
+  animation-delay: 0.5s;
+}
+
+.projects-visible .project-card:nth-child(4) {
+  animation-duration: 8.5s;
+  animation-delay: 0.2s;
+}
+
+.projects-visible .project-card:nth-child(5) {
+  animation-duration: 7.2s;
+  animation-delay: 0.4s;
+}
+
+/* Collapsed State */
+.projects-collapsed .project-card {
+  transform: translateY(40px) scale(0.96);
+  opacity: 0.35;
+  animation: none;
+}
+
+/* Hover Effect */
+.projects-visible .project-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  border-color: #4ade80;
+  animation-play-state: paused;
+  /* Important: Stop float on hover */
+  cursor: pointer;
+}
+
+/* CARD CONTENT */
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.badge {
+  padding: 0.16rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  color: #9ca3af;
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.badge--primary {
+  border-color: #22c55e;
+  color: #bbf7d0;
+  background: rgba(34, 197, 94, 0.1);
+}
+
+.project-title {
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: #e5f5e9;
+  margin: 0;
+}
+
+.project-one-liner {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.project-meta {
+  font-size: 0.83rem;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.project-meta span {
+  color: #e5f5e9;
+}
+
+/* ACTION BUTTONS */
+.project-actions {
+  margin-top: 0.6rem;
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.btn-link {
+  font-size: 0.8rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: transparent;
+  color: #e5f5e9;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: all 0.3s ease;
+}
+
+.btn-link--primary {
+  border-color: #22c55e;
+  background: rgba(34, 197, 94, 0.12);
+}
+
+.btn-link:hover {
+  border-color: #a855f7;
+  color: #f9fafb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.2);
+}
+
+/* RESPONSIVE TWEAKS */
+@media (max-width: 640px) {
+  .ml-page {
+    padding: 2.5rem 1.1rem 3.5rem;
+  }
+
+  .ml-heading {
+    font-size: 2rem;
+  }
+
+  .ml-subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+/* ============================================
+   🟢 UNSUPERVISED LEARNING STYLING (Bigger & Shiny)
+   ============================================ */
+
+/* Unsupervised Grid (Larger cards) */
+.unsupervised-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  /* Bigger cards */
+  gap: 2rem;
+  /* More space between cards */
+}
+
+/* Unsupervised Card Styling (Green theme, larger) */
+.project-card-unsupervised {
+  background: radial-gradient(circle at top left, #0d3d2d 0, #020617 55%);
+  border-radius: 1.2rem;
+  border: 2px solid rgba(34, 197, 94, 0.5);
+  /* Thicker green border */
+  padding: 1.8rem 1.5rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  box-shadow:
+    0 20px 50px rgba(34, 197, 94, 0.15),
+    /* Green glow */
+    0 0 40px rgba(34, 197, 94, 0.1);
+
+  transform: translateY(40px) scale(0.96);
+  opacity: 0.35;
+  transition:
+    transform 420ms cubic-bezier(0.23, 1, 0.32, 1),
+    opacity 380ms ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* When Unsupervised Grid is Visible */
+.projects-visible-unsupervised .project-card-unsupervised {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  animation: cardFloatOrbit 8s ease-in-out infinite;
+}
+
+/* Staggered animations for unsupervised cards */
+.projects-visible-unsupervised .project-card-unsupervised:nth-child(1) {
+  animation-duration: 7.8s;
+  animation-delay: 0.1s;
+}
+
+.projects-visible-unsupervised .project-card-unsupervised:nth-child(2) {
+  animation-duration: 8.3s;
+  animation-delay: 0.25s;
+}
+
+.projects-visible-unsupervised .project-card-unsupervised:nth-child(3) {
+  animation-duration: 8s;
+  animation-delay: 0.4s;
+}
+
+.projects-visible-unsupervised .project-card-unsupervised:nth-child(4) {
+  animation-duration: 7.6s;
+  animation-delay: 0.15s;
+}
+
+.projects-visible-unsupervised .project-card-unsupervised:nth-child(5) {
+  animation-duration: 8.5s;
+  animation-delay: 0.3s;
+}
+
+.projects-visible-unsupervised .project-card-unsupervised:nth-child(6) {
+  animation-duration: 7.9s;
+  animation-delay: 0.2s;
+}
+
+/* Collapsed state */
+.projects-collapsed-unsupervised .project-card-unsupervised {
+  transform: translateY(40px) scale(0.96);
+  opacity: 0.35;
+  animation: none;
+}
+
+/* Hover effect (Green glow intensifies) */
+.projects-visible-unsupervised .project-card-unsupervised:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: #4ade80;
+  box-shadow:
+    0 30px 60px rgba(34, 197, 94, 0.3),
+    0 0 50px rgba(74, 222, 128, 0.25);
+  animation-play-state: paused;
+  cursor: pointer;
+}
+
+/* Unsupervised Badge */
+.badge--unsupervised {
+  border-color: #22c55e;
+  color: #bbf7d0;
+  background: rgba(34, 197, 94, 0.15);
+}
+
+/* Unsupervised Button Link */
+.btn-link--unsupervised {
+  border-color: #22c55e;
+  color: #4ade80;
+}
+
+.btn-link--unsupervised:hover {
+  border-color: #86efac;
+  color: #bbf7d0;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+/* Pull handle for unsupervised (same as supervised but maybe slightly different) */
+.pull-handle-unsupervised .pull-knob {
+  box-shadow: 0 0 22px rgba(34, 197, 94, 0.9);
+}
