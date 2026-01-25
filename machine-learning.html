@@ -648,42 +648,33 @@
           </div>
         </article>
 
-      <!-- Developer Persona Segmentation (Unsupervised) -->
-      <section class="project-card" id="developer-persona-segmentation">
-          <div class="project-badge">Unsupervised • MiniBatch K-Means</div>
-      
-          <h3>👥 Developer Persona Segmentation (Stack Overflow 2025)</h3>
-          <p>
-              Segment <strong>42K+ developers</strong> into actionable personas using the 
-              <strong>Stack Overflow 2025 Developer Survey</strong> and 
-              <strong>MiniBatch K-Means clustering</strong>. The project uncovers three clear
-              developer personas based on tech stack, experience, and work patterns, 
-              supporting data-driven hiring, marketing, and product strategy decisions.
+       <!-- 5. Developer Persona Segmentation -->
+        <article class="project-card project-card-unsupervised">
+          <div class="badge-row">
+            <span class="badge badge--unsupervised">Unsupervised</span>
+            <span class="badge">Clustering</span>
+            <span class="badge">Developer Analytics</span>
+            <span class="badge">MiniBatch K-Means</span>
+          </div>
+          <h3 class="project-title">👥 Developer Persona Segmentation</h3>
+          <p class="project-one-liner">
+            ML-powered developer persona segmentation using MiniBatch K-Means clustering on Stack Overflow 2025 survey
+            (~42K developers) to identify 3 distinct personas for hiring, marketing, and product strategy.
           </p>
-      
-          <ul class="project-highlights">
-              <li>📊 Uses real-world Stack Overflow 2025 survey data (~42,000 respondents).</li>
-              <li>🧠 End-to-end unsupervised ML pipeline with imputation, encoding, and scaling.</li>
-              <li>👥 Identifies three interpretable developer personas:
-                  <em>Modern Web Builders</em>, <em>Generalist Developers</em>, and <em>Veteran Builders</em>.
-              </li>
-              <li>🎨 Interactive Streamlit app with persona overview, tech stack, and experience insights.</li>
-              <li>💼 Generates labeled datasets and persona reports for business teams.</li>
-          </ul>
-      
-          <div class="project-tech">
-              <span><strong>Tech stack:</strong> Python, Pandas, NumPy, Scikit-learn, MiniBatch K-Means, Streamlit, Plotly</span>
+          <p class="project-meta">
+            <span>Stack:</span> Python · Scikit-learn · Streamlit · Pandas<br /><br>
+            <span>Personas:</span> Modern Web Builders (~45%) · Generalist Developers (~35%) · Veteran Builders
+            (~20%)<br /><br>
+            <span>Features:</span> Feature engineering for multi-select tech stacks | Scikit-learn pipeline with
+            imputation, encoding & scaling | Interactive Streamlit dashboard | Persona report CSV export
+          </p>
+          <div class="project-actions">
+            <a class="btn-link btn-link--unsupervised" href="https://developer-persona-project.streamlit.app"
+              target="_blank" rel="noopener">Live Demo</a>
+            <a class="btn-link btn-link--unsupervised" href="https://github.com/mayank-goyal09/Developer-persona"
+              target="_blank" rel="noopener">View Code</a>
           </div>
-      
-          <div class="project-links">
-              <a href="https://developer-persona-project.streamlit.app/" target="_blank" class="btn btn-primary">
-                  🔗 Live Demo
-              </a>
-              <a href="https://github.com/mayank-goyal09/Developer-persona" target="_blank" class="btn btn-secondary">
-                  💻 View Code
-              </a>
-          </div>
-      </section>
+        </article>
 
 
         <!-- 6. Feature Extraction Engine -->
@@ -742,5 +733,6 @@
 </body>
 
 </html>
+
 
 
