@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Data Analyst Projects | Mayank Goyal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
     <style>
         /* ===== ACHIEVEMENT BADGE STYLES ===== */
@@ -16,16 +19,25 @@
             font-size: 2.5rem;
             animation: glowPulse 2s ease-in-out infinite;
             filter: drop-shadow(0 0 10px #ffd700);
-            
+
             /* FIXED: Ensures the emoji shows properly */
-            -webkit-text-fill-color: initial; 
-            background: none;                 
-            -webkit-background-clip: border-box; 
+            -webkit-text-fill-color: initial;
+            background: none;
+            -webkit-background-clip: border-box;
         }
 
         @keyframes glowPulse {
-            0%, 100% { filter: drop-shadow(0 0 5px #ffd700); transform: scale(1); }
-            50% { filter: drop-shadow(0 0 15px #ffd700); transform: scale(1.15); }
+
+            0%,
+            100% {
+                filter: drop-shadow(0 0 5px #ffd700);
+                transform: scale(1);
+            }
+
+            50% {
+                filter: drop-shadow(0 0 15px #ffd700);
+                transform: scale(1.15);
+            }
         }
 
         /* ===== EXPERIENCE SECTION STYLES ===== */
@@ -33,7 +45,7 @@
             max-width: 1000px;
             margin: 0 auto 60px auto;
         }
-        
+
         .experience-card {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(0, 234, 255, 0.3);
@@ -51,7 +63,10 @@
         .experience-card::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 4px; height: 100%;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
             background: var(--accent-cyan);
             box-shadow: 0 0 15px var(--accent-cyan);
         }
@@ -136,10 +151,12 @@
             border: 2px solid var(--accent-cyan) !important;
             box-shadow: 0 0 20px rgba(0, 234, 255, 0.3), inset 0 0 20px rgba(0, 234, 255, 0.1) !important;
         }
+
         .project-card:hover {
             box-shadow: 0 0 40px rgba(0, 234, 255, 0.6), inset 0 0 30px rgba(0, 234, 255, 0.2) !important;
             border-color: var(--accent-cyan) !important;
         }
+
         .card-stats {
             display: flex;
             gap: 30px;
@@ -148,16 +165,19 @@
             border-top: 1px solid rgba(0, 234, 255, 0.2);
             border-bottom: 1px solid rgba(0, 234, 255, 0.2);
         }
+
         .stat-item {
             display: flex;
             flex-direction: column;
         }
+
         .stat-value {
             font-size: 1.6rem;
             font-weight: 700;
             color: var(--accent-cyan);
             margin-bottom: 4px;
         }
+
         .stat-label {
             font-size: 0.75rem;
             color: var(--text-muted);
@@ -167,6 +187,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="space-bg">
         <div class="layer starfield"></div>
@@ -185,19 +206,27 @@
         </div>
     </nav>
 
-    <section style="text-align: center; padding: 80px 20px; background: linear-gradient(135deg, rgba(0, 234, 255, 0.1) 0%, rgba(139, 71, 255, 0.1) 100%); margin-top: 60px;">
-        <h1 style="font-size: 3rem; font-weight: 700; background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 15px;">   Data Analyst Projects   <span class="achievement-badge">🏆</span> </h1>
-        <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 30px;">Comprehensive collection of data-driven projects showcasing analytics expertise</p>
-        <a href="index.html" style="display: inline-block; color: var(--accent-cyan); text-decoration: none; font-weight: 600;">← Back to Home</a>
+    <section
+        style="text-align: center; padding: 80px 20px; background: linear-gradient(135deg, rgba(0, 234, 255, 0.1) 0%, rgba(139, 71, 255, 0.1) 100%); margin-top: 60px;">
+        <h1
+            style="font-size: 3rem; font-weight: 700; background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 15px;">
+            Data Analyst Projects <span class="achievement-badge">🏆</span> </h1>
+        <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 30px;">Comprehensive collection of
+            data-driven projects showcasing analytics expertise</p>
+        <a href="index.html"
+            style="display: inline-block; color: var(--accent-cyan); text-decoration: none; font-weight: 600;">← Back to
+            Home</a>
     </section>
 
     <section class="section-padding" style="background: var(--bg-main);">
         <div class="container">
-            
+
             <!-- ✨ NEW: EXPERIENCE SECTION ✨ -->
             <div id="experience" class="experience-section">
-                <h2 style="color:white; margin-bottom: 30px; border-left: 5px solid var(--accent-cyan); padding-left: 15px;">Professional Experience</h2>
-                
+                <h2
+                    style="color:white; margin-bottom: 30px; border-left: 5px solid var(--accent-cyan); padding-left: 15px;">
+                    Professional Experience</h2>
+
                 <div class="experience-card">
                     <div class="exp-header">
                         <div>
@@ -206,9 +235,10 @@
                         </div>
                         <div class="exp-date">📅 Jul 2025 - Oct 2025</div>
                     </div>
-                    
+
                     <div class="exp-details">
-                        Successfully completed a Business Analysis internship focusing on data-driven dashboard creation. Recognized by leadership for diligence and inquisitive analytical approach.
+                        Successfully completed a Business Analysis internship focusing on data-driven dashboard
+                        creation. Recognized by leadership for diligence and inquisitive analytical approach.
                     </div>
 
                     <div class="exp-projects">
@@ -224,6 +254,192 @@
             </div>
             <!-- ✨ END EXPERIENCE SECTION ✨ -->
 
+            <!-- ========================== -->
+            <!-- ⚠️ SAFETY INTELLIGENCE HUD ⚠️ -->
+            <!-- ========================== -->
+            <div class="spotlight-hud-container" style="
+                margin-bottom: 60px;
+                background: linear-gradient(180deg, rgba(255, 166, 0, 0.05) 0%, rgba(0, 0, 0, 0.6) 100%);
+                border: 1px solid rgba(255, 166, 0, 0.3);
+                border-radius: 20px;
+                padding: 2px;
+                position: relative;
+                overflow: hidden;
+                box-shadow: 0 0 40px rgba(255, 166, 0, 0.1);
+            ">
+                <!-- Animated Scan Line -->
+                <div style="
+                    position: absolute;
+                    top: 0; left: 0; width: 100%; height: 2px;
+                    background: #ffae00;
+                    box-shadow: 0 0 15px #ffae00;
+                    animation: scanDown 4s linear infinite;
+                    opacity: 0.5;
+                    z-index: 1;
+                "></div>
+
+                <div style="
+                    background: rgba(10, 10, 15, 0.85);
+                    backdrop-filter: blur(12px);
+                    border-radius: 18px;
+                    padding: 40px;
+                    display: grid;
+                    grid-template-columns: 1.2fr 0.8fr;
+                    gap: 40px;
+                    align-items: center;
+                    position: relative;
+                    z-index: 2;
+                ">
+                    <!-- LEFT: Project Identity -->
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                            <span style="
+                                background: rgba(255, 174, 0, 0.15);
+                                color: #ffae00;
+                                border: 1px solid #ffae00;
+                                padding: 5px 12px;
+                                border-radius: 4px;
+                                font-size: 0.8rem;
+                                font-weight: 700;
+                                letter-spacing: 1px;
+                                text-transform: uppercase;
+                                display: flex;
+                                align-items: center;
+                                gap: 8px;
+                            ">
+                                <span
+                                    style="width: 8px; height: 8px; background: #ffae00; border-radius: 50%; box-shadow: 0 0 10px #ffae00; animation: blink 1s infinite;"></span>
+                                Live Monitoring
+                            </span>
+                        </div>
+
+                        <h3 style="
+                            font-size: 2.5rem;
+                            font-weight: 800;
+                            line-height: 1.1;
+                            margin-bottom: 20px;
+                            background: linear-gradient(90deg, #fff 0%, #ffae00 100%);
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                        ">Real-Time Safety Intelligence</h3>
+
+                        <p style="font-size: 1.05rem; color: #ccc; line-height: 1.6; margin-bottom: 30px;">
+                            An advanced environmental defense system that ingests <strong style="color: #ffae00;">live
+                                weather API streams</strong> to calculate instantaneous safety risks. It transforms
+                            chaotic atmospheric data into actionable "Go/No-Go" safety protocols for field operations.
+                        </p>
+
+                        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                            <a href="https://github.com/mayank-goyal09/environmental-safety-dashboard" target="_blank"
+                                style="
+                                background: linear-gradient(135deg, #ffae00 0%, #ff8800 100%);
+                                color: #000;
+                                padding: 12px 25px;
+                                font-weight: 700;
+                                text-decoration: none;
+                                border-radius: 8px;
+                                display: inline-flex;
+                                align-items: center;
+                                gap: 8px;
+                                box-shadow: 0 0 20px rgba(255, 174, 0, 0.3);
+                                transition: all 0.2s;
+                            " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 0 30px rgba(255, 174, 0, 0.5)'"
+                                onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 20px rgba(255, 174, 0, 0.3)'">
+                                View Architecture on GitHub →
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: Data Stream Visuals -->
+                    <div style="
+                        background: rgba(0, 0, 0, 0.5);
+                        border: 1px solid rgba(255, 174, 0, 0.2);
+                        border-radius: 12px;
+                        padding: 25px;
+                        font-family: 'Courier New', monospace;
+                        position: relative;
+                    ">
+                        <!-- Technical Corner Markers -->
+                        <div
+                            style="position: absolute; top: -1px; left: -1px; width: 10px; height: 10px; border-top: 2px solid #ffae00; border-left: 2px solid #ffae00;">
+                        </div>
+                        <div
+                            style="position: absolute; bottom: -1px; right: -1px; width: 10px; height: 10px; border-bottom: 2px solid #ffae00; border-right: 2px solid #ffae00;">
+                        </div>
+
+                        <div
+                            style="border-bottom: 1px solid rgba(255, 174, 0, 0.2); padding-bottom: 15px; margin-bottom: 15px; display: flex; justify-content: space-between;">
+                            <span style="color: #ffae00; font-size: 0.9rem;">SYSTEM_STATUS: ONLINE</span>
+                            <span style="color: #4ade80; text-shadow: 0 0 10px rgba(74, 222, 128, 0.5);">● STABLE</span>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div>
+                                <div style="color: #666; font-size: 0.75rem; margin-bottom: 5px;">DATA SOURCE</div>
+                                <div style="color: #fff; font-size: 1.1rem; font-weight: bold;">OpenWeather API</div>
+                            </div>
+                            <div>
+                                <div style="color: #666; font-size: 0.75rem; margin-bottom: 5px;">LATENCY</div>
+                                <div style="color: #4ade80; font-size: 1.1rem; font-weight: bold;">~25ms</div>
+                            </div>
+                            <div>
+                                <div style="color: #666; font-size: 0.75rem; margin-bottom: 5px;">RISK FACTORS</div>
+                                <div style="color: #ffae00; font-size: 1.1rem; font-weight: bold;">6 Types</div>
+                            </div>
+                            <div>
+                                <div style="color: #666; font-size: 0.75rem; margin-bottom: 5px;">UPDATES</div>
+                                <div style="color: #fff; font-size: 1.1rem; font-weight: bold;">Real-Time</div>
+                            </div>
+                        </div>
+
+                        <div
+                            style="margin-top: 20px; padding-top: 15px; border-top: 1px dashed rgba(255, 255, 255, 0.1); font-size: 0.85rem; color: #888;">
+                            > Connecting to sensor grid...<br>
+                            > Calibrating risk thresholds...<br>
+                            > <span style="color: #ffae00;">Ready for deployment.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                @keyframes scanDown {
+                    0% {
+                        top: -10%;
+                        opacity: 0;
+                    }
+
+                    20% {
+                        opacity: 0.5;
+                    }
+
+                    80% {
+                        opacity: 0.5;
+                    }
+
+                    100% {
+                        top: 110%;
+                        opacity: 0;
+                    }
+                }
+
+                @keyframes blink {
+
+                    0%,
+                    100% {
+                        opacity: 1;
+                    }
+
+                    50% {
+                        opacity: 0.4;
+                    }
+                }
+
+                @media (max-width: 900px) {
+                    .spotlight-hud-container>div {
+                        grid-template-columns: 1fr !important;
+                    }
+                }
+            </style>
 
             <div class="projects-grid">
                 <!-- Project 1 -->
@@ -233,7 +449,8 @@
                         <span class="tag">Power BI</span>
                         <span class="tag">Marketing</span>
                     </div>
-                    <p class="card-description">Comprehensive marketing performance dashboard tracking campaign ROI and customer engagement.</p>
+                    <p class="card-description">Comprehensive marketing performance dashboard tracking campaign ROI and
+                        customer engagement.</p>
                     <div class="card-stats">
                         <div class="stat-item">
                             <span class="stat-value">10+</span>
@@ -244,7 +461,8 @@
                             <span class="stat-label">Data Refresh</span>
                         </div>
                     </div>
-                    <a href="https://github.com/mayank-goyal09/Marketing-PowerBI-Dashboard" target="_blank" class="card-link">View on GitHub →</a>
+                    <a href="https://github.com/mayank-goyal09/Marketing-PowerBI-Dashboard" target="_blank"
+                        class="card-link">View on GitHub →</a>
                 </article>
 
                 <!-- Project 2 -->
@@ -254,7 +472,8 @@
                         <span class="tag">Python</span>
                         <span class="tag">SQL</span>
                     </div>
-                    <p class="card-description">Deep-dive analysis on Target's e-commerce sales patterns and customer behavior.</p>
+                    <p class="card-description">Deep-dive analysis on Target's e-commerce sales patterns and customer
+                        behavior.</p>
                     <div class="card-stats">
                         <div class="stat-item">
                             <span class="stat-value">100K+</span>
@@ -265,7 +484,8 @@
                             <span class="stat-label">Key Insights</span>
                         </div>
                     </div>
-                    <a href="https://github.com/mayank-goyal09/target-ecommerce-sales-analysis" target="_blank" class="card-link">View on GitHub →</a>
+                    <a href="https://github.com/mayank-goyal09/target-ecommerce-sales-analysis" target="_blank"
+                        class="card-link">View on GitHub →</a>
                 </article>
 
                 <!-- Project 3 -->
@@ -275,7 +495,8 @@
                         <span class="tag">Excel</span>
                         <span class="tag">Data Visualization</span>
                     </div>
-                    <p class="card-description">Interactive Excel dashboard analyzing 1,701 flight records for delay patterns and trends.</p>
+                    <p class="card-description">Interactive Excel dashboard analyzing 1,701 flight records for delay
+                        patterns and trends.</p>
                     <div class="card-stats">
                         <div class="stat-item">
                             <span class="stat-value">1.7K</span>
@@ -286,7 +507,8 @@
                             <span class="stat-label">Historical Data</span>
                         </div>
                     </div>
-                    <a href="https://github.com/mayank-goyal09/flight-delay-analysis-dashboard" target="_blank" class="card-link">View on GitHub →</a>
+                    <a href="https://github.com/mayank-goyal09/flight-delay-analysis-dashboard" target="_blank"
+                        class="card-link">View on GitHub →</a>
                 </article>
 
                 <!-- Project 4 -->
@@ -296,7 +518,8 @@
                         <span class="tag">Excel</span>
                         <span class="tag">HR Analytics</span>
                     </div>
-                    <p class="card-description">Strategic HR dashboard monitoring 2,458+ employees across demographics and performance.</p>
+                    <p class="card-description">Strategic HR dashboard monitoring 2,458+ employees across demographics
+                        and performance.</p>
                     <div class="card-stats">
                         <div class="stat-item">
                             <span class="stat-value">2.5K+</span>
@@ -307,7 +530,8 @@
                             <span class="stat-label">Departments</span>
                         </div>
                     </div>
-                    <a href="https://github.com/mayank-goyal09/hr-analytics-dashboard" target="_blank" class="card-link">View on GitHub →</a>
+                    <a href="https://github.com/mayank-goyal09/hr-analytics-dashboard" target="_blank"
+                        class="card-link">View on GitHub →</a>
                 </article>
 
                 <!-- Project 5 -->
@@ -317,7 +541,8 @@
                         <span class="tag">Python</span>
                         <span class="tag">Pandas</span>
                     </div>
-                    <p class="card-description">Analyzed 32 years of Olympic data to reveal athletic dominance patterns and trends.</p>
+                    <p class="card-description">Analyzed 32 years of Olympic data to reveal athletic dominance patterns
+                        and trends.</p>
                     <div class="card-stats">
                         <div class="stat-item">
                             <span class="stat-value">32 Years</span>
@@ -328,29 +553,11 @@
                             <span class="stat-label">Countries</span>
                         </div>
                     </div>
-                    <a href="https://github.com/mayank-goyal09/olympic-legacy-1976-2008" target="_blank" class="card-link">View on GitHub →</a>
+                    <a href="https://github.com/mayank-goyal09/olympic-legacy-1976-2008" target="_blank"
+                        class="card-link">View on GitHub →</a>
                 </article>
 
-                <!-- Project 6 -->
-                <article class="project-card glass-panel">
-                    <h3 class="card-title">Real-Time Safety Intelligence</h3>
-                    <div class="card-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Streamlit</span>
-                    </div>
-                    <p class="card-description">Environmental monitoring dashboard analyzing real-time weather data for daily safety risks.</p>
-                    <div class="card-stats">
-                        <div class="stat-item">
-                            <span class="stat-value">6+</span>
-                            <span class="stat-label">Safety Metrics</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-value">Live</span>
-                            <span class="stat-label">API Data</span>
-                        </div>
-                    </div>
-                    <a href="https://github.com/mayank-goyal09/environmental-safety-dashboard" target="_blank" class="card-link">View on GitHub →</a>
-                </article>
+
 
                 <!-- Project 7 -->
                 <article class="project-card glass-panel">
@@ -359,7 +566,8 @@
                         <span class="tag">SQL</span>
                         <span class="tag">Revenue Analysis</span>
                     </div>
-                    <p class="card-description">SQL analysis extracting revenue trends and customer ordering patterns from sales data.</p>
+                    <p class="card-description">SQL analysis extracting revenue trends and customer ordering patterns
+                        from sales data.</p>
                     <div class="card-stats">
                         <div class="stat-item">
                             <span class="stat-value">1000+</span>
@@ -370,7 +578,8 @@
                             <span class="stat-label">SQL Queries</span>
                         </div>
                     </div>
-                    <a href="https://github.com/mayank-goyal09/pizza-sales-sql-analysis" target="_blank" class="card-link">View on GitHub →</a>
+                    <a href="https://github.com/mayank-goyal09/pizza-sales-sql-analysis" target="_blank"
+                        class="card-link">View on GitHub →</a>
                 </article>
 
                 <!-- Project 8 -->
@@ -380,7 +589,8 @@
                         <span class="tag">Python</span>
                         <span class="tag">SQL</span>
                     </div>
-                    <p class="card-description">Comprehensive notebook demonstrating advanced SQL optimization and Python data manipulation.</p>
+                    <p class="card-description">Comprehensive notebook demonstrating advanced SQL optimization and
+                        Python data manipulation.</p>
                     <div class="card-stats">
                         <div class="stat-item">
                             <span class="stat-value">50+</span>
@@ -391,7 +601,8 @@
                             <span class="stat-label">Topics Covered</span>
                         </div>
                     </div>
-                    <a href="https://github.com/mayank-goyal09/python-SQL-notebook" target="_blank" class="card-link">View on GitHub →</a>
+                    <a href="https://github.com/mayank-goyal09/python-SQL-notebook" target="_blank"
+                        class="card-link">View on GitHub →</a>
                 </article>
 
                 <!-- Project 9 -->
@@ -401,7 +612,8 @@
                         <span class="tag">Excel</span>
                         <span class="tag">Predictive Analytics</span>
                     </div>
-                    <p class="card-description">Interactive Excel dashboard analyzing 891 Titanic passengers to predict survival outcomes.</p>
+                    <p class="card-description">Interactive Excel dashboard analyzing 891 Titanic passengers to predict
+                        survival outcomes.</p>
                     <div class="card-stats">
                         <div class="stat-item">
                             <span class="stat-value">891</span>
@@ -412,7 +624,8 @@
                             <span class="stat-label">Predictive Factors</span>
                         </div>
                     </div>
-                    <a href="https://github.com/mayank-goyal09/titanic-survival-dashboard" target="_blank" class="card-link">View on GitHub →</a>
+                    <a href="https://github.com/mayank-goyal09/titanic-survival-dashboard" target="_blank"
+                        class="card-link">View on GitHub →</a>
                 </article>
 
                 <!-- Project 10 -->
@@ -422,7 +635,8 @@
                         <span class="tag">Power BI</span>
                         <span class="tag">Sports Analytics</span>
                     </div>
-                    <p class="card-description">Power BI dashboard tracking team performance and cricket statistics across IPL seasons.</p>
+                    <p class="card-description">Power BI dashboard tracking team performance and cricket statistics
+                        across IPL seasons.</p>
                     <div class="card-stats">
                         <div class="stat-item">
                             <span class="stat-value">15+</span>
@@ -433,7 +647,8 @@
                             <span class="stat-label">Metrics Tracked</span>
                         </div>
                     </div>
-                    <a href="https://github.com/mayank-goyal09/IPL-PowerBI-Dashboard" target="_blank" class="card-link">View on GitHub →</a>
+                    <a href="https://github.com/mayank-goyal09/IPL-PowerBI-Dashboard" target="_blank"
+                        class="card-link">View on GitHub →</a>
                 </article>
 
                 <!-- Project 11: AI-ML-Job-Pulse -->
@@ -444,18 +659,20 @@
                         <span class="tag">Data Analysis</span>
                         <span class="tag">Pandas</span>
                     </div>
-                    <p class="card-description">Data Analysis project exploring AI/ML job trends, skill demand, salary patterns, and market insights using Python.</p>
+                    <p class="card-description">Data Analysis project exploring AI/ML job trends, skill demand, salary
+                        patterns, and market insights using Python.</p>
                     <div class="card-stats">
                         <div class="stat-item">
                             <span class="stat-value">100+</span>
                             <span class="stat-label">Job Listings</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-value">15+</span>
-                                <span class="stat-label">Skills Analyzed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">15+</span>
+                            <span class="stat-label">Skills Analyzed</span>
                         </div>
                     </div>
-                    <a href="https://github.com/mayank-goyal09/AI-ML-Job-Pulse" target="_blank" class="card-link">View on GitHub →</a>
+                    <a href="https://github.com/mayank-goyal09/AI-ML-Job-Pulse" target="_blank" class="card-link">View
+                        on GitHub →</a>
                 </article>
 
 
@@ -467,7 +684,8 @@
                         <span class="tag">EDA</span>
                         <span class="tag">Pandas</span>
                     </div>
-                    <p class="card-description">Exploratory Data Analysis on Student Performance Dataset uncovering key factors influencing academic outcomes using Pandas & NumPy.</p>
+                    <p class="card-description">Exploratory Data Analysis on Student Performance Dataset uncovering key
+                        factors influencing academic outcomes using Pandas & NumPy.</p>
                     <div class="card-stats">
                         <div class="stat-item">
                             <span class="stat-value">17</span>
@@ -478,10 +696,12 @@
                             <span class="stat-label">Insights Found</span>
                         </div>
                     </div>
-                    <a href="https://github.com/mayank-goyal09/performance-predictors-eda" target="_blank" class="card-link">View on GitHub →</a>
+                    <a href="https://github.com/mayank-goyal09/performance-predictors-eda" target="_blank"
+                        class="card-link">View on GitHub →</a>
                 </article>
             </div> <!-- End projects-grid -->
         </div> <!-- End container -->
     </section>
 </body>
+
 </html>
