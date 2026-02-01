@@ -1,1 +1,1652 @@
+/* ============================================
+   🌌 BLACK HOLE & MILKY WAY DEEP LEARNING THEME
+   ============================================ */
 
+/* 1. BASE PAGE SETUP */
+body {
+    margin: 0;
+    min-height: 100vh;
+    /* Deep Void Background - Black Hole Core */
+    background: radial-gradient(ellipse at center, #0a0015 0%, #050008 30%, #000000 100%);
+    color: #f0e6ff;
+    position: relative;
+    overflow-x: hidden;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* 2. BACKGROUND LAYERS (Black Hole & Galaxy) */
+.background-layers {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* ============================================
+   🌀 THE BLACK HOLE - GALAXY JETS THEME!
+   ============================================ */
+
+/* Event Horizon - Deep Dark Core with warm undertones */
+.black-hole {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    /* Dark core with subtle warm/pink undertones */
+    background:
+        radial-gradient(circle at center,
+            #000000 0%,
+            #0a0008 30%,
+            #150510 50%,
+            #0f0a15 70%,
+            #000000 100%);
+    box-shadow:
+        0 0 100px 50px rgba(0, 0, 0, 1),
+        0 0 150px 80px rgba(30, 10, 40, 0.8),
+        0 0 200px 100px rgba(80, 30, 100, 0.4),
+        0 0 300px 150px rgba(100, 50, 150, 0.2),
+        inset 0 0 100px 50px #000000;
+    z-index: 3;
+    animation:
+        blackHoleRotate 15s linear infinite,
+        voidPulse 5s ease-in-out infinite;
+}
+
+/* Inner Spinning Vortex - Pink/Magenta Swirls */
+.black-hole::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg,
+            transparent 0deg,
+            rgba(255, 100, 150, 0.5) 20deg,
+            transparent 40deg,
+            rgba(200, 100, 255, 0.4) 60deg,
+            transparent 80deg,
+            rgba(255, 150, 200, 0.45) 100deg,
+            transparent 120deg,
+            rgba(180, 80, 220, 0.4) 140deg,
+            transparent 160deg,
+            rgba(255, 120, 180, 0.5) 180deg,
+            transparent 200deg,
+            rgba(220, 100, 255, 0.4) 220deg,
+            transparent 240deg,
+            rgba(255, 140, 190, 0.45) 260deg,
+            transparent 280deg,
+            rgba(190, 90, 230, 0.4) 300deg,
+            transparent 320deg,
+            rgba(255, 100, 150, 0.5) 340deg,
+            transparent 360deg);
+    animation: vortexSpinReverse 8s linear infinite;
+    filter: blur(6px);
+}
+
+/* Outer Glowing Ring - Warm white/pink glow */
+.black-hole::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 345px;
+    height: 345px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: rgba(255, 220, 240, 0.7);
+    border-right-color: rgba(200, 150, 255, 0.5);
+    border-bottom-color: rgba(255, 180, 220, 0.6);
+    border-left-color: rgba(150, 100, 255, 0.4);
+    animation: outerRingSpin 6s linear infinite reverse;
+    box-shadow:
+        0 0 20px rgba(255, 150, 200, 0.5),
+        0 0 40px rgba(150, 100, 255, 0.3);
+}
+
+/* Main Black Hole Rotation */
+@keyframes blackHoleRotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Inner Vortex Counter-Spin */
+@keyframes vortexSpinReverse {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+/* Outer Ring Spin */
+@keyframes outerRingSpin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes voidPulse {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 100px 60px rgba(0, 0, 0, 1),
+            0 0 150px 80px rgba(0, 0, 0, 0.95),
+            0 0 200px 100px rgba(0, 0, 0, 0.8),
+            inset 0 0 150px 80px #000000;
+    }
+
+    50% {
+        box-shadow:
+            0 0 120px 70px rgba(0, 0, 0, 1),
+            0 0 180px 100px rgba(0, 0, 0, 0.95),
+            0 0 250px 120px rgba(0, 0, 0, 0.85),
+            inset 0 0 180px 100px #000000;
+    }
+}
+
+@keyframes vortexSpin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+/* Accretion Disk - Galaxy Theme with Pink/Purple/Warm */
+.accretion-disk {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateX(75deg);
+    width: 750px;
+    height: 750px;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg,
+            #8b4089,
+            #a855f7,
+            #c084fc,
+            #e879f9,
+            #f0abfc,
+            #fce7f3,
+            #fff1f2,
+            #fffbeb,
+            #fef3c7,
+            #fde68a,
+            #fbbf24,
+            #f59e0b,
+            #d97706,
+            #b45309,
+            #92400e,
+            #78350f,
+            #8b4089);
+    opacity: 0.9;
+    filter: blur(2px);
+    animation: diskRotate 10s linear infinite;
+    z-index: 0;
+}
+
+/* Inner disk shadow */
+.accretion-disk::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #000000 0%, #000000 80%, transparent 100%);
+    box-shadow: 0 0 60px 30px rgba(0, 0, 0, 0.9);
+}
+
+/* Secondary accretion disk layer */
+.accretion-disk::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    animation: diskRotate 20s linear infinite reverse;
+}
+
+@keyframes diskRotate {
+    0% {
+        transform: translate(-50%, -50%) rotateX(75deg) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotateX(75deg) rotate(360deg);
+    }
+}
+
+/* Photon Ring - Intense Gravitational Glow */
+.photon-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    background: linear-gradient(#000, #000) padding-box,
+        conic-gradient(from 0deg, #ff006e, #8338ec, #3a86ff, #8338ec, #ff006e) border-box;
+    box-shadow:
+        0 0 40px rgba(131, 56, 236, 0.9),
+        0 0 80px rgba(255, 0, 110, 0.6),
+        0 0 120px rgba(58, 134, 255, 0.4),
+        inset 0 0 40px rgba(131, 56, 236, 0.4);
+    animation: photonPulse 3s ease-in-out infinite, photonRotate 8s linear infinite;
+    z-index: 2;
+}
+
+@keyframes photonPulse {
+
+    0%,
+    100% {
+        opacity: 0.9;
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow:
+            0 0 40px rgba(131, 56, 236, 0.9),
+            0 0 80px rgba(255, 0, 110, 0.6),
+            0 0 120px rgba(58, 134, 255, 0.4),
+            inset 0 0 40px rgba(131, 56, 236, 0.4);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.08);
+        box-shadow:
+            0 0 60px rgba(131, 56, 236, 1),
+            0 0 100px rgba(255, 0, 110, 0.8),
+            0 0 150px rgba(58, 134, 255, 0.6),
+            inset 0 0 60px rgba(131, 56, 236, 0.6);
+    }
+}
+
+@keyframes photonRotate {
+    0% {
+        background: linear-gradient(#000, #000) padding-box,
+            conic-gradient(from 0deg, #ff006e, #8338ec, #3a86ff, #8338ec, #ff006e) border-box;
+    }
+
+    100% {
+        background: linear-gradient(#000, #000) padding-box,
+            conic-gradient(from 360deg, #ff006e, #8338ec, #3a86ff, #8338ec, #ff006e) border-box;
+    }
+}
+
+/* Gravitational Lens Effect - Intense Warping */
+.gravitational-lens {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center,
+            transparent 25%,
+            rgba(0, 0, 0, 0.3) 35%,
+            rgba(131, 56, 236, 0.08) 50%,
+            rgba(255, 0, 110, 0.1) 65%,
+            rgba(58, 134, 255, 0.05) 80%,
+            transparent 100%);
+    animation: lensWarp 5s ease-in-out infinite;
+    z-index: -1;
+}
+
+/* Outer gravity waves */
+.gravitational-lens::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    border: 1px solid rgba(168, 85, 247, 0.1);
+    animation: gravityWave 3s ease-out infinite;
+}
+
+.gravitational-lens::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    border: 1px solid rgba(236, 72, 153, 0.08);
+    animation: gravityWave 3s ease-out infinite 1s;
+}
+
+@keyframes lensWarp {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        filter: blur(0px);
+        opacity: 1;
+    }
+
+    25% {
+        transform: translate(-50%, -50%) scale(1.05) rotate(2deg);
+        filter: blur(1px);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.12);
+        filter: blur(3px);
+        opacity: 0.9;
+    }
+
+    75% {
+        transform: translate(-50%, -50%) scale(1.08) rotate(-2deg);
+        filter: blur(2px);
+    }
+}
+
+@keyframes gravityWave {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* ============================================
+   🌌 MILKY WAY GALAXY ARMS
+   ============================================ */
+
+/* Galaxy Core Glow - PULSATING */
+.galaxy-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center,
+            rgba(255, 180, 220, 0.2) 0%,
+            rgba(200, 100, 255, 0.12) 25%,
+            rgba(150, 80, 220, 0.06) 50%,
+            transparent 100%);
+    filter: blur(40px);
+    z-index: -2;
+    animation: corePulse 8s ease-in-out infinite;
+}
+
+@keyframes corePulse {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.15);
+        opacity: 0.8;
+    }
+}
+
+/* Spiral Arms - Layer 1 */
+.spiral-arm-1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 800px;
+    height: 400px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(147, 51, 234, 0.1) 20%,
+            rgba(236, 72, 153, 0.15) 50%,
+            rgba(147, 51, 234, 0.1) 80%,
+            transparent 100%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) rotate(30deg);
+    filter: blur(40px);
+    animation: spiralRotate 60s linear infinite;
+    z-index: -3;
+}
+
+/* Spiral Arms - Layer 2 */
+.spiral-arm-2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 900px;
+    height: 350px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(59, 130, 246, 0.1) 20%,
+            rgba(147, 51, 234, 0.12) 50%,
+            rgba(59, 130, 246, 0.1) 80%,
+            transparent 100%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    filter: blur(50px);
+    animation: spiralRotate 80s linear infinite reverse;
+    z-index: -4;
+}
+
+@keyframes spiralRotate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* ============================================
+   ✨ STAR LAYERS - ANIMATED DRIFTING!
+   ============================================ */
+
+/* Layer 1: Bright Close Stars - Drifting */
+.layer-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background-image:
+        radial-gradient(2.5px 2.5px at 25px 40px, #ffffff, transparent),
+        radial-gradient(2px 2px at 60px 90px, #e0c3fc, transparent),
+        radial-gradient(1.5px 1.5px at 100px 30px, #ffffff, transparent),
+        radial-gradient(3px 3px at 140px 150px, #c4b5fd, transparent),
+        radial-gradient(2px 2px at 180px 60px, #ffffff, transparent),
+        radial-gradient(1px 1px at 220px 120px, #f0abfc, transparent),
+        radial-gradient(2.5px 2.5px at 260px 200px, #ffffff, transparent),
+        radial-gradient(2px 2px at 50px 250px, #c4b5fd, transparent),
+        radial-gradient(1.5px 1.5px at 150px 280px, #ffffff, transparent),
+        radial-gradient(3px 3px at 280px 40px, #e879f9, transparent);
+    background-size: 320px 320px;
+    opacity: 0.9;
+    animation:
+        starDrift1 60s linear infinite,
+        starPulse 4s ease-in-out infinite alternate;
+}
+
+/* Layer 2: Medium Stars - Drifting opposite */
+.layer-stars-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background-image:
+        radial-gradient(1.5px 1.5px at 30px 20px, #a78bfa, transparent),
+        radial-gradient(2px 2px at 80px 100px, #ffffff, transparent),
+        radial-gradient(1px 1px at 130px 60px, #f9a8d4, transparent),
+        radial-gradient(1.5px 1.5px at 200px 180px, #ffffff, transparent),
+        radial-gradient(2px 2px at 250px 30px, #c4b5fd, transparent),
+        radial-gradient(1px 1px at 70px 200px, #ffffff, transparent);
+    background-size: 280px 280px;
+    opacity: 0.7;
+    animation:
+        starDrift2 80s linear infinite,
+        starPulse 6s ease-in-out infinite alternate-reverse;
+}
+
+/* Layer 3: Distant Star Dust - Slow drift */
+.layer-stars-3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background-image:
+        radial-gradient(1px 1px at 50px 50px, #e9d5ff, transparent),
+        radial-gradient(1px 1px at 150px 150px, #fce7f3, transparent),
+        radial-gradient(1px 1px at 250px 100px, #ddd6fe, transparent),
+        radial-gradient(1px 1px at 100px 200px, #fbcfe8, transparent);
+    background-size: 180px 180px;
+    opacity: 0.5;
+    animation:
+        starDrift3 100s linear infinite,
+        starPulse 8s ease-in-out infinite alternate;
+}
+
+/* Star Drift Animations */
+@keyframes starDrift1 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(-5%, -3%);
+    }
+
+    50% {
+        transform: translate(-10%, 0);
+    }
+
+    75% {
+        transform: translate(-5%, 3%);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes starDrift2 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(4%, 2%);
+    }
+
+    50% {
+        transform: translate(0, 5%);
+    }
+
+    75% {
+        transform: translate(-4%, 2%);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes starDrift3 {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(-3%, -3%) rotate(5deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+@keyframes starPulse {
+    0% {
+        opacity: 0.9;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}
+
+/* ============================================
+   💫 COSMIC DUST NEBULA - ANIMATED!
+   ============================================ */
+
+.nebula-dust {
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    width: 140%;
+    height: 140%;
+    background:
+        radial-gradient(ellipse at 20% 30%, rgba(147, 51, 234, 0.15), transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(236, 72, 153, 0.12), transparent 40%),
+        radial-gradient(ellipse at 60% 20%, rgba(59, 130, 246, 0.1), transparent 45%),
+        radial-gradient(ellipse at 30% 80%, rgba(168, 85, 247, 0.12), transparent 35%);
+    filter: blur(60px);
+    z-index: -5;
+    animation: nebulaDrift 30s ease-in-out infinite;
+}
+
+/* Nebula Drift Animation */
+@keyframes nebulaDrift {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+
+    25% {
+        transform: translate(5%, -3%) scale(1.05);
+        opacity: 0.9;
+    }
+
+    50% {
+        transform: translate(0, 5%) scale(1.1);
+        opacity: 0.85;
+    }
+
+    75% {
+        transform: translate(-5%, 2%) scale(1.05);
+        opacity: 0.9;
+    }
+}
+
+/* ============================================
+   🌠 MATTER STREAMS (Falling into Black Hole)
+   ============================================ */
+
+.matter-stream {
+    position: absolute;
+    width: 4px;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent, #a855f7, #ec4899, transparent);
+    border-radius: 2px;
+    opacity: 0;
+    animation: matterFall 4s linear infinite;
+}
+
+.matter-stream:nth-child(1) {
+    top: 10%;
+    left: 30%;
+    animation-delay: 0s;
+}
+
+.matter-stream:nth-child(2) {
+    top: 5%;
+    right: 25%;
+    animation-delay: 1.2s;
+    height: 80px;
+}
+
+.matter-stream:nth-child(3) {
+    top: 15%;
+    left: 60%;
+    animation-delay: 2.4s;
+    height: 120px;
+}
+
+@keyframes matterFall {
+    0% {
+        transform: translateY(0) scale(1) rotate(15deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.9;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translateY(45vh) translateX(-8vw) scale(0.1) rotate(180deg);
+        opacity: 0;
+    }
+}
+
+/* ============================================
+   🌀 ORBITING DEBRIS PARTICLES
+   ============================================ */
+
+.orbiting-particle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fff 0%, #c084fc 50%, transparent 100%);
+    box-shadow: 0 0 10px #a855f7, 0 0 20px #ec4899;
+    transform-origin: center center;
+    z-index: 5;
+}
+
+.orbiting-particle:nth-child(4) {
+    animation: orbit1 6s linear infinite;
+}
+
+.orbiting-particle:nth-child(5) {
+    animation: orbit2 8s linear infinite;
+    width: 6px;
+    height: 6px;
+}
+
+.orbiting-particle:nth-child(6) {
+    animation: orbit3 10s linear infinite reverse;
+    width: 5px;
+    height: 5px;
+}
+
+.orbiting-particle:nth-child(7) {
+    animation: orbit4 5s linear infinite;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, #fbbf24 0%, #f97316 50%, transparent 100%);
+    box-shadow: 0 0 15px #fbbf24;
+}
+
+@keyframes orbit1 {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) translateX(180px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) translateX(180px) rotate(-360deg);
+    }
+}
+
+@keyframes orbit2 {
+    0% {
+        transform: translate(-50%, -50%) rotate(45deg) translateX(220px) rotate(-45deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(405deg) translateX(220px) rotate(-405deg);
+    }
+}
+
+@keyframes orbit3 {
+    0% {
+        transform: translate(-50%, -50%) rotate(120deg) translateX(260px) rotate(-120deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(480deg) translateX(260px) rotate(-480deg);
+    }
+}
+
+@keyframes orbit4 {
+    0% {
+        transform: translate(-50%, -50%) rotate(200deg) translateX(150px) rotate(-200deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(560deg) translateX(150px) rotate(-560deg);
+    }
+}
+
+/* ============================================
+   ⚡ RELATIVISTIC JETS (Polar Energy Beams)
+   ============================================ */
+
+.energy-jet {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    background: linear-gradient(to top,
+            transparent,
+            rgba(168, 85, 247, 0.3),
+            rgba(168, 85, 247, 0.6),
+            rgba(236, 72, 153, 0.8),
+            rgba(255, 255, 255, 0.9),
+            rgba(236, 72, 153, 0.8),
+            rgba(168, 85, 247, 0.6),
+            rgba(168, 85, 247, 0.3),
+            transparent);
+    filter: blur(3px);
+    z-index: 1;
+    animation: jetPulse 2s ease-in-out infinite;
+}
+
+.energy-jet.jet-top {
+    top: 0;
+    height: 35%;
+}
+
+.energy-jet.jet-bottom {
+    bottom: 0;
+    height: 35%;
+    transform: translateX(-50%) rotate(180deg);
+    animation-delay: 1s;
+}
+
+@keyframes jetPulse {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        width: 20px;
+    }
+
+    50% {
+        opacity: 0.9;
+        width: 30px;
+    }
+}
+
+/* ============================================
+   🌟 SPAGHETTIFYING STARS (Being Pulled In)
+   ============================================ */
+
+.spaghetti-star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #fff, 0 0 20px #a855f7;
+    z-index: 4;
+}
+
+.spaghetti-star:nth-child(8) {
+    animation: spaghettify1 8s ease-in infinite;
+    top: 20%;
+    left: 20%;
+}
+
+.spaghetti-star:nth-child(9) {
+    animation: spaghettify2 10s ease-in infinite 2s;
+    top: 30%;
+    right: 15%;
+}
+
+.spaghetti-star:nth-child(10) {
+    animation: spaghettify3 12s ease-in infinite 4s;
+    top: 15%;
+    left: 70%;
+}
+
+@keyframes spaghettify1 {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+    }
+
+    50% {
+        transform: translate(20vw, 15vh) scale(0.8);
+        opacity: 0.8;
+        width: 3px;
+        height: 20px;
+        border-radius: 2px;
+    }
+
+    100% {
+        transform: translate(30vw, 30vh) scale(0);
+        opacity: 0;
+        width: 2px;
+        height: 80px;
+        border-radius: 1px;
+    }
+}
+
+@keyframes spaghettify2 {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+    }
+
+    50% {
+        transform: translate(-15vw, 12vh) scale(0.8);
+        opacity: 0.8;
+        width: 3px;
+        height: 25px;
+        border-radius: 2px;
+    }
+
+    100% {
+        transform: translate(-20vw, 20vh) scale(0);
+        opacity: 0;
+        width: 2px;
+        height: 60px;
+        border-radius: 1px;
+    }
+}
+
+@keyframes spaghettify3 {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+    }
+
+    50% {
+        transform: translate(-10vw, 18vh) scale(0.8);
+        opacity: 0.8;
+        width: 3px;
+        height: 30px;
+        border-radius: 2px;
+    }
+
+    100% {
+        transform: translate(-20vw, 35vh) scale(0);
+        opacity: 0;
+        width: 2px;
+        height: 70px;
+        border-radius: 1px;
+    }
+}
+
+/* ============================================
+   🔮 GRAVITATIONAL LENSING LIGHT ARCS
+   ============================================ */
+
+.light-arc {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: rgba(255, 255, 255, 0.3);
+    border-right-color: rgba(168, 85, 247, 0.2);
+    z-index: 0;
+}
+
+.light-arc:nth-child(11) {
+    width: 350px;
+    height: 350px;
+    animation: lightBend1 12s linear infinite;
+}
+
+.light-arc:nth-child(12) {
+    width: 400px;
+    height: 400px;
+    animation: lightBend2 15s linear infinite reverse;
+    border-top-color: rgba(236, 72, 153, 0.2);
+}
+
+.light-arc:nth-child(13) {
+    width: 450px;
+    height: 450px;
+    animation: lightBend3 18s linear infinite;
+    border-top-color: rgba(59, 130, 246, 0.2);
+}
+
+@keyframes lightBend1 {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) scaleX(1.2);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) rotate(180deg) scaleX(0.8);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) scaleX(1.2);
+    }
+}
+
+@keyframes lightBend2 {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) scaleY(1.3);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) rotate(180deg) scaleY(0.7);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) scaleY(1.3);
+    }
+}
+
+@keyframes lightBend3 {
+    0% {
+        transform: translate(-50%, -50%) rotate(45deg) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) rotate(225deg) scale(1.1);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(405deg) scale(1);
+    }
+}
+
+/* ============================================
+   💥 HAWKING RADIATION FLICKERS
+   ============================================ */
+
+.hawking-particle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 3px;
+    height: 3px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 6;
+}
+
+.hawking-particle:nth-child(14) {
+    animation: hawkingEscape1 3s ease-out infinite;
+}
+
+.hawking-particle:nth-child(15) {
+    animation: hawkingEscape2 4s ease-out infinite 1s;
+}
+
+.hawking-particle:nth-child(16) {
+    animation: hawkingEscape3 3.5s ease-out infinite 2s;
+}
+
+@keyframes hawkingEscape1 {
+    0% {
+        transform: translate(-50%, -50%);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(calc(-50% + 150px), calc(-50% - 100px));
+        opacity: 0;
+    }
+}
+
+@keyframes hawkingEscape2 {
+    0% {
+        transform: translate(-50%, -50%);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(calc(-50% - 120px), calc(-50% + 80px));
+        opacity: 0;
+    }
+}
+
+@keyframes hawkingEscape3 {
+    0% {
+        transform: translate(-50%, -50%);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(calc(-50% + 80px), calc(-50% + 130px));
+        opacity: 0;
+    }
+}
+
+/* ============================================
+   🟣 MAIN PAGE CONTENT (Foreground)
+   ============================================ */
+
+.dl-page {
+    position: relative;
+    z-index: 10;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 3.2rem 1.5rem 4.5rem;
+    box-sizing: border-box;
+}
+
+/* HOME BUTTON */
+.dl-home-btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.6rem;
+    border-radius: 999px;
+    border: 1px solid rgba(168, 85, 247, 0.5);
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+    color: #0f0020;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow:
+        0 8px 25px rgba(168, 85, 247, 0.4),
+        0 0 40px rgba(236, 72, 153, 0.2);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+}
+
+.dl-home-btn:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 14px 35px rgba(168, 85, 247, 0.5),
+        0 0 60px rgba(236, 72, 153, 0.3);
+    filter: brightness(1.1);
+}
+
+.dl-home-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 18px rgba(168, 85, 247, 0.3);
+}
+
+/* HERO / HEADER CARD */
+.dl-hero-card {
+    margin-top: 3.2rem;
+    padding: 1.6rem 1.8rem;
+    border-radius: 1rem;
+    background: rgba(15, 5, 30, 0.9);
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    box-shadow:
+        0 22px 60px rgba(0, 0, 0, 0.85),
+        0 0 80px rgba(168, 85, 247, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    position: relative;
+    overflow: hidden;
+    animation: dlHeroFloat 7s ease-in-out infinite;
+}
+
+@keyframes dlHeroFloat {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+
+    25% {
+        transform: translateY(-8px) translateX(6px);
+    }
+
+    50% {
+        transform: translateY(-12px) translateX(-6px);
+    }
+
+    75% {
+        transform: translateY(-6px) translateX(4px);
+    }
+
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+}
+
+.dl-hero-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 1px solid rgba(168, 85, 247, 0.18);
+    pointer-events: none;
+    background: radial-gradient(ellipse at top left,
+            rgba(168, 85, 247, 0.1) 0%,
+            transparent 50%);
+}
+
+.dl-hero-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.dl-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #c4b5fd;
+    margin-bottom: 0.35rem;
+}
+
+.dl-heading {
+    font-size: 2.1rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #e9d5ff, #f0abfc, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+    text-shadow: 0 0 40px rgba(168, 85, 247, 0.5);
+}
+
+.dl-subtitle {
+    margin-top: 0.6rem;
+    font-size: 0.94rem;
+    color: #a1a1aa;
+    max-width: 640px;
+}
+
+/* PULL HANDLE / THREAD - BLACK HOLE STYLE */
+.pull-wrapper {
+    margin-top: 2.2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.pull-handle {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.pull-line {
+    width: 6px;
+    height: 150px;
+    background: linear-gradient(to bottom, #a855f7, #3b0764);
+    transform-origin: top;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
+}
+
+.pull-knob {
+    width: 36px;
+    height: 40px;
+    border-radius: 999px;
+    border: 5px solid #a855f7;
+    background: radial-gradient(circle at center, #1a0033 0%, #000 100%);
+    box-shadow:
+        0 0 22px rgba(168, 85, 247, 0.9),
+        0 0 44px rgba(236, 72, 153, 0.5),
+        inset 0 0 10px rgba(168, 85, 247, 0.3);
+}
+
+.pull-handle.active .pull-line {
+    transform: translateY(-15px);
+}
+
+.pull-handle:not(.active) .pull-line {
+    transform: translateY(0);
+}
+
+/* SECTION HEADERS */
+.dl-section {
+    margin-top: 3rem;
+}
+
+.section-header {
+    margin-bottom: 1.5rem;
+}
+
+.dl-section-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin: 0 0 0.25rem;
+    background: linear-gradient(135deg, #e9d5ff, #c4b5fd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.dl-section-desc {
+    font-size: 0.94rem;
+    color: #a1a1aa;
+    max-width: 640px;
+}
+
+/* ============================================
+   🎴 PROJECT GRID & CARDS
+   ============================================ */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.8rem;
+}
+
+/* Card Float Animation */
+@keyframes cardVoidFloat {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-10px) translateX(5px) rotate(0.5deg);
+    }
+
+    50% {
+        transform: translateY(-14px) translateX(-5px) rotate(-0.5deg);
+    }
+
+    75% {
+        transform: translateY(-8px) translateX(3px) rotate(0.25deg);
+    }
+
+    100% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+    }
+}
+
+/* Base card styles */
+.project-card {
+    background: radial-gradient(ellipse at top left, #1a0a2e 0%, #0a0015 50%, #050008 100%);
+    border-radius: 1rem;
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    padding: 1.4rem 1.4rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.9),
+        0 0 40px rgba(168, 85, 247, 0.1);
+    position: relative;
+    overflow: hidden;
+
+    /* Initial state (collapsed) */
+    transform: translateY(40px) scale(0.96);
+    opacity: 0.35;
+    transition:
+        transform 420ms cubic-bezier(0.23, 1, 0.32, 1),
+        opacity 380ms ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Card inner glow effect */
+.project-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: radial-gradient(ellipse at top,
+            rgba(168, 85, 247, 0.08) 0%,
+            transparent 70%);
+    pointer-events: none;
+}
+
+/* Visible State */
+.projects-visible .project-card {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    animation: cardVoidFloat 9s ease-in-out infinite;
+}
+
+/* Staggered Animations */
+.projects-visible .project-card:nth-child(1) {
+    animation-duration: 8.5s;
+    animation-delay: 0.1s;
+}
+
+.projects-visible .project-card:nth-child(2) {
+    animation-duration: 9.2s;
+    animation-delay: 0.3s;
+}
+
+.projects-visible .project-card:nth-child(3) {
+    animation-duration: 8.8s;
+    animation-delay: 0.5s;
+}
+
+.projects-visible .project-card:nth-child(4) {
+    animation-duration: 9.5s;
+    animation-delay: 0.2s;
+}
+
+.projects-visible .project-card:nth-child(5) {
+    animation-duration: 8.2s;
+    animation-delay: 0.4s;
+}
+
+.projects-visible .project-card:nth-child(6) {
+    animation-duration: 9s;
+    animation-delay: 0.15s;
+}
+
+/* Collapsed State */
+.projects-collapsed .project-card {
+    transform: translateY(40px) scale(0.96);
+    opacity: 0.35;
+    animation: none;
+}
+
+/* Hover Effect - Gravitational Pull */
+.projects-visible .project-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    border-color: #c084fc;
+    box-shadow:
+        0 30px 70px rgba(168, 85, 247, 0.3),
+        0 0 60px rgba(236, 72, 153, 0.2),
+        inset 0 0 30px rgba(168, 85, 247, 0.05);
+    animation-play-state: paused;
+    cursor: pointer;
+}
+
+/* ============================================
+   🏷️ BADGES & CARD CONTENT
+   ============================================ */
+
+.badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.badge {
+    padding: 0.18rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    color: #a1a1aa;
+    background: rgba(15, 5, 30, 0.8);
+}
+
+.badge--primary {
+    border-color: #a855f7;
+    color: #e9d5ff;
+    background: rgba(168, 85, 247, 0.15);
+}
+
+.badge--cnn {
+    border-color: #ec4899;
+    color: #fbcfe8;
+    background: rgba(236, 72, 153, 0.15);
+}
+
+.badge--rnn {
+    border-color: #8b5cf6;
+    color: #ddd6fe;
+    background: rgba(139, 92, 246, 0.15);
+}
+
+.badge--transformer {
+    border-color: #06b6d4;
+    color: #a5f3fc;
+    background: rgba(6, 182, 212, 0.15);
+}
+
+.badge--gan {
+    border-color: #f97316;
+    color: #fed7aa;
+    background: rgba(249, 115, 22, 0.15);
+}
+
+.project-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f0e6ff;
+    margin: 0;
+}
+
+.project-one-liner {
+    font-size: 0.9rem;
+    color: #a1a1aa;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.project-meta {
+    font-size: 0.83rem;
+    color: #a1a1aa;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.project-meta span {
+    color: #e9d5ff;
+    font-weight: 500;
+}
+
+/* ============================================
+   🔘 ACTION BUTTONS
+   ============================================ */
+
+.project-actions {
+    margin-top: 0.75rem;
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.btn-link {
+    font-size: 0.8rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.5);
+    background: transparent;
+    color: #f0e6ff;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: all 0.3s ease;
+}
+
+.btn-link--primary {
+    border-color: #a855f7;
+    background: rgba(168, 85, 247, 0.15);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+}
+
+.btn-link:hover {
+    border-color: #c084fc;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow:
+        0 4px 15px rgba(168, 85, 247, 0.3),
+        0 0 25px rgba(236, 72, 153, 0.2);
+}
+
+/* ============================================
+   📱 RESPONSIVE TWEAKS
+   ============================================ */
+
+@media (max-width: 640px) {
+    .dl-page {
+        padding: 2.5rem 1.1rem 3.5rem;
+    }
+
+    .dl-heading {
+        font-size: 1.8rem;
+    }
+
+    .dl-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .black-hole {
+        width: 100px;
+        height: 100px;
+    }
+
+    .accretion-disk {
+        width: 250px;
+        height: 250px;
+    }
+
+    .photon-ring {
+        width: 130px;
+        height: 130px;
+    }
+}
+
+/* ============================================
+   🌟 SPECIAL CATEGORY SECTIONS
+   ============================================ */
+
+/* ANN Section - Purple theme */
+.ann-section .project-card {
+    border-color: rgba(139, 92, 246, 0.3);
+}
+
+.ann-section .projects-visible .project-card:hover {
+    border-color: #a78bfa;
+    box-shadow:
+        0 30px 70px rgba(139, 92, 246, 0.3),
+        0 0 60px rgba(139, 92, 246, 0.2);
+}
+
+/* CNN Section - Pink theme */
+.cnn-section .project-card {
+    border-color: rgba(236, 72, 153, 0.3);
+    background: radial-gradient(ellipse at top right, #2a0a25 0%, #0a0015 50%, #050008 100%);
+}
+
+.cnn-section .projects-visible .project-card:hover {
+    border-color: #f472b6;
+    box-shadow:
+        0 30px 70px rgba(236, 72, 153, 0.3),
+        0 0 60px rgba(236, 72, 153, 0.2);
+}
+
+/* RNN Section - Violet theme */
+.rnn-section .project-card {
+    border-color: rgba(124, 58, 237, 0.3);
+    background: radial-gradient(ellipse at bottom left, #1e0a35 0%, #0a0015 50%, #050008 100%);
+}
+
+.rnn-section .projects-visible .project-card:hover {
+    border-color: #8b5cf6;
+    box-shadow:
+        0 30px 70px rgba(124, 58, 237, 0.3),
+        0 0 60px rgba(124, 58, 237, 0.2);
+}
+
+/* Pull handles per section */
+.pull-handle-ann .pull-knob {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 22px rgba(139, 92, 246, 0.9);
+}
+
+.pull-handle-ann .pull-line {
+    background: linear-gradient(to bottom, #8b5cf6, #2e1065);
+}
+
+.pull-handle-cnn .pull-knob {
+    border-color: #ec4899;
+    box-shadow: 0 0 22px rgba(236, 72, 153, 0.9);
+}
+
+.pull-handle-cnn .pull-line {
+    background: linear-gradient(to bottom, #ec4899, #500724);
+}
