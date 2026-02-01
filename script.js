@@ -6,6 +6,9 @@ const portfolioConfig = {
     "roles": [
       "Data Analyst",
       "Data Scientist",
+      "Machine Learning Engineer",
+      "Deep Learning Engineer",
+      "Natural Language Processing Egineer",
       "AI Master Enthusiast",
       "Market Researcher",
       "Prompt Engineer",
@@ -241,4 +244,5 @@ if(audio && soundBtn) {
     setTimeout(type, 600);
   });
 })();
+
 
