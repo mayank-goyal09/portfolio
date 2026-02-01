@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Python OOP Projects | Mayank Goyal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
     <style>
         /* ===== ACHIEVEMENT BADGE ===== */
@@ -16,14 +19,23 @@
             font-size: 2.5rem;
             animation: glowPulse 2s ease-in-out infinite;
             filter: drop-shadow(0 0 10px #ffd700);
-            -webkit-text-fill-color: initial; 
-            background: none;                 
+            -webkit-text-fill-color: initial;
+            background: none;
             -webkit-background-clip: border-box;
         }
 
         @keyframes glowPulse {
-            0%, 100% { filter: drop-shadow(0 0 5px #ffd700); transform: scale(1); }
-            50% { filter: drop-shadow(0 0 15px #ffd700); transform: scale(1.15); }
+
+            0%,
+            100% {
+                filter: drop-shadow(0 0 5px #ffd700);
+                transform: scale(1);
+            }
+
+            50% {
+                filter: drop-shadow(0 0 15px #ffd700);
+                transform: scale(1.15);
+            }
         }
 
         /* ===== FLOATING CARDS LAYOUT ===== */
@@ -55,22 +67,41 @@
         }
 
         /* STAGGERED FLOATING ANIMATION */
-        .floating-card:nth-child(1) { animation-delay: 0s; }
-        .floating-card:nth-child(2) { animation-delay: 0.5s; }
-        .floating-card:nth-child(3) { animation-delay: 1s; }
-        .floating-card:nth-child(4) { animation-delay: 1.5s; }
-        .floating-card:nth-child(5) { animation-delay: 2s; }
+        .floating-card:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .floating-card:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        .floating-card:nth-child(3) {
+            animation-delay: 1s;
+        }
+
+        .floating-card:nth-child(4) {
+            animation-delay: 1.5s;
+        }
+
+        .floating-card:nth-child(5) {
+            animation-delay: 2s;
+        }
 
         @keyframes float {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0px) translateX(0px);
             }
+
             25% {
                 transform: translateY(-15px) translateX(5px);
             }
+
             50% {
                 transform: translateY(-25px) translateX(-5px);
             }
+
             75% {
                 transform: translateY(-10px) translateX(8px);
             }
@@ -79,9 +110,9 @@
         /* HOVER EFFECTS */
         .floating-card:hover {
             border-color: rgba(0, 234, 255, 0.8);
-            box-shadow: 0 0 40px rgba(0, 234, 255, 0.4), 
-                        0 0 80px rgba(0, 234, 255, 0.2),
-                        inset 0 0 20px rgba(0, 234, 255, 0.1);
+            box-shadow: 0 0 40px rgba(0, 234, 255, 0.4),
+                0 0 80px rgba(0, 234, 255, 0.2),
+                inset 0 0 20px rgba(0, 234, 255, 0.1);
             transform: scale(1.05) translateY(-30px);
             background: rgba(0, 234, 255, 0.08);
         }
@@ -100,8 +131,13 @@
         }
 
         @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         /* CONTENT WRAPPER */
@@ -122,8 +158,15 @@
         }
 
         @keyframes emojiFloat {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(5deg); }
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(5deg);
+            }
         }
 
         /* PROJECT TITLE */
@@ -288,6 +331,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="space-bg">
         <div class="layer starfield"></div>
@@ -313,6 +357,109 @@
     </section>
 
     <section style="background: var(--bg-main); padding: 40px 0;">
+        <!-- ========================== -->
+        <!-- 🚨 FLAGSHIP SPOTLIGHT 🚨 -->
+        <!-- ========================== -->
+        <div class="projects-container" style="padding-bottom: 10px;">
+            <!-- SPECIAL SPOTLIGHT CARD: YOUTUBE STUDIO -->
+            <div class="floating-card" style="
+                 border-color: rgba(255, 0, 0, 0.5); 
+                 background: linear-gradient(135deg, rgba(255, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.4) 100%);
+                 grid-column: 1 / -1; 
+                 min-height: 480px;
+                 display: flex;
+                 flex-direction: row;
+                 align-items: center;
+                 gap: 40px;
+             ">
+                <!-- Left: Content -->
+                <div class="card-content" style="flex: 1; text-align: left; align-items: flex-start;">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+                        <div class="card-emoji"
+                            style="font-size: 4.5rem; animation: none; filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.6));">
+                            📺</div>
+                        <div>
+                            <span style="
+                                background: #FF0000; 
+                                color: white; 
+                                padding: 5px 12px; 
+                                border-radius: 4px; 
+                                font-weight: 800; 
+                                font-size: 0.8rem; 
+                                letter-spacing: 1px;
+                                text-transform: uppercase;
+                                box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+                             ">Flagship Project</span>
+                            <h3 class="card-title" style="
+                                font-size: 2.8rem; 
+                                margin-top: 10px;
+                                text-align: left;
+                                background: linear-gradient(135deg, #fff 0%, #ff4b4b 100%);
+                                -webkit-background-clip: text;
+                                -webkit-text-fill-color: transparent;
+                             ">YouTube Studio Automation</h3>
+                        </div>
+                    </div>
+
+                    <p class="card-description" style="
+                        text-align: left; 
+                        font-size: 1.1rem; 
+                        max-width: 600px; 
+                        color: #e0e0e0;
+                    ">
+                        An enterprise-grade data pipeline built to reclaim ownership of platform data.
+                        This system bypasses generic analytics by directly interfacing with the <strong
+                            style="color: #ff4b4b;">YouTube Data API</strong>
+                        to mirror raw metrics into a local <strong style="color: #ff4b4b;">SQLite Data
+                            Warehouse</strong>.
+                        It enables granular, sql-driven insights that default dashboards simply cannot provide.
+                    </p>
+
+                    <div class="card-tech" style="justify-content: flex-start; border: none; padding-left: 0;">
+                        <span class="tech-badge"
+                            style="border-color: #ff4b4b; color: #ff4b4b; background: rgba(255, 0, 0, 0.1);">Python
+                            Automation</span>
+                        <span class="tech-badge"
+                            style="border-color: #ff4b4b; color: #ff4b4b; background: rgba(255, 0, 0, 0.1);">YouTube
+                            Data API</span>
+                        <span class="tech-badge"
+                            style="border-color: #ff4b4b; color: #ff4b4b; background: rgba(255, 0, 0, 0.1);">SQLite
+                            Architecture</span>
+                        <span class="tech-badge"
+                            style="border-color: #ff4b4b; color: #ff4b4b; background: rgba(255, 0, 0, 0.1);">ETL
+                            Pipeline</span>
+                    </div>
+
+                    <div class="card-features" style="
+                        border-left: 4px solid #ff4b4b; 
+                        background: linear-gradient(90deg, rgba(255, 0, 0, 0.05) 0%, transparent 100%);
+                        width: 100%;
+                    ">
+                        <h4 style="color: #ff4b4b;">🔥 Why this matters?</h4>
+                        <ul style="grid-template-columns: 1fr 1fr; display: grid;">
+                            <li style="color: #fff;">Automated Data Ingestion Loop</li>
+                            <li style="color: #fff;">Raw SQL Access to Analytics</li>
+                            <li style="color: #fff;">Custom Metric Engineering</li>
+                            <li style="color: #fff;">Zero-Dependency Architecture</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-top: 20px; display: flex; gap: 20px;">
+                        <a href="https://github.com/mayank-goyal09/YouTube-Studio" target="_blank" class="card-link"
+                            style="
+                            background: linear-gradient(135deg, rgba(255, 0, 0, 0.8) 0%, rgba(139, 0, 0, 0.9) 100%); 
+                            border-color: #ff4b4b; 
+                            color: white;
+                            min-width: 200px;
+                            box-shadow: 0 0 30px rgba(255, 0, 0, 0.2);
+                        ">
+                            View Architecture on GitHub →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="projects-container">
 
             <!-- Project 1: LedgerAPI -->
@@ -320,8 +467,9 @@
                 <div class="card-content">
                     <div class="card-emoji">🏦</div>
                     <h3 class="card-title">LedgerAPI</h3>
-                    <p class="card-description">Enterprise Bank Management System with production-ready backend architecture</p>
-                    
+                    <p class="card-description">Enterprise Bank Management System with production-ready backend
+                        architecture</p>
+
                     <div class="card-tech">
                         <span class="tech-badge">Python OOP</span>
                         <span class="tech-badge">SQLite</span>
@@ -338,7 +486,8 @@
                         </ul>
                     </div>
 
-                    <a href="https://github.com/mayank-goyal09/LedgerAPI" target="_blank" class="card-link">View on GitHub →</a>
+                    <a href="https://github.com/mayank-goyal09/LedgerAPI" target="_blank" class="card-link">View on
+                        GitHub →</a>
                 </div>
             </div>
 
@@ -348,7 +497,7 @@
                     <div class="card-emoji">🛍️</div>
                     <h3 class="card-title">Smart Inventory Billing</h3>
                     <p class="card-description">Complete inventory and billing solution for retail management</p>
-                    
+
                     <div class="card-tech">
                         <span class="tech-badge">Streamlit</span>
                         <span class="tech-badge">SQLite</span>
@@ -365,7 +514,8 @@
                         </ul>
                     </div>
 
-                    <a href="https://github.com/mayank-goyal09/smart-inventory-billing-system" target="_blank" class="card-link">View on GitHub →</a>
+                    <a href="https://github.com/mayank-goyal09/smart-inventory-billing-system" target="_blank"
+                        class="card-link">View on GitHub →</a>
                 </div>
             </div>
 
@@ -375,7 +525,7 @@
                     <div class="card-emoji">📚</div>
                     <h3 class="card-title">Maygal Book Vault</h3>
                     <p class="card-description">Digital library management system with advanced book tracking</p>
-                    
+
                     <div class="card-tech">
                         <span class="tech-badge">Streamlit</span>
                         <span class="tech-badge">Python OOP</span>
@@ -392,7 +542,8 @@
                         </ul>
                     </div>
 
-                    <a href="https://github.com/mayank-goyal09/Maygal-book-vault" target="_blank" class="card-link">View on GitHub →</a>
+                    <a href="https://github.com/mayank-goyal09/Maygal-book-vault" target="_blank" class="card-link">View
+                        on GitHub →</a>
                 </div>
             </div>
 
@@ -402,7 +553,7 @@
                     <div class="card-emoji">🗂️</div>
                     <h3 class="card-title">The File Forge</h3>
                     <p class="card-description">Advanced file management system with batch processing capabilities</p>
-                    
+
                     <div class="card-tech">
                         <span class="tech-badge">Streamlit</span>
                         <span class="tech-badge">File Handling</span>
@@ -419,7 +570,8 @@
                         </ul>
                     </div>
 
-                    <a href="https://github.com/mayank-goyal09/the-file-forge" target="_blank" class="card-link">View on GitHub →</a>
+                    <a href="https://github.com/mayank-goyal09/the-file-forge" target="_blank" class="card-link">View on
+                        GitHub →</a>
                 </div>
             </div>
 
@@ -428,8 +580,9 @@
                 <div class="card-content">
                     <div class="card-emoji">🏤</div>
                     <h3 class="card-title">Bank Management System</h3>
-                    <p class="card-description">User-friendly bank account system with modern UI and transaction history</p>
-                    
+                    <p class="card-description">User-friendly bank account system with modern UI and transaction history
+                    </p>
+
                     <div class="card-tech">
                         <span class="tech-badge">Streamlit</span>
                         <span class="tech-badge">Python OOP</span>
@@ -446,114 +599,127 @@
                         </ul>
                     </div>
 
-                    <a href="https://github.com/mayank-goyal09/bank-management-system" target="_blank" class="card-link">View on GitHub →</a>
+                    <a href="https://github.com/mayank-goyal09/bank-management-system" target="_blank"
+                        class="card-link">View on GitHub →</a>
                 </div>
             </div>
-             <!-- Project 6: AI-ML-Job-Pulse -->
- <div class="floating-card">
- <div class="card-content">
- <div class="card-emoji">🔍</div>
- <h3 class="card-title">AI-ML-Job-Pulse</h3>
- <p class="card-description">Exploratory data analysis of AI/ML job trends, salary patterns, and skill demand across the market</p>
- <br>
- <div class="card-tech">
- <span class="tech-badge">Data Analysis</span>
- <span class="tech-badge">Pandas</span>
- <span class="tech-badge">NumPy</span>
- <span class="tech-badge">Matplotlib</span>
- </div>
- <div class="card-features">
- <h4>Key Insights</h4>
- <ul>
- <li>1000+ Job Posts</li>
- <li>Salary Patterns</li>
- <li>Skill Trends</li>
- <li>Geographic Data</li>
- </ul>
- </div>
- <a href="https://github.com/mayank-goyal09/AI-ML-Job-Pulse" target="_blank" class="card-link">View on GitHub →</a>
- </div>
- </div>
-             <!-- Project 7: Performance Predictors EDA -->
- <div class="floating-card">
- <div class="card-content">
- <div class="card-emoji">📊</div>
- <h3 class="card-title">Performance Predictors</h3>
- <p class="card-description">Exploratory Data Analysis uncovering key factors influencing student academic outcomes</p>
- <br>
- <div class="card-tech">
- <span class="tech-badge">EDA</span>
- <span class="tech-badge">Pandas</span>
- <span class="tech-badge">NumPy</span>
- <span class="tech-badge">Data Insights</span>
- </div>
- <div class="card-features">
- <h4>Key Analysis</h4>
- <ul>
- <li>17 Q&A Insights</li>
- <li>Performance Factors</li>
- <li>Data Patterns</li>
- <li>Statistical Analysis</li>
- </ul>
- </div>
- <a href="https://github.com/mayank-goyal09/performance-predictors-eda" target="_blank" class="card-link">View on GitHub →</a>
- </div>
- </div>
-             <!-- Project 8: RPS R.A.N.D.O.M -->
- <div class="floating-card">
- <div class="card-content">
- <div class="card-emoji">💎</div>
- <h3 class="card-title">RPS R.A.N.D.O.M</h3>
- <p class="card-description">Intelligent Rock-Paper-Scissors game with computer AI, best-of-N series, and advanced game management</p>
- <br>
- <div class="card-tech">
- <span class="tech-badge">Python Game</span>
- <span class="tech-badge">AI Logic</span>
- <span class="tech-badge">CLI</span>
- <span class="tech-badge">Score Tracking</span>
- </div>
- <div class="card-features">
- <h4>Game Features</h4>
- <ul>
- <li>Best-of-N Series</li>
- <li>Score Tracking</li>
- <li>Move Validation</li>
- <li>Match History</li>
- </ul>
- </div>
- <a href="https://github.com/mayank-goyal09/rps-random" target="_blank" class="card-link">View on GitHub →</a>
- </div>
- </div>
+            <!-- Project 6: AI-ML-Job-Pulse -->
+            <div class="floating-card">
+                <div class="card-content">
+                    <div class="card-emoji">🔍</div>
+                    <h3 class="card-title">AI-ML-Job-Pulse</h3>
+                    <p class="card-description">Exploratory data analysis of AI/ML job trends, salary patterns, and
+                        skill demand across the market</p>
+                    <br>
+                    <div class="card-tech">
+                        <span class="tech-badge">Data Analysis</span>
+                        <span class="tech-badge">Pandas</span>
+                        <span class="tech-badge">NumPy</span>
+                        <span class="tech-badge">Matplotlib</span>
+                    </div>
+                    <div class="card-features">
+                        <h4>Key Insights</h4>
+                        <ul>
+                            <li>1000+ Job Posts</li>
+                            <li>Salary Patterns</li>
+                            <li>Skill Trends</li>
+                            <li>Geographic Data</li>
+                        </ul>
+                    </div>
+                    <a href="https://github.com/mayank-goyal09/AI-ML-Job-Pulse" target="_blank" class="card-link">View
+                        on GitHub →</a>
+                </div>
+            </div>
+            <!-- Project 7: Performance Predictors EDA -->
+            <div class="floating-card">
+                <div class="card-content">
+                    <div class="card-emoji">📊</div>
+                    <h3 class="card-title">Performance Predictors</h3>
+                    <p class="card-description">Exploratory Data Analysis uncovering key factors influencing student
+                        academic outcomes</p>
+                    <br>
+                    <div class="card-tech">
+                        <span class="tech-badge">EDA</span>
+                        <span class="tech-badge">Pandas</span>
+                        <span class="tech-badge">NumPy</span>
+                        <span class="tech-badge">Data Insights</span>
+                    </div>
+                    <div class="card-features">
+                        <h4>Key Analysis</h4>
+                        <ul>
+                            <li>17 Q&A Insights</li>
+                            <li>Performance Factors</li>
+                            <li>Data Patterns</li>
+                            <li>Statistical Analysis</li>
+                        </ul>
+                    </div>
+                    <a href="https://github.com/mayank-goyal09/performance-predictors-eda" target="_blank"
+                        class="card-link">View on GitHub →</a>
+                </div>
+            </div>
+            <!-- Project 8: RPS R.A.N.D.O.M -->
+            <div class="floating-card">
+                <div class="card-content">
+                    <div class="card-emoji">💎</div>
+                    <h3 class="card-title">RPS R.A.N.D.O.M</h3>
+                    <p class="card-description">Intelligent Rock-Paper-Scissors game with computer AI, best-of-N series,
+                        and advanced game management</p>
+                    <br>
+                    <div class="card-tech">
+                        <span class="tech-badge">Python Game</span>
+                        <span class="tech-badge">AI Logic</span>
+                        <span class="tech-badge">CLI</span>
+                        <span class="tech-badge">Score Tracking</span>
+                    </div>
+                    <div class="card-features">
+                        <h4>Game Features</h4>
+                        <ul>
+                            <li>Best-of-N Series</li>
+                            <li>Score Tracking</li>
+                            <li>Move Validation</li>
+                            <li>Match History</li>
+                        </ul>
+                    </div>
+                    <a href="https://github.com/mayank-goyal09/rps-random" target="_blank" class="card-link">View on
+                        GitHub →</a>
+                </div>
+            </div>
 
-             <!-- Project 9: Gridlock Game -->
- <div class="floating-card">
- <div class="card-content">
- <div class="card-emoji">🎮</div>
- <h3 class="card-title">Gridlock Game</h3>
- <p class="card-description">NumPy-powered Tic-Tac-Toe with web interface demonstrating array manipulation and Python game logic</p>
- <br>
- <div class="card-tech">
- <span class="tech-badge">NumPy</span>
- <span class="tech-badge">Streamlit</span>
- <span class="tech-badge">Game Logic</span>
- <span class="tech-badge">Arrays</span>
- </div>
- <div class="card-features">
- <h4>Technical Highlights</h4>
- <ul>
- <li>NumPy Arrays</li>
- <li>Win Detection</li>
- <li>Interactive UI</li>
- <li>Game State</li>
- </ul>
- </div>
- <a href="https://github.com/mayank-goyal09/Gridlock-Game" target="_blank" class="card-link">View on GitHub →</a>
- <a href="https://gridlock-game-bdoqnt2uavckvypewafl8g.streamlit.app/" target="_blank" class="card-link" style="background: linear-gradient(135deg, rgba(255, 75, 75, 0.2) 0%, rgba(255, 165, 0, 0.2) 100%); border-color: rgba(255, 75, 75, 0.4); color: #ff4b4b; margin-top: 5px;">🚀 Want to play? →</a>
- </div>
- </div>
+            <!-- Project 9: Gridlock Game -->
+            <div class="floating-card">
+                <div class="card-content">
+                    <div class="card-emoji">🎮</div>
+                    <h3 class="card-title">Gridlock Game</h3>
+                    <p class="card-description">NumPy-powered Tic-Tac-Toe with web interface demonstrating array
+                        manipulation and Python game logic</p>
+                    <br>
+                    <div class="card-tech">
+                        <span class="tech-badge">NumPy</span>
+                        <span class="tech-badge">Streamlit</span>
+                        <span class="tech-badge">Game Logic</span>
+                        <span class="tech-badge">Arrays</span>
+                    </div>
+                    <div class="card-features">
+                        <h4>Technical Highlights</h4>
+                        <ul>
+                            <li>NumPy Arrays</li>
+                            <li>Win Detection</li>
+                            <li>Interactive UI</li>
+                            <li>Game State</li>
+                        </ul>
+                    </div>
+                    <a href="https://github.com/mayank-goyal09/Gridlock-Game" target="_blank" class="card-link">View on
+                        GitHub →</a>
+                    <a href="https://gridlock-game-bdoqnt2uavckvypewafl8g.streamlit.app/" target="_blank"
+                        class="card-link"
+                        style="background: linear-gradient(135deg, rgba(255, 75, 75, 0.2) 0%, rgba(255, 165, 0, 0.2) 100%); border-color: rgba(255, 75, 75, 0.4); color: #ff4b4b; margin-top: 5px;">🚀
+                        Want to play? →</a>
+                </div>
+            </div>
 
         </div>
     </section>
 
 </body>
+
 </html>
