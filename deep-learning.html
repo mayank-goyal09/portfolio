@@ -11,60 +11,24 @@
     <link rel="stylesheet" href="style.css" />
     <!-- Page-specific styles -->
     <link rel="stylesheet" href="deep-learning.css" />
+    <!-- AI Chatbot Styles -->
+    <link rel="stylesheet" href="chatbot.css?v=20260206" />
+
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 
 <body>
-    <!-- 🌌 BACKGROUND LAYERS - BLACK HOLE & MILKY WAY -->
+    <!-- 🌌 COSMIC BACKGROUND (Stars & Nebula) -->
     <div class="background-layers">
-        <!-- Star Layers -->
         <div class="layer-stars"></div>
         <div class="layer-stars layer-stars-2"></div>
         <div class="layer-stars layer-stars-3"></div>
-
-        <!-- Cosmic Nebula Dust -->
         <div class="nebula-dust"></div>
-
-        <!-- Galaxy Core & Spiral Arms -->
-        <div class="galaxy-core"></div>
-        <div class="spiral-arm-1"></div>
-        <div class="spiral-arm-2"></div>
-
-        <!-- Gravitational Lensing Light Arcs -->
-        <div class="light-arc"></div>
-        <div class="light-arc"></div>
-        <div class="light-arc"></div>
-
-        <!-- The Black Hole -->
-        <div class="gravitational-lens"></div>
-        <div class="accretion-disk"></div>
-        <div class="photon-ring"></div>
-        <div class="black-hole"></div>
-
-        <!-- Orbiting Debris Particles -->
-        <div class="orbiting-particle"></div>
-        <div class="orbiting-particle"></div>
-        <div class="orbiting-particle"></div>
-        <div class="orbiting-particle"></div>
-
-        <!-- Spaghettifying Stars -->
-        <div class="spaghetti-star"></div>
-        <div class="spaghetti-star"></div>
-        <div class="spaghetti-star"></div>
-
-        <!-- Hawking Radiation Particles -->
-        <div class="hawking-particle"></div>
-        <div class="hawking-particle"></div>
-        <div class="hawking-particle"></div>
-
-        <!-- Relativistic Jets -->
-        <div class="energy-jet jet-top"></div>
-        <div class="energy-jet jet-bottom"></div>
     </div>
 
-    <!-- 🌠 MATTER STREAMS (Falling into Black Hole) -->
-    <div class="matter-stream"></div>
-    <div class="matter-stream"></div>
-    <div class="matter-stream"></div>
+    <!-- 🔮 PLASMA SPHERE BACKGROUND (Three.js) -->
+    <div id="plasmaContainer" class="plasma-background"></div>
 
     <!-- 🟣 MAIN CONTENT -->
     <main class="dl-page" id="dl-page">
@@ -309,6 +273,12 @@
         toggleSection(handleCNN, gridCNN);
         toggleSection(handleRNN, gridRNN);
     </script>
+
+    <!-- 🔮 Plasma Background Script -->
+    <script src="deep-learning-plasma.js"></script>
+
+    <!-- AI Chatbot Script -->
+    <script src="chatbot.js?v=20260206"></script>
 </body>
 
 </html>
