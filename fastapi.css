@@ -1,0 +1,682 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap");
+
+/* ============================================
+   ⚡ FASTAPI - EVERVAULT CARD SCANNER THEME
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000000;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: "Arial", sans-serif;
+    color: #fff;
+}
+
+/* 💎 PRISM BACKGROUND CANVAS */
+#prismCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ============================================
+   � HOME BUTTON (Fixed Top Right)
+   ============================================ */
+
+.home-btn-fixed {
+    position: fixed;
+    top: 25px;
+    right: 30px;
+    z-index: 200;
+    padding: 12px 28px;
+    background: rgba(139, 92, 246, 0.3);
+    border: 1px solid rgba(139, 92, 246, 0.5);
+    border-radius: 30px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.home-btn-fixed:hover {
+    background: rgba(139, 92, 246, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+}
+
+/* ============================================
+   ⚡ MINIMAL TRANSPARENT HEADER
+   ============================================ */
+
+.fastapi-header-minimal {
+    position: relative;
+    z-index: 50;
+    padding: 3rem 2rem 1rem;
+    text-align: center;
+    background: transparent;
+}
+
+.fastapi-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #ffffff 0%, #a78bfa 50%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    filter: drop-shadow(0 0 30px rgba(139, 92, 246, 0.4));
+    margin-bottom: 0.5rem;
+}
+
+.fastapi-desc {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 300;
+    letter-spacing: 0.3px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Hide old styles (kept for fallback) */
+.controls,
+.fastapi-header,
+.fastapi-hero-card,
+.section-info {
+    display: none;
+}
+
+.fastapi-hero-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(ellipse at top left,
+            rgba(139, 92, 246, 0.08) 0%,
+            transparent 50%);
+    pointer-events: none;
+}
+
+.fastapi-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #c4b5fd;
+    margin-bottom: 0.35rem;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.fastapi-heading {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #e9d5ff, #c4b5fd, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+    text-shadow: 0 0 40px rgba(139, 92, 246, 0.5);
+}
+
+.fastapi-subtitle {
+    margin-top: 0.6rem;
+    font-size: 0.95rem;
+    color: #a1a1aa;
+    max-width: 700px;
+    line-height: 1.5;
+}
+
+.fastapi-home-btn {
+    display: inline-block;
+    margin-top: 1.2rem;
+    padding: 0.65rem 1.4rem;
+    border-radius: 999px;
+    border: 1px solid rgba(139, 92, 246, 0.5);
+    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+    color: #0a0015;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow:
+        0 8px 25px rgba(139, 92, 246, 0.4),
+        0 0 30px rgba(168, 85, 247, 0.2);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+}
+
+.fastapi-home-btn:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 12px 30px rgba(139, 92, 246, 0.5),
+        0 0 50px rgba(168, 85, 247, 0.3);
+    filter: brightness(1.1);
+}
+
+/* ============================================
+   📦 CARD STREAM CONTAINER
+   ============================================ */
+
+.scanner-section {
+    position: relative;
+    width: 100vw;
+    height: 420px;
+    margin-top: 2rem;
+    margin-left: 0;
+    overflow: visible;
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+.card-stream {
+    position: absolute;
+    width: 100vw;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    overflow: visible;
+    left: 0;
+}
+
+.card-line {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    white-space: nowrap;
+    cursor: grab;
+    user-select: none;
+    will-change: transform;
+}
+
+.card-line:active {
+    cursor: grabbing;
+}
+
+.card-line.dragging {
+    cursor: grabbing;
+}
+
+.card-line.css-animated {
+    animation: scrollCards 40s linear infinite;
+}
+
+@keyframes scrollCards {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100vw);
+    }
+}
+
+/* ============================================
+   💳 CARD STYLES
+   ============================================ */
+
+.card-wrapper {
+    position: relative;
+    width: 480px;
+    height: 300px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 18px;
+}
+
+.card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 480px;
+    height: 300px;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.card-normal {
+    background: transparent;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    color: white;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    /* Clip from LEFT - hides scanned portion */
+    clip-path: inset(0 0 0 var(--clip-left, 0%));
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    filter: brightness(1.1) contrast(1.1);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-image:hover {
+    filter: brightness(1.2) contrast(1.2);
+}
+
+.card-ascii {
+    background: #0a0010;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 480px;
+    height: 300px;
+    border-radius: 18px;
+    overflow: hidden;
+    /* Clip from RIGHT - shows only scanned portion */
+    clip-path: inset(0 var(--clip-right, 100%) 0 0);
+}
+
+.card-chip {
+    width: 40px;
+    height: 30px;
+    background: linear-gradient(45deg, #ffd700, #ffed4e);
+    border-radius: 5px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.card-chip::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    background: linear-gradient(45deg, #e6c200, #f4d03f);
+    border-radius: 2px;
+}
+
+.contactless {
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    width: 25px;
+    height: 25px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+}
+
+.contactless::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+}
+
+.card-number {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.card-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.card-holder {
+    color: white;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.card-expiry {
+    color: white;
+    font-size: 14px;
+}
+
+.card-logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   💻 ASCII CODE EFFECT
+   ============================================ */
+
+.ascii-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: rgba(220, 210, 255, 0.8);
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+    line-height: 13px;
+    overflow: hidden;
+    white-space: pre;
+    animation: glitch 0.1s infinite linear alternate-reverse;
+    margin: 0;
+    padding: 5px;
+    text-align: left;
+    vertical-align: top;
+    box-sizing: border-box;
+    /* Fade effect from left (bright) to right (dim) */
+    -webkit-mask-image: linear-gradient(to right,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 0.9) 40%,
+            rgba(0, 0, 0, 0.7) 70%,
+            rgba(0, 0, 0, 0.4) 90%,
+            rgba(0, 0, 0, 0.1) 100%);
+    mask-image: linear-gradient(to right,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 0.9) 40%,
+            rgba(0, 0, 0, 0.7) 70%,
+            rgba(0, 0, 0, 0.4) 90%,
+            rgba(0, 0, 0, 0.1) 100%);
+}
+
+@keyframes glitch {
+    0% {
+        opacity: 1;
+    }
+
+    15% {
+        opacity: 0.9;
+    }
+
+    16% {
+        opacity: 1;
+    }
+
+    49% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    99% {
+        opacity: 0.9;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   🔦 SCANNER BEAM
+   ============================================ */
+
+.scanner {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 4px;
+    height: 300px;
+    border-radius: 30px;
+    background: linear-gradient(to bottom,
+            transparent,
+            rgba(139, 92, 246, 0.8),
+            rgba(168, 85, 247, 1),
+            rgba(139, 92, 246, 0.8),
+            transparent);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.8), 0 0 40px rgba(168, 85, 247, 0.4);
+    animation: scanPulse 2s ease-in-out infinite alternate;
+    z-index: 10;
+}
+
+@keyframes scanPulse {
+    0% {
+        opacity: 0.8;
+        transform: translate(-50%, -50%) scaleY(1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scaleY(1.1);
+    }
+}
+
+.scanner-label {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(139, 92, 246, 0.9);
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+}
+
+.scan-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(139, 92, 246, 0.4),
+            transparent);
+    animation: scanEffect 0.6s ease-out;
+    pointer-events: none;
+    z-index: 5;
+}
+
+@keyframes scanEffect {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* ============================================
+   ✨ CANVAS LAYERS
+   ============================================ */
+
+#particleCanvas {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100vw;
+    height: 250px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#scannerCanvas {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100vw;
+    height: 300px;
+    z-index: 15;
+    pointer-events: none;
+}
+
+/* ============================================
+   📋 SECTION INFO (Below Scanner)
+   ============================================ */
+
+.section-info {
+    position: relative;
+    z-index: 50;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 1rem auto 0;
+}
+
+.section-info-card {
+    padding: 1.2rem 1.5rem;
+    border-radius: 1rem;
+    background: rgba(10, 10, 20, 0.75);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    backdrop-filter: blur(8px);
+    text-align: center;
+}
+
+.section-info-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #c4b5fd;
+    margin-bottom: 0.5rem;
+}
+
+.section-info-desc {
+    font-size: 0.9rem;
+    color: #a1a1aa;
+    line-height: 1.5;
+}
+
+/* ============================================
+   🔗 INSPIRATION CREDIT
+   ============================================ */
+
+.inspiration-credit {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "Roboto Mono", monospace;
+    font-size: 12px;
+    font-weight: 900;
+    color: #c4b5fd;
+    z-index: 1000;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 8px 16px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.inspiration-credit a {
+    color: #a855f7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.inspiration-credit a:hover {
+    color: #c084fc;
+}
+
+/* ============================================
+   📱 RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .fastapi-header {
+        padding: 1.5rem 1rem 1rem;
+    }
+
+    .fastapi-heading {
+        font-size: 1.6rem;
+    }
+
+    .fastapi-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .controls {
+        top: 10px;
+        left: 10px;
+        gap: 5px;
+    }
+
+    .control-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .speed-indicator {
+        top: 10px;
+        right: 10px;
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .card-wrapper,
+    .card,
+    .card-normal,
+    .card-ascii {
+        width: 300px;
+        height: 188px;
+    }
+
+    .section-info {
+        padding: 1.5rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .card-wrapper,
+    .card,
+    .card-normal,
+    .card-ascii {
+        width: 260px;
+        height: 163px;
+    }
+
+    .card-line {
+        gap: 30px;
+    }
+}
