@@ -11,6 +11,8 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
+    <!-- AI Chatbot Styles -->
+    <link rel="stylesheet" href="chatbot.css?v=20260206" />
     <style>
         /* ===== ACHIEVEMENT BADGE STYLES ===== */
         .achievement-badge {
@@ -206,17 +208,371 @@
         </div>
     </nav>
 
-    <section
-        style="text-align: center; padding: 80px 20px; background: linear-gradient(135deg, rgba(0, 234, 255, 0.1) 0%, rgba(139, 71, 255, 0.1) 100%); margin-top: 60px;">
-        <h1
-            style="font-size: 3rem; font-weight: 700; background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 15px;">
-            Data Analyst Projects <span class="achievement-badge">🏆</span> </h1>
-        <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 30px;">Comprehensive collection of
-            data-driven projects showcasing analytics expertise</p>
-        <a href="index.html"
-            style="display: inline-block; color: var(--accent-cyan); text-decoration: none; font-weight: 600;">← Back to
-            Home</a>
+    <!-- ===== ENHANCED DATA ANALYTICS HERO SECTION ===== -->
+    <section class="da-hero">
+        <!-- Animated Background Elements -->
+        <div class="da-hero-bg">
+            <div class="floating-chart chart-1">📊</div>
+            <div class="floating-chart chart-2">📈</div>
+            <div class="floating-chart chart-3">📉</div>
+            <div class="floating-chart chart-4">🎯</div>
+            <div class="data-particle p1"></div>
+            <div class="data-particle p2"></div>
+            <div class="data-particle p3"></div>
+        </div>
+
+        <!-- Animated Bar Chart Visual -->
+        <div class="hero-chart-visual">
+            <div class="bar bar-1"></div>
+            <div class="bar bar-2"></div>
+            <div class="bar bar-3"></div>
+            <div class="bar bar-4"></div>
+            <div class="bar bar-5"></div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="da-hero-content">
+            <div class="da-badge">
+                <span class="badge-icon">📊</span>
+                <span class="badge-text">DATA ANALYTICS</span>
+            </div>
+
+            <h1 class="da-title">
+                Data Analyst <span class="highlight">Projects</span>
+                <span class="achievement-badge">🏆</span>
+            </h1>
+
+            <p class="da-subtitle">Transforming raw data into actionable insights through advanced analytics,
+                visualization & strategic decision-making</p>
+
+            <!-- Stats Counter -->
+            <div class="da-stats">
+                <div class="da-stat">
+                    <span class="stat-number">8+</span>
+                    <span class="stat-text">Projects</span>
+                </div>
+                <div class="da-stat">
+                    <span class="stat-number">5+</span>
+                    <span class="stat-text">Tools</span>
+                </div>
+                <div class="da-stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-text">Data-Driven</span>
+                </div>
+            </div>
+
+            <a href="index.html" class="da-back-btn">
+                <span class="btn-arrow">←</span>
+                <span>Back to Command Center</span>
+            </a>
+        </div>
     </section>
+
+    <style>
+        /* ===== DATA ANALYTICS HERO STYLES ===== */
+        .da-hero {
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px 60px;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(0, 20, 40, 0.95) 0%, rgba(10, 15, 30, 0.98) 100%);
+        }
+
+        /* Animated Background */
+        .da-hero-bg {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .floating-chart {
+            position: absolute;
+            font-size: 2.5rem;
+            opacity: 0.15;
+            animation: floatData 8s ease-in-out infinite;
+        }
+
+        .chart-1 {
+            top: 15%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .chart-2 {
+            top: 25%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .chart-3 {
+            bottom: 30%;
+            left: 8%;
+            animation-delay: 4s;
+        }
+
+        .chart-4 {
+            bottom: 20%;
+            right: 10%;
+            animation-delay: 1s;
+        }
+
+        @keyframes floatData {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.15;
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+                opacity: 0.25;
+            }
+        }
+
+        /* Data Particles */
+        .data-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--accent-cyan);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent-cyan);
+            animation: particleFloat 6s ease-in-out infinite;
+        }
+
+        .p1 {
+            top: 20%;
+            left: 30%;
+            animation-delay: 0s;
+        }
+
+        .p2 {
+            top: 60%;
+            right: 25%;
+            animation-delay: 2s;
+        }
+
+        .p3 {
+            bottom: 25%;
+            left: 50%;
+            animation-delay: 4s;
+        }
+
+        @keyframes particleFloat {
+
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+                opacity: 0.6;
+            }
+
+            50% {
+                transform: translateY(-30px) scale(1.5);
+                opacity: 1;
+            }
+        }
+
+        /* Animated Bar Chart */
+        .hero-chart-visual {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: flex-end;
+            gap: 8px;
+            height: 120px;
+            opacity: 0.15;
+        }
+
+        .bar {
+            width: 20px;
+            background: linear-gradient(to top, var(--accent-cyan), var(--accent-purple));
+            border-radius: 4px 4px 0 0;
+            animation: barGrow 2s ease-in-out infinite;
+        }
+
+        .bar-1 {
+            height: 40%;
+            animation-delay: 0s;
+        }
+
+        .bar-2 {
+            height: 70%;
+            animation-delay: 0.2s;
+        }
+
+        .bar-3 {
+            height: 55%;
+            animation-delay: 0.4s;
+        }
+
+        .bar-4 {
+            height: 85%;
+            animation-delay: 0.6s;
+        }
+
+        .bar-5 {
+            height: 60%;
+            animation-delay: 0.8s;
+        }
+
+        @keyframes barGrow {
+
+            0%,
+            100% {
+                transform: scaleY(1);
+            }
+
+            50% {
+                transform: scaleY(1.2);
+            }
+        }
+
+        /* Hero Content */
+        .da-hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+        }
+
+        .da-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0, 234, 255, 0.1);
+            border: 1px solid rgba(0, 234, 255, 0.3);
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin-bottom: 25px;
+            animation: badgePulse 3s ease-in-out infinite;
+        }
+
+        .badge-icon {
+            font-size: 1.2rem;
+        }
+
+        .badge-text {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: var(--accent-cyan);
+        }
+
+        @keyframes badgePulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 10px rgba(0, 234, 255, 0.2);
+            }
+
+            50% {
+                box-shadow: 0 0 25px rgba(0, 234, 255, 0.4);
+            }
+        }
+
+        .da-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .da-title .highlight {
+            background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .da-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 35px;
+            line-height: 1.7;
+        }
+
+        /* Stats */
+        .da-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .da-stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent-cyan);
+            text-shadow: 0 0 20px rgba(0, 234, 255, 0.5);
+            animation: numberPulse 2s ease-in-out infinite;
+        }
+
+        .stat-text {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 5px;
+        }
+
+        @keyframes numberPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Back Button */
+        .da-back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 12px 25px;
+            border: 1px solid rgba(0, 234, 255, 0.3);
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            background: rgba(0, 234, 255, 0.05);
+        }
+
+        .da-back-btn:hover {
+            background: rgba(0, 234, 255, 0.15);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 25px rgba(0, 234, 255, 0.3);
+            transform: translateX(-5px);
+        }
+
+        .btn-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .da-back-btn:hover .btn-arrow {
+            transform: translateX(-5px);
+        }
+    </style>
 
     <section class="section-padding" style="background: var(--bg-main);">
         <div class="container">
@@ -702,6 +1058,178 @@
             </div> <!-- End projects-grid -->
         </div> <!-- End container -->
     </section>
+
+    <!-- Smooth Scrolling & Scroll Reveal Styles -->
+    <style>
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Scroll Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered animations for cards */
+        .project-card {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Different delays for staggered effect */
+        .project-card:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+
+        .project-card:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+
+        .project-card:nth-child(3) {
+            transition-delay: 0.3s;
+        }
+
+        .project-card:nth-child(4) {
+            transition-delay: 0.4s;
+        }
+
+        .project-card:nth-child(5) {
+            transition-delay: 0.5s;
+        }
+
+        .project-card:nth-child(6) {
+            transition-delay: 0.6s;
+        }
+
+        .project-card:nth-child(7) {
+            transition-delay: 0.7s;
+        }
+
+        .project-card:nth-child(8) {
+            transition-delay: 0.8s;
+        }
+
+        /* Experience card animation */
+        .experience-card {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .experience-card.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Scale up effect on scroll */
+        .scale-reveal {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scale-reveal.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Slide from left */
+        .slide-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Slide from right */
+        .slide-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+
+    <!-- Scroll Reveal Script -->
+    <script>
+        // Intersection Observer for scroll reveal
+        document.addEventListener('DOMContentLoaded', () => {
+            // Reveal elements
+            const revealElements = document.querySelectorAll('.reveal, .scale-reveal, .slide-left, .slide-right');
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            // Project cards staggered animation
+            const projectCards = document.querySelectorAll('.project-card');
+
+            const cardObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -30px 0px'
+            });
+
+            projectCards.forEach(card => cardObserver.observe(card));
+
+            // Experience card animation
+            const expCards = document.querySelectorAll('.experience-card');
+            expCards.forEach(card => cardObserver.observe(card));
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- AI Chatbot Script -->
+    <script src="chatbot.js?v=20260206"></script>
 </body>
 
 </html>
