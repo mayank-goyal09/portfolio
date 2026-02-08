@@ -11,6 +11,8 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
+    <!-- AI Chatbot Styles -->
+    <link rel="stylesheet" href="chatbot.css?v=20260206" />
     <style>
         /* ===== ACHIEVEMENT BADGE ===== */
         .achievement-badge {
@@ -350,11 +352,483 @@
         </div>
     </nav>
 
-    <section class="page-header">
-        <h1>Python OOP & Backend <span class="achievement-badge">🐍</span></h1>
-        <p>Enterprise-grade applications built with Python OOP, Streamlit, and SQLite</p>
-        <a href="index.html" class="back-link">← Back to Home</a>
+    <!-- ===== PYTHON HERO SECTION - TERMINAL THEME ===== -->
+    <section class="py-hero">
+        <!-- Code Rain Background -->
+        <div class="code-rain">
+            <span class="code-drop" style="--i:1">def</span>
+            <span class="code-drop" style="--i:2">class</span>
+            <span class="code-drop" style="--i:3">import</span>
+            <span class="code-drop" style="--i:4">return</span>
+            <span class="code-drop" style="--i:5">self</span>
+            <span class="code-drop" style="--i:6">__init__</span>
+            <span class="code-drop" style="--i:7">for</span>
+            <span class="code-drop" style="--i:8">while</span>
+            <span class="code-drop" style="--i:9">lambda</span>
+            <span class="code-drop" style="--i:10">async</span>
+        </div>
+
+        <!-- Floating Python Symbols -->
+        <div class="py-symbols">
+            <span class="py-symbol s1">🐍</span>
+            <span class="py-symbol s2">{}</span>
+            <span class="py-symbol s3">[ ]</span>
+            <span class="py-symbol s4">//</span>
+            <span class="py-symbol s5">→</span>
+        </div>
+
+        <!-- Mini Terminal Window -->
+        <div class="mini-terminal">
+            <div class="terminal-header">
+                <span class="term-dot red"></span>
+                <span class="term-dot yellow"></span>
+                <span class="term-dot green"></span>
+                <span class="term-title">python main.py</span>
+            </div>
+            <div class="terminal-body">
+                <span class="term-line"><span class="prompt">>>> </span><span class="typing-code">import
+                        portfolio</span></span>
+                <span class="term-line output">Loading projects...</span>
+                <span class="term-line success">✓ 9 projects ready!</span>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="py-hero-content">
+            <div class="py-logo-badge">
+                <span class="snake-icon">🐍</span>
+                <span class="py-version">Python 3.x</span>
+            </div>
+
+            <h1 class="py-title">
+                <span class="code-bracket">&lt;</span>
+                Python OOP
+                <span class="code-bracket">/&gt;</span>
+            </h1>
+            <h2 class="py-subtitle-main">& Backend Projects</h2>
+
+            <p class="py-description">Enterprise-grade applications crafted with clean architecture, object-oriented
+                design patterns & database integration</p>
+
+            <!-- Tech Stack Pills -->
+            <div class="tech-pills">
+                <span class="tech-pill">
+                    <span class="pill-icon">🐍</span> Python
+                </span>
+                <span class="tech-pill">
+                    <span class="pill-icon">⚡</span> Streamlit
+                </span>
+                <span class="tech-pill">
+                    <span class="pill-icon">🗄️</span> SQLite
+                </span>
+                <span class="tech-pill">
+                    <span class="pill-icon">🏗️</span> OOP
+                </span>
+            </div>
+
+            <a href="index.html" class="py-back-btn">
+                <span class="btn-icon">←</span>
+                <span>cd ~/home</span>
+            </a>
+        </div>
     </section>
+
+    <style>
+        /* ===== PYTHON HERO STYLES ===== */
+        .py-hero {
+            position: relative;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 20px 60px;
+            overflow: hidden;
+            background: linear-gradient(160deg, #0d1117 0%, #161b22 50%, #0d1117 100%);
+        }
+
+        /* Code Rain Effect */
+        .code-rain {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .code-drop {
+            position: absolute;
+            top: -50px;
+            font-family: 'Fira Code', 'Courier New', monospace;
+            font-size: 0.8rem;
+            color: rgba(77, 243, 255, 0.15);
+            animation: codeFall 8s linear infinite;
+            animation-delay: calc(var(--i) * 0.8s);
+        }
+
+        .code-drop:nth-child(1) {
+            left: 5%;
+        }
+
+        .code-drop:nth-child(2) {
+            left: 15%;
+        }
+
+        .code-drop:nth-child(3) {
+            left: 25%;
+        }
+
+        .code-drop:nth-child(4) {
+            left: 35%;
+        }
+
+        .code-drop:nth-child(5) {
+            left: 50%;
+        }
+
+        .code-drop:nth-child(6) {
+            left: 60%;
+        }
+
+        .code-drop:nth-child(7) {
+            left: 70%;
+        }
+
+        .code-drop:nth-child(8) {
+            left: 80%;
+        }
+
+        .code-drop:nth-child(9) {
+            left: 88%;
+        }
+
+        .code-drop:nth-child(10) {
+            left: 95%;
+        }
+
+        @keyframes codeFall {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.3;
+            }
+
+            90% {
+                opacity: 0.3;
+            }
+
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+
+        /* Floating Symbols */
+        .py-symbols {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .py-symbol {
+            position: absolute;
+            font-size: 1.8rem;
+            opacity: 0.1;
+            animation: symbolFloat 10s ease-in-out infinite;
+        }
+
+        .s1 {
+            top: 15%;
+            left: 8%;
+            animation-delay: 0s;
+            font-size: 3rem;
+        }
+
+        .s2 {
+            top: 30%;
+            right: 12%;
+            animation-delay: 2s;
+            color: #ffcc00;
+        }
+
+        .s3 {
+            bottom: 35%;
+            left: 15%;
+            animation-delay: 4s;
+            color: #4DF3FF;
+        }
+
+        .s4 {
+            top: 60%;
+            right: 20%;
+            animation-delay: 1s;
+            color: #8c6eff;
+        }
+
+        .s5 {
+            bottom: 25%;
+            right: 8%;
+            animation-delay: 3s;
+            color: #4DF3FF;
+        }
+
+        @keyframes symbolFloat {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-25px) rotate(15deg);
+            }
+        }
+
+        /* Mini Terminal */
+        .mini-terminal {
+            position: absolute;
+            top: 15%;
+            right: 8%;
+            width: 280px;
+            background: rgba(13, 17, 23, 0.95);
+            border: 1px solid rgba(77, 243, 255, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            animation: terminalFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes terminalFloat {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(-2deg);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(2deg);
+            }
+        }
+
+        .terminal-header {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 12px;
+            background: rgba(30, 35, 45, 0.9);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .term-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .term-dot.red {
+            background: #ff5f56;
+        }
+
+        .term-dot.yellow {
+            background: #ffbd2e;
+        }
+
+        .term-dot.green {
+            background: #27ca40;
+        }
+
+        .term-title {
+            margin-left: 10px;
+            font-size: 0.7rem;
+            color: #8b949e;
+            font-family: monospace;
+        }
+
+        .terminal-body {
+            padding: 15px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.75rem;
+        }
+
+        .term-line {
+            display: block;
+            margin-bottom: 8px;
+            color: #c9d1d9;
+        }
+
+        .prompt {
+            color: #58a6ff;
+        }
+
+        .typing-code {
+            color: #7ee787;
+            animation: typeCode 3s steps(20) infinite;
+        }
+
+        @keyframes typeCode {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .term-line.output {
+            color: #8b949e;
+        }
+
+        .term-line.success {
+            color: #3fb950;
+        }
+
+        /* Hero Content */
+        .py-hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 700px;
+        }
+
+        .py-logo-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 212, 59, 0.1);
+            border: 1px solid rgba(255, 212, 59, 0.3);
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin-bottom: 25px;
+        }
+
+        .snake-icon {
+            font-size: 1.5rem;
+            animation: snakeWiggle 2s ease-in-out infinite;
+        }
+
+        @keyframes snakeWiggle {
+
+            0%,
+            100% {
+                transform: rotate(-5deg);
+            }
+
+            50% {
+                transform: rotate(5deg);
+            }
+        }
+
+        .py-version {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #ffd43b;
+            letter-spacing: 0.1em;
+        }
+
+        .py-title {
+            font-size: clamp(2.5rem, 7vw, 4.5rem);
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 5px;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .code-bracket {
+            color: #58a6ff;
+            font-weight: 300;
+        }
+
+        .py-subtitle-main {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 600;
+            background: linear-gradient(135deg, #ffd43b 0%, #ff6b6b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 25px;
+        }
+
+        .py-description {
+            font-size: 1.05rem;
+            color: #8b949e;
+            max-width: 550px;
+            margin: 0 auto 35px;
+            line-height: 1.7;
+        }
+
+        /* Tech Pills */
+        .tech-pills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .tech-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(88, 166, 255, 0.1);
+            border: 1px solid rgba(88, 166, 255, 0.25);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #58a6ff;
+            transition: all 0.3s ease;
+        }
+
+        .tech-pill:hover {
+            background: rgba(88, 166, 255, 0.2);
+            border-color: #58a6ff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(88, 166, 255, 0.2);
+        }
+
+        .pill-icon {
+            font-size: 1rem;
+        }
+
+        /* Back Button */
+        .py-back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #3fb950;
+            text-decoration: none;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            padding: 12px 25px;
+            border: 1px solid rgba(63, 185, 80, 0.3);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: rgba(63, 185, 80, 0.05);
+        }
+
+        .py-back-btn:hover {
+            background: rgba(63, 185, 80, 0.15);
+            border-color: #3fb950;
+            box-shadow: 0 0 25px rgba(63, 185, 80, 0.2);
+        }
+
+        .btn-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .py-back-btn:hover .btn-icon {
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .mini-terminal {
+                display: none;
+            }
+        }
+    </style>
 
     <section style="background: var(--bg-main); padding: 40px 0;">
         <!-- ========================== -->
@@ -729,6 +1203,166 @@
         </div>
     </section>
 
+    <!-- Smooth Scrolling & Scroll Reveal Styles -->
+    <style>
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Scroll Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered animations for floating cards - start hidden */
+        .floating-card {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .floating-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+            /* Keep the float animation after reveal */
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Different delays for staggered effect */
+        .floating-card:nth-child(1) {
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+        }
+
+        .floating-card:nth-child(2) {
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+        }
+
+        .floating-card:nth-child(3) {
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+        }
+
+        .floating-card:nth-child(4) {
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+        }
+
+        .floating-card:nth-child(5) {
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.5s;
+        }
+
+        .floating-card:nth-child(6) {
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.6s;
+        }
+
+        .floating-card:nth-child(7) {
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.7s;
+        }
+
+        .floating-card:nth-child(8) {
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.8s;
+        }
+
+        .floating-card:nth-child(9) {
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.9s;
+        }
+
+        /* Scale up effect on scroll */
+        .scale-reveal {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scale-reveal.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Slide from left */
+        .slide-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Slide from right */
+        .slide-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+
+    <!-- Scroll Reveal Script -->
+    <script>
+        // Intersection Observer for scroll reveal
+        document.addEventListener('DOMContentLoaded', () => {
+            // Reveal elements
+            const revealElements = document.querySelectorAll('.reveal, .scale-reveal, .slide-left, .slide-right');
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            // Floating cards staggered animation (Python page uses .floating-card)
+            const floatingCards = document.querySelectorAll('.floating-card');
+
+            const cardObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -30px 0px'
+            });
+
+            floatingCards.forEach(card => cardObserver.observe(card));
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- AI Chatbot Script -->
+    <script src="chatbot.js?v=20260206"></script>
 </body>
 
 </html>
