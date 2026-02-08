@@ -7,30 +7,25 @@
   <title>Mayank Goyal | Cosmic Command Interface</title>
   <link rel="icon" type="image/png" href="favicon.png">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts (including Syne for modern headings) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet" />
 
+  <!-- Three.js Library for Liquid Gradient -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
   <!-- Styles (cache-busted to force fresh load) -->
-  <link rel="stylesheet" href="style.css?v=20251215-FINAL" />
+  <link rel="stylesheet" href="style.css?v=20260208-LIQUID" />
+  <!-- AI Chatbot Styles -->
+  <link rel="stylesheet" href="chatbot.css?v=20260206" />
 </head>
 
 <body>
-  <!-- Animated space background layers -->
-  <div class="space-bg">
-    <div class="starfield layer layer-stars"></div>
-    <div class="nebula layer layer-nebula"></div>
-    <div class="satellite layer layer-satellite layer-satellite-1"></div>
-    <div class="satellite layer layer-satellite layer-satellite-2"></div>
-    <div class="satellite layer layer-satellite layer-satellite-3"></div>
-    <div class="satellite layer layer-satellite layer-satellite-4"></div>
-    <div class="satellite layer layer-satellite layer-satellite-5"></div>
-    <div class="satellite layer layer-satellite layer-satellite-6"></div>
-    <div class="layer layer-asteroid asteroid-1"></div>
-    <div class="layer layer-asteroid asteroid-2"></div>
-    <div class="layer layer-asteroid asteroid-3"></div>
-  </div>
+  <!-- 🌊 LIQUID GRADIENT BACKGROUND -->
+  <div id="liquidGradientCanvas" class="liquid-gradient-bg"></div>
 
   <!-- 🎵 Space Ambience Audio Source -->
   <!-- This is the deep space drone engine sound -->
@@ -78,7 +73,6 @@
 
       <!-- Command Interface Text -->
       <div class="command-text">
-        <p class="command-tagline">WELCOME TO THE COMMAND INTERFACE</p>
         <h1 class="command-name">
           MAYANK <span>GOYAL</span>
         </h1>
@@ -98,13 +92,13 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section section-padding">
+    <section id="about" class="section section-padding about-brilliant">
       <div class="section-header animate-on-scroll">
         <h2>About <span>Me</span></h2>
         <p></p>
       </div>
 
-      <div class="about-grid">
+      <div class="about-container">
         <div class="about-box glass-panel animate-on-scroll">
           <p>
             I’m building the version of myself I’d want to hire. Someone who can
@@ -140,6 +134,20 @@
           <p>
             If you’re building something ambitious and need someone who treats
             problems like puzzles and deadlines like fuel, we’ll probably get along well.
+          </p>
+        </div>
+
+        <div class="about-box glass-panel highlight animate-on-scroll">
+          <p>
+            I look beyond the raw numbers to understand the intent behind them. It's about
+            building tools that don't just function, but fit naturally into how people actually work.
+          </p>
+        </div>
+
+        <div class="about-box glass-panel animate-on-scroll">
+          <p>
+            Binary is boring. I'm here to find the ghost in the machine, the raw intent
+            that turns cold data into a move.
           </p>
         </div>
       </div>
@@ -179,6 +187,16 @@
           <h3>🧬 Deep Learning</h3>
           <p>Neural networks, CNNs, and cutting-edge AI architectures.</p>
           <span style="color: #c084fc; font-size: 0.9rem; margin-top: 10px;">
+            → View Projects
+          </span>
+        </a>
+
+        <!-- ⚡ FastAPI -->
+        <a href="fastapi.html" class="skill-tile glass-panel scan-effect animate-on-scroll"
+          style="text-decoration: none; color: inherit; cursor: pointer; transition: all 0.3s ease;">
+          <h3>⚡ FastAPI</h3>
+          <p>High-performance async APIs, ML deployment, and real-time backends.</p>
+          <span style="color: #10b981; font-size: 0.9rem; margin-top: 10px;">
             → View Projects
           </span>
         </a>
@@ -353,6 +371,33 @@
               Explore DL →
             </a>
           </div>
+
+          <!-- ⚡ FastAPI Projects Card -->
+          <div class="glass-panel" style="
+              padding: 30px;
+              border-radius: 15px;
+              transition: all 0.3s ease;
+              cursor: pointer;
+              background: radial-gradient(ellipse at top, rgba(16, 185, 129, 0.1), transparent);
+            "
+            onmouseover="this.style.transform='translateY(-10px)'; this.style.borderColor='rgba(16, 185, 129, 0.8)'; this.style.boxShadow='0 0 30px rgba(16, 185, 129, 0.3)'"
+            onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 234, 255, 0.3)'; this.style.boxShadow='none'">
+            <div style="font-size: 3rem; margin-bottom: 15px;">⚡</div>
+            <h3 style="color: #10b981; margin-bottom: 10px;">
+              FastAPI Lab
+            </h3>
+            <p style="
+                color: var(--text-muted);
+                margin-bottom: 20px;
+                font-size: 0.9rem;
+              ">
+              High-performance async APIs, ML deployment, and real-time data pipelines
+            </p>
+            <a href="fastapi.html" class="btn primary-btn"
+              style="text-decoration: none; width: 100%; background: linear-gradient(135deg, #10b981, #059669); border-color: #10b981;">
+              Explore FastAPI →
+            </a>
+          </div>
         </div>
 
         <!-- Additional CTA Buttons -->
@@ -480,24 +525,416 @@
     </div>
   </div>
 
-  <!-- Dev badge to confirm updated file and scripts -->
-  <div style="
-      position: fixed;
-      right: 14px;
-      bottom: 14px;
-      background: rgba(0, 0, 0, 0.45);
+
+  <!-- Brilliant About Section Styles -->
+  <style>
+    .about-brilliant {
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Style existing about-container with about-box */
+    .about-container,
+    .about-brilliant .about-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      counter-reset: about-counter;
+    }
+
+    /* Enhanced about-box styling */
+    .about-box {
+      position: relative;
+      background: rgba(10, 15, 25, 0.7);
+      border: 1.5px solid rgba(0, 234, 255, 0.15);
+      border-radius: 20px;
+      padding: 30px 28px;
+      backdrop-filter: blur(15px);
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      counter-increment: about-counter;
+      overflow: hidden;
+    }
+
+    .about-box::before {
+      content: "0" counter(about-counter);
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      opacity: 0.5;
+      letter-spacing: 0.1em;
+    }
+
+    .about-box::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-cyan), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .about-box:hover {
+      transform: translateY(-8px);
+      border-color: rgba(0, 234, 255, 0.4);
+      box-shadow: 0 20px 50px rgba(0, 234, 255, 0.15), 0 0 0 1px rgba(0, 234, 255, 0.1);
+    }
+
+    .about-box:hover::after {
+      opacity: 1;
+    }
+
+    .about-box.highlight {
+      border-color: rgba(255, 180, 0, 0.3);
+    }
+
+    .about-box.highlight::after {
+      background: linear-gradient(90deg, #ffb400, transparent);
+    }
+
+    .about-box.highlight::before {
+      color: #ffb400;
+    }
+
+    .about-box p {
       color: var(--text-muted);
-      padding: 8px 10px;
-      border-radius: 8px;
-      font-size: 12px;
-      backdrop-filter: blur(6px);
-      z-index: 60;
-    ">
-    System Online: v2025-12-15
-  </div>
+      font-size: 1rem;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    /* First box special - larger and spans full width on larger screens */
+    .about-container .about-box:first-child {
+      grid-column: 1 / -1;
+      text-align: center;
+      font-size: 1.15rem;
+      border-color: rgba(0, 234, 255, 0.35);
+      background: linear-gradient(135deg, rgba(0, 234, 255, 0.05) 0%, rgba(10, 15, 25, 0.8) 100%);
+    }
+
+    .about-container .about-box:first-child p {
+      font-size: 1.15rem;
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .about-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .about-profile-card {
+      position: relative;
+      background: rgba(10, 15, 25, 0.8);
+      border: 1px solid rgba(0, 234, 255, 0.2);
+      border-radius: 24px;
+      padding: 40px 30px;
+      text-align: center;
+      backdrop-filter: blur(20px);
+      overflow: hidden;
+    }
+
+    .profile-glow {
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(0, 234, 255, 0.1) 0%, transparent 50%);
+      animation: rotateGlow 10s linear infinite;
+    }
+
+    @keyframes rotateGlow {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .profile-avatar {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+
+    .avatar-emoji {
+      font-size: 4rem;
+      z-index: 2;
+    }
+
+    .avatar-ring {
+      position: absolute;
+      inset: -10px;
+      border: 3px solid transparent;
+      border-top-color: var(--accent-cyan);
+      border-radius: 50%;
+      animation: spinRing 3s linear infinite;
+    }
+
+    @keyframes spinRing {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .profile-name {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .profile-title {
+      font-size: 0.85rem;
+      color: var(--accent-cyan);
+      margin-bottom: 25px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .profile-stats {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-bottom: 25px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .profile-stats .stat-item {
+      text-align: center;
+    }
+
+    .profile-stats .stat-num {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .profile-stats .stat-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .profile-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .about-section .tag,
+    .about-brilliant .tag {
+      background: rgba(0, 234, 255, 0.1);
+      border: 1px solid rgba(0, 234, 255, 0.2);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .about-content-area {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .intro-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 25px 30px;
+      border: 1px solid rgba(0, 234, 255, 0.3);
+      border-radius: 16px;
+    }
+
+    .intro-icon {
+      font-size: 2.5rem;
+      flex-shrink: 0;
+    }
+
+    .intro-text h4 {
+      font-size: 1.1rem;
+      color: var(--accent-cyan);
+      margin-bottom: 8px;
+    }
+
+    .intro-text p {
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .intro-text strong {
+      color: #fff;
+    }
+
+    .traits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .trait-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 25px 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .trait-card:hover {
+      border-color: var(--accent-cyan);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 234, 255, 0.15);
+    }
+
+    .trait-icon {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+
+    .trait-card h5 {
+      color: #fff;
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+
+    .trait-card p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .philosophy-card {
+      position: relative;
+      padding: 30px 35px;
+      border-left: 4px solid var(--accent-purple);
+      border-radius: 0 16px 16px 0;
+    }
+
+    .quote-mark {
+      position: absolute;
+      top: 10px;
+      left: 15px;
+      font-size: 4rem;
+      color: rgba(140, 110, 255, 0.2);
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+
+    .philosophy-card p {
+      color: var(--text-muted);
+      line-height: 1.8;
+      font-size: 1.05rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .highlight-text {
+      color: var(--accent-cyan);
+      font-weight: 600;
+    }
+
+    .about-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 25px 30px;
+      background: linear-gradient(135deg, rgba(0, 234, 255, 0.08) 0%, rgba(140, 110, 255, 0.08) 100%);
+      border: 1px solid rgba(0, 234, 255, 0.2);
+      border-radius: 16px;
+    }
+
+    .about-cta p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      flex: 1;
+      margin: 0;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 100%);
+      color: #000;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .cta-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(0, 234, 255, 0.4);
+    }
+
+    .cta-button .arrow {
+      transition: transform 0.3s ease;
+    }
+
+    .cta-button:hover .arrow {
+      transform: translateX(5px);
+    }
+
+    @media (max-width: 900px) {
+      .about-container {
+        grid-template-columns: 1fr;
+      }
+
+      .about-profile-card {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .traits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-cta {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
 
   <!-- Scripts (cache-busted to force fresh load) -->
   <script src="script.js?v=20251215-FINAL"></script>
+  <!-- 🌊 Liquid Gradient Background -->
+  <script src="liquid-gradient.js"></script>
+  <!-- AI Chatbot Script -->
+  <script src="chatbot.js?v=20260206"></script>
 </body>
 
 </html>
