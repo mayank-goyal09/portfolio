@@ -128,7 +128,7 @@ function addMessage(role, text) {
 
 function localBrain(prompt) {
   const t = prompt.toLowerCase();
-  
+
   // Loop through JSON knowledge base
   const knowledge = portfolioConfig.aiAssistant.knowledgeBase;
   for (const entry of knowledge) {
@@ -166,7 +166,7 @@ quickButtons.forEach((btn) => {
     const prompt = portfolioConfig.aiAssistant.quickPrompts[intent] || "hello";
     addMessage("user", prompt);
     setTimeout(() => {
-        addMessage("assistant", localBrain(prompt));
+      addMessage("assistant", localBrain(prompt));
     }, 400); // Small delay for realism
   });
 });
@@ -178,7 +178,7 @@ if (aiForm && aiInput) {
     if (!text) return;
     addMessage("user", text);
     setTimeout(() => {
-        addMessage("assistant", localBrain(text));
+      addMessage("assistant", localBrain(text));
     }, 400);
     aiInput.value = "";
   });
@@ -189,21 +189,21 @@ const audio = document.getElementById("space-audio");
 const soundBtn = document.getElementById("sound-btn");
 const soundIcon = document.getElementById("sound-icon");
 
-if(audio && soundBtn) {
-    audio.volume = 0.8;
-    soundBtn.addEventListener("click", () => {
-        if (audio.paused) {
-            audio.play();
-            soundBtn.classList.add("sound-active");
-            soundIcon.innerText = "🔊";
-            soundBtn.style.borderColor = "#8c6eff";
-        } else {
-            audio.pause();
-            soundBtn.classList.remove("sound-active");
-            soundIcon.innerText = "🔇";
-            soundBtn.style.borderColor = "rgba(0, 234, 255, 0.3)";
-        }
-    });
+if (audio && soundBtn) {
+  audio.volume = 0.8;
+  soundBtn.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play();
+      soundBtn.classList.add("sound-active");
+      soundIcon.innerText = "🔊";
+      soundBtn.style.borderColor = "#8c6eff";
+    } else {
+      audio.pause();
+      soundBtn.classList.remove("sound-active");
+      soundIcon.innerText = "🔇";
+      soundBtn.style.borderColor = "rgba(0, 234, 255, 0.3)";
+    }
+  });
 }
 
 // 6. Typing Effect (Powered by JSON Config)
@@ -244,5 +244,4 @@ if(audio && soundBtn) {
     setTimeout(type, 600);
   });
 })();
-
 
