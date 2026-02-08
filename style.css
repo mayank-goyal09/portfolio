@@ -1,6 +1,6 @@
 :root {
-    --bg-main: #050507;
-    --bg-alt: #0a0f14;
+    --bg-main: #0f2838;
+    --bg-alt: #1a3a52;
     --accent-cyan: #00eaff;
     --accent-cyan-soft: #4df3ff;
     --accent-purple: #8c6eff;
@@ -8,7 +8,7 @@
     --accent-gold: #ffcb47;
     --text-main: #f5f7ff;
     --text-muted: #a6b0d8;
-    --glass-bg: rgba(8, 16, 28, 0.72);
+    --glass-bg: rgba(15, 40, 56, 0.72);
     --border-glass: rgba(255, 255, 255, 0.08);
     --shadow-soft: 0 0 22px rgba(0, 234, 255, 0.25);
     --radius-lg: 24px;
@@ -32,7 +32,7 @@ body {
 
 body {
     font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: radial-gradient(circle at top, #111827 0, #020308 42%, #000000 100%);
+    background: #0f2838;
     color: var(--text-main);
     overflow-x: hidden;
     line-height: 1.6;
@@ -45,13 +45,29 @@ body {
     padding: 0 20px;
 }
 
-/* Space background */
-.space-bg {
+/* 🌊 LIQUID GRADIENT BACKGROUND */
+.liquid-gradient-bg {
     position: fixed;
-    inset: 0;
-    z-index: -3;
-    background: radial-gradient(circle at 10% 0, #1b2a49 0, #020308 50%, #000 100%);
-    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.liquid-gradient-bg canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    pointer-events: auto;
+}
+
+/* Hide old space background */
+.space-bg {
+    display: none;
 }
 
 .layer {
@@ -1221,27 +1237,98 @@ body {
     text-transform: uppercase;
     color: var(--text-muted);
     text-decoration: none;
-    transition: color 0.3s ease;
     position: relative;
+    padding: 10px 16px;
+    border-radius: 25px;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    z-index: 1;
 }
 
+/* Round growing glow background */
+.nav-link::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(0, 234, 255, 0.4) 0%, rgba(0, 234, 255, 0.1) 50%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease, height 0.5s ease;
+    z-index: -1;
+}
+
+/* Glowing border ring */
 .nav-link::after {
     content: "";
     position: absolute;
-    left: 0;
-    bottom: -6px;
+    top: 50%;
+    left: 50%;
     width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
-    transition: width 0.3s ease;
+    height: 0;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
+    opacity: 0;
 }
 
+/* Hover state - ROUND GROWING ANIMATION! */
 .nav-link:hover {
-    color: var(--accent-cyan-soft);
+    color: #ffffff;
+    text-shadow:
+        0 0 8px var(--accent-cyan),
+        0 0 15px var(--accent-cyan),
+        0 0 25px rgba(0, 234, 255, 0.5);
+    transform: scale(1.08);
 }
 
+/* Growing circular glow on hover */
+.nav-link:hover::before {
+    width: 200%;
+    height: 200%;
+    animation: pulseGrow 1.5s ease-in-out infinite;
+}
+
+/* Growing border ring on hover */
 .nav-link:hover::after {
     width: 100%;
+    height: 100%;
+    border-color: rgba(0, 234, 255, 0.5);
+    opacity: 1;
+    animation: ringPulse 1.2s ease-in-out infinite;
+}
+
+/* Pulsing glow animation */
+@keyframes pulseGrow {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.9;
+    }
+}
+
+/* Ring pulse animation */
+@keyframes ringPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 5px var(--accent-cyan), 0 0 10px var(--accent-cyan);
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        box-shadow: 0 0 15px var(--accent-cyan), 0 0 25px var(--accent-purple);
+        transform: translate(-50%, -50%) scale(1.05);
+    }
 }
 
 
