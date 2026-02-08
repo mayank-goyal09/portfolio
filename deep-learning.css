@@ -1,29 +1,168 @@
 /* ============================================
-   🌌 BLACK HOLE & MILKY WAY DEEP LEARNING THEME
+   🔮 PLASMA SPHERE DEEP LEARNING THEME
    ============================================ */
 
 /* 1. BASE PAGE SETUP */
 body {
     margin: 0;
     min-height: 100vh;
-    /* Deep Void Background - Black Hole Core */
-    background: radial-gradient(ellipse at center, #0a0015 0%, #050008 30%, #000000 100%);
+    background: #000000;
     color: #f0e6ff;
     position: relative;
     overflow-x: hidden;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-/* 2. BACKGROUND LAYERS (Black Hole & Galaxy) */
+/* 🔮 PLASMA BACKGROUND CONTAINER */
+.plasma-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.plasma-background canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    pointer-events: auto;
+}
+
+/* 🌌 COSMIC BACKGROUND LAYERS (Stars & Nebula) */
 .background-layers {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -10;
+    z-index: -2;
     pointer-events: none;
     overflow: hidden;
+}
+
+/* Hide the black hole elements but keep stars */
+.black-hole,
+.gravitational-lens,
+.accretion-disk,
+.photon-ring,
+.orbiting-particle,
+.spaghetti-star,
+.hawking-particle,
+.energy-jet,
+.matter-stream,
+.galaxy-core,
+.spiral-arm-1,
+.spiral-arm-2,
+.light-arc {
+    display: none !important;
+}
+
+/* ============================================
+   ⭐ STAR FIELD LAYERS
+   ============================================ */
+
+.layer-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(2px 2px at 20px 30px, white, transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.8), transparent),
+        radial-gradient(1px 1px at 90px 40px, white, transparent),
+        radial-gradient(2px 2px at 160px 120px, rgba(255, 255, 255, 0.9), transparent),
+        radial-gradient(1px 1px at 230px 80px, white, transparent),
+        radial-gradient(2px 2px at 300px 150px, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 370px 60px, white, transparent),
+        radial-gradient(2px 2px at 440px 200px, rgba(255, 255, 255, 0.8), transparent),
+        radial-gradient(1px 1px at 510px 100px, white, transparent),
+        radial-gradient(2px 2px at 580px 170px, rgba(255, 255, 255, 0.9), transparent),
+        radial-gradient(1px 1px at 650px 50px, white, transparent),
+        radial-gradient(2px 2px at 720px 220px, rgba(255, 255, 255, 0.7), transparent);
+    background-size: 800px 300px;
+    animation: twinkle 4s ease-in-out infinite alternate;
+}
+
+.layer-stars-2 {
+    background-image:
+        radial-gradient(1px 1px at 50px 100px, rgba(200, 200, 255, 0.9), transparent),
+        radial-gradient(2px 2px at 120px 50px, rgba(255, 200, 255, 0.8), transparent),
+        radial-gradient(1px 1px at 200px 180px, rgba(200, 255, 255, 0.9), transparent),
+        radial-gradient(2px 2px at 280px 120px, rgba(255, 255, 200, 0.7), transparent),
+        radial-gradient(1px 1px at 350px 200px, rgba(255, 200, 200, 0.8), transparent),
+        radial-gradient(2px 2px at 420px 80px, rgba(200, 200, 255, 0.9), transparent),
+        radial-gradient(1px 1px at 500px 160px, rgba(255, 200, 255, 0.7), transparent),
+        radial-gradient(2px 2px at 580px 40px, rgba(200, 255, 255, 0.8), transparent);
+    background-size: 700px 250px;
+    animation: twinkle 5s ease-in-out infinite alternate-reverse;
+    opacity: 0.8;
+}
+
+.layer-stars-3 {
+    background-image:
+        radial-gradient(1px 1px at 80px 140px, rgba(255, 100, 255, 0.6), transparent),
+        radial-gradient(1px 1px at 180px 80px, rgba(100, 255, 255, 0.5), transparent),
+        radial-gradient(1px 1px at 300px 190px, rgba(255, 255, 100, 0.6), transparent),
+        radial-gradient(1px 1px at 400px 60px, rgba(100, 100, 255, 0.5), transparent),
+        radial-gradient(1px 1px at 520px 130px, rgba(255, 100, 100, 0.6), transparent),
+        radial-gradient(1px 1px at 620px 200px, rgba(100, 255, 100, 0.5), transparent);
+    background-size: 750px 280px;
+    animation: twinkle 6s ease-in-out infinite alternate;
+    opacity: 0.6;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.7;
+    }
+}
+
+/* ============================================
+   🌌 NEBULA DUST
+   ============================================ */
+
+.nebula-dust {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse at 20% 30%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(236, 72, 153, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 40%);
+    animation: nebulaShift 20s ease-in-out infinite alternate;
+}
+
+@keyframes nebulaShift {
+    0% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.1) rotate(5deg);
+        opacity: 0.9;
+    }
 }
 
 /* ============================================
