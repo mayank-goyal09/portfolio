@@ -1,0 +1,410 @@
+/* =================================================================
+   🤖 COSMIC AI ASSISTANT - ENHANCED CHATBOT STYLES
+   Uses the ORIGINAL orb design with improved chat functionality
+   ================================================================= */
+
+/* ===== WRAPPER ===== */
+.cosmic-chat-wrapper {
+    position: fixed;
+    bottom: 22px;
+    right: 20px;
+    z-index: 9999;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+/* ===== FLOATING ORB BUTTON (ORIGINAL DESIGN) ===== */
+.cosmic-orb {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 30% 20%, #ffffff, transparent 55%),
+        radial-gradient(circle at 70% 80%, #4df3ff, transparent 60%),
+        radial-gradient(circle at 20% 80%, #8c6eff, transparent 60%);
+    box-shadow:
+        0 0 24px rgba(0, 234, 255, 0.7),
+        0 0 64px rgba(140, 110, 255, 0.6);
+    animation:
+        orb-pulse 3.3s ease-in-out infinite,
+        float 10s ease-in-out infinite;
+    /* Hide the inner elements for original design */
+    padding: 0;
+}
+
+.cosmic-orb::after {
+    content: "";
+    position: absolute;
+    inset: 18%;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 234, 255, 0.6);
+    box-shadow: 0 0 22px rgba(0, 234, 255, 0.6);
+    opacity: 0.85;
+}
+
+@keyframes orb-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow:
+            0 0 22px rgba(0, 234, 255, 0.65),
+            0 0 45px rgba(140, 110, 255, 0.55);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow:
+            0 0 32px rgba(0, 234, 255, 0.85),
+            0 0 70px rgba(140, 110, 255, 0.7);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.cosmic-orb:hover {
+    animation-play-state: paused;
+    transform: scale(1.08);
+    box-shadow:
+        0 0 40px rgba(0, 234, 255, 0.9),
+        0 0 80px rgba(140, 110, 255, 0.8);
+}
+
+.cosmic-orb.orb-active {
+    animation-play-state: paused;
+    transform: scale(0.95);
+    opacity: 0.85;
+}
+
+/* Hide the inner orb elements - use just the orb visual */
+.orb-glow,
+.orb-core,
+.orb-ring,
+.orb-pulse,
+.orb-icon {
+    display: none;
+}
+
+/* ===== CHAT WINDOW (ORIGINAL DESIGN) ===== */
+.cosmic-chat-window {
+    position: fixed;
+    bottom: 98px;
+    right: 20px;
+    width: min(360px, 92vw);
+    max-height: 70vh;
+    display: none;
+    flex-direction: column;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 234, 255, 0.26);
+    background: rgba(8, 16, 28, 0.96);
+    backdrop-filter: blur(16px);
+    box-shadow:
+        0 0 34px rgba(0, 234, 255, 0.4),
+        0 0 60px rgba(140, 110, 255, 0.35);
+    overflow: hidden;
+    animation: windowSlideUp 0.3s ease-out;
+}
+
+@keyframes windowSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== CHAT HEADER (ORIGINAL STYLE) ===== */
+.chat-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    background: radial-gradient(circle at 0 0, rgba(0, 234, 255, 0.16), transparent 60%);
+}
+
+.chat-header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.status-indicator {
+    width: 10px;
+    height: 10px;
+}
+
+.status-dot {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #00eaff;
+    box-shadow: 0 0 8px rgba(0, 234, 255, 0.7);
+}
+
+.header-text h3 {
+    margin: 0;
+    font-family: "Orbitron", system-ui, sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #f5f7ff;
+}
+
+.header-text p {
+    margin: 2px 0 0 0;
+    font-size: 0.7rem;
+    color: rgba(148, 163, 184, 0.8);
+}
+
+.chat-close-btn {
+    margin-left: auto;
+    background: transparent;
+    border: none;
+    color: #f5f7ff;
+    font-size: 1.3rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.chat-close-btn:hover {
+    background: rgba(255, 100, 100, 0.2);
+    color: #ff6b6b;
+}
+
+/* ===== MESSAGES CONTAINER ===== */
+.chat-messages {
+    padding: 12px 14px;
+    overflow-y: auto;
+    max-height: calc(70vh - 180px);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 234, 255, 0.3) transparent;
+}
+
+.chat-messages::-webkit-scrollbar {
+    width: 5px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: rgba(0, 234, 255, 0.3);
+    border-radius: 3px;
+}
+
+/* ===== MESSAGE BUBBLES (ORIGINAL STYLE) ===== */
+.chat-message {
+    display: flex;
+    margin-bottom: 6px;
+    animation: messageSlide 0.25s ease-out;
+}
+
+@keyframes messageSlide {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.chat-message-user {
+    justify-content: flex-end;
+}
+
+.chat-message-assistant {
+    justify-content: flex-start;
+}
+
+.message-bubble {
+    max-width: 85%;
+    padding: 8px 11px;
+    border-radius: 12px;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: #f5f7ff;
+}
+
+.chat-message-user .message-bubble {
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(148, 163, 184, 0.7);
+}
+
+.chat-message-assistant .message-bubble {
+    background: rgba(8, 16, 28, 0.96);
+    border: 1px solid rgba(0, 234, 255, 0.42);
+    box-shadow: 0 0 18px rgba(0, 234, 255, 0.3);
+}
+
+.message-bubble strong {
+    color: #00eaff;
+    font-weight: 600;
+}
+
+.message-bubble a {
+    color: #00eaff;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.2s;
+}
+
+.message-bubble a:hover {
+    color: #8c6eff;
+}
+
+/* ===== QUICK ACTIONS (ORIGINAL STYLE) ===== */
+.chat-quick-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 8px 10px 6px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.chat-quick-actions button {
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.5);
+    background: rgba(15, 23, 42, 0.9);
+    color: #f5f7ff;
+    padding: 4px 9px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.chat-quick-actions button:hover {
+    background: rgba(8, 16, 28, 0.96);
+    border-color: rgba(0, 234, 255, 0.6);
+    color: #4df3ff;
+    box-shadow: 0 0 12px rgba(0, 234, 255, 0.35);
+}
+
+/* ===== INPUT FORM (ORIGINAL STYLE) ===== */
+.chat-input-form {
+    display: flex;
+    gap: 6px;
+    padding: 8px 10px 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.chat-input-form input {
+    flex: 1;
+    border-radius: 999px;
+    padding: 6px 12px;
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(148, 163, 184, 0.7);
+    color: #f5f7ff;
+    font-size: 0.8rem;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+.chat-input-form input::placeholder {
+    color: rgba(148, 163, 184, 0.6);
+}
+
+.chat-input-form input:focus {
+    border-color: rgba(0, 234, 255, 0.8);
+    box-shadow: 0 0 12px rgba(0, 234, 255, 0.4);
+}
+
+.chat-input-form button[type="submit"] {
+    border-radius: 999px;
+    padding: 6px 13px;
+    border: none;
+    background: linear-gradient(120deg, #00eaff, #12b3c7);
+    color: #020308;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: "Orbitron", system-ui, sans-serif;
+    transition: all 0.25s ease;
+}
+
+.chat-input-form button[type="submit"]:hover {
+    box-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
+    transform: scale(1.02);
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 960px) {
+    .cosmic-chat-window {
+        right: 14px;
+        left: 14px;
+        width: auto;
+    }
+}
+
+@media (max-width: 640px) {
+    .cosmic-chat-wrapper {
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .cosmic-orb {
+        width: 54px;
+        height: 54px;
+    }
+
+    .cosmic-chat-window {
+        bottom: 80px;
+        max-height: 65vh;
+    }
+
+    .chat-messages {
+        max-height: calc(65vh - 160px);
+        padding: 10px 12px;
+    }
+
+    .message-bubble {
+        max-width: 90%;
+        padding: 7px 10px;
+        font-size: 0.78rem;
+    }
+
+    .chat-quick-actions {
+        gap: 4px;
+        padding: 6px 8px;
+    }
+
+    .chat-quick-actions button {
+        padding: 3px 7px;
+        font-size: 0.65rem;
+    }
+}
+
+/* ===== HIDE OLD CHATBOT ORBS (if present) ===== */
+.ai-orb-wrapper {
+    display: none !important;
+}
