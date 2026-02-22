@@ -52,6 +52,9 @@
         renderer.toneMapping = THREE.ACESFilmicToneMapping;
         renderer.toneMappingExposure = 0.9;
         container.appendChild(renderer.domElement);
+        // Force the canvas behind all page content
+        renderer.domElement.style.position = 'relative';
+        renderer.domElement.style.zIndex = '-1';
 
         // Main group for rotation
         const mainGroup = new THREE.Group();
