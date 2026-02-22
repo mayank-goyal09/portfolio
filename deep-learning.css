@@ -20,7 +20,7 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 0;
+    z-index: -1 !important;
     pointer-events: none;
 }
 
@@ -30,7 +30,8 @@ body {
     left: 0;
     width: 100% !important;
     height: 100% !important;
-    pointer-events: auto;
+    pointer-events: none;
+    z-index: -1 !important;
 }
 
 /* 🌌 COSMIC BACKGROUND LAYERS (Stars & Nebula) */
@@ -1258,6 +1259,8 @@ body {
     margin: 0 auto;
     padding: 3.2rem 1.5rem 4.5rem;
     box-sizing: border-box;
+    isolation: isolate;
+    transform: translateZ(0);
 }
 
 /* HOME BUTTON */
@@ -1788,4 +1791,394 @@ body {
 
 .pull-handle-cnn .pull-line {
     background: linear-gradient(to bottom, #ec4899, #500724);
+}
+
+/* ============================================
+   🏛️ ARCHITECTURAL CARD STACK SYSTEM
+   ============================================ */
+
+.arch-section {
+    margin-top: 4rem;
+    padding-bottom: 6rem;
+    position: relative;
+    z-index: 10;
+    transform: translateZ(1px);
+}
+
+/* Section Intro */
+.arch-section-intro {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.arch-label {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(168, 130, 255, 0.7);
+    margin: 0 0 0.6rem;
+}
+
+.arch-heading {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #e9d5ff 0%, #c4b5fd 40%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0 0 0.6rem;
+}
+
+.arch-sub {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.92rem;
+    color: #71717a;
+    margin: 0;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* ─── Three-Column Layout ─── */
+.arch-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+/* ─── Single Column ─── */
+.arch-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: opacity 500ms ease, transform 500ms ease;
+    will-change: opacity, transform;
+}
+
+/* Column fade when sibling is active */
+.arch-col.is-dimmed {
+    opacity: 0.55;
+    transform: scale(0.96);
+}
+
+.arch-col.is-dimmed .arch-col-label {
+    opacity: 0.5;
+}
+
+/* Column active glow */
+.arch-col.is-active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.arch-col.is-active .arch-col-label {
+    opacity: 1;
+}
+
+.arch-col.is-active .arch-col-label::after {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+/* ─── Column Labels ─── */
+.arch-col-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #a1a1aa;
+    position: relative;
+    transition: opacity 400ms ease, color 400ms ease;
+}
+
+.arch-col-icon {
+    font-size: 1.1rem;
+}
+
+.arch-col-label::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 60%;
+    height: 2px;
+    border-radius: 1px;
+    background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.6), transparent);
+    transition: transform 500ms ease, opacity 500ms ease;
+    opacity: 0;
+}
+
+/* ─── Card Stack Container ─── */
+.arch-col-stack {
+    position: relative;
+    width: 100%;
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    perspective: 900px;
+}
+
+/* ─── Individual Cards ─── */
+.arch-card {
+    position: absolute;
+    width: 92%;
+    max-width: 340px;
+    border-radius: 14px;
+    overflow: hidden;
+    cursor: pointer;
+    will-change: transform, opacity;
+    transition: box-shadow 400ms ease;
+}
+
+/* Card inner */
+.arch-card-inner {
+    position: relative;
+    padding: 1.3rem 1.3rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    background: #0c0519;
+    border: 1px solid rgba(168, 85, 247, 0.18);
+    border-radius: 14px;
+    position: relative;
+    z-index: 1;
+    transition: border-color 400ms ease, box-shadow 400ms ease;
+}
+
+/* Top accent line */
+.arch-card-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.5), transparent);
+    opacity: 0;
+    transition: opacity 400ms ease;
+}
+
+.arch-card:hover .arch-card-accent,
+.arch-col.is-active .arch-card .arch-card-accent {
+    opacity: 1;
+}
+
+/* hover glow */
+.arch-card:hover .arch-card-inner {
+    border-color: rgba(168, 85, 247, 0.4);
+    box-shadow:
+        0 8px 40px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(168, 85, 247, 0.08);
+}
+
+/* ─── Badge Row ─── */
+.arch-card-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+}
+
+.arch-badge {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    color: #71717a;
+    background: rgba(15, 5, 30, 0.6);
+}
+
+.arch-badge--cnn {
+    border-color: rgba(236, 72, 153, 0.5);
+    color: #f9a8d4;
+    background: rgba(236, 72, 153, 0.1);
+}
+
+.arch-badge--ann {
+    border-color: rgba(139, 92, 246, 0.5);
+    color: #c4b5fd;
+    background: rgba(139, 92, 246, 0.1);
+}
+
+.arch-badge--rnn {
+    border-color: rgba(124, 58, 237, 0.5);
+    color: #ddd6fe;
+    background: rgba(124, 58, 237, 0.1);
+}
+
+/* ─── Card Content ─── */
+.arch-card-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #f0e6ff;
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+.arch-card-desc {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.82rem;
+    color: #8b8b99;
+    margin: 0;
+    line-height: 1.55;
+}
+
+.arch-card-meta {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.76rem;
+    color: #71717a;
+    line-height: 1.5;
+}
+
+.arch-meta-label {
+    color: #a78bfa;
+    font-weight: 600;
+}
+
+/* ─── Action Buttons ─── */
+.arch-card-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.3rem;
+}
+
+.arch-btn {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.4rem 0.85rem;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    background: transparent;
+    color: #d4d4d8;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: all 300ms ease;
+    letter-spacing: 0.02em;
+}
+
+.arch-btn--primary {
+    border-color: rgba(168, 85, 247, 0.5);
+    background: rgba(168, 85, 247, 0.12);
+    color: #e9d5ff;
+}
+
+.arch-btn:hover {
+    transform: translateY(-1px);
+    border-color: #a78bfa;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.25);
+}
+
+/* ─── Col-specific accent colors ─── */
+/* CNN column */
+.arch-col[data-col="cnn"] .arch-card-accent {
+    background: linear-gradient(90deg, transparent, rgba(236, 72, 153, 0.5), transparent);
+}
+
+.arch-col[data-col="cnn"].is-active .arch-col-label::after {
+    background: linear-gradient(90deg, transparent, rgba(236, 72, 153, 0.6), transparent);
+}
+
+.arch-col[data-col="cnn"] .arch-card:hover .arch-card-inner {
+    border-color: rgba(236, 72, 153, 0.35);
+    box-shadow:
+        0 8px 40px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(236, 72, 153, 0.08);
+}
+
+.arch-col[data-col="cnn"] .arch-meta-label {
+    color: #f472b6;
+}
+
+.arch-col[data-col="cnn"] .arch-btn--primary {
+    border-color: rgba(236, 72, 153, 0.5);
+    background: rgba(236, 72, 153, 0.1);
+    color: #fbcfe8;
+}
+
+.arch-col[data-col="cnn"] .arch-btn:hover {
+    border-color: #f472b6;
+    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.25);
+}
+
+/* RNN column */
+.arch-col[data-col="rnn"] .arch-card-accent {
+    background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.5), transparent);
+}
+
+.arch-col[data-col="rnn"].is-active .arch-col-label::after {
+    background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.6), transparent);
+}
+
+.arch-col[data-col="rnn"] .arch-card:hover .arch-card-inner {
+    border-color: rgba(124, 58, 237, 0.35);
+    box-shadow:
+        0 8px 40px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(124, 58, 237, 0.08);
+}
+
+.arch-col[data-col="rnn"] .arch-meta-label {
+    color: #a78bfa;
+}
+
+.arch-col[data-col="rnn"] .arch-btn--primary {
+    border-color: rgba(124, 58, 237, 0.5);
+    background: rgba(124, 58, 237, 0.1);
+    color: #ddd6fe;
+}
+
+.arch-col[data-col="rnn"] .arch-btn:hover {
+    border-color: #8b5cf6;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.25);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 960px) {
+    .arch-columns {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .arch-col-stack {
+        min-height: 420px;
+    }
+
+    .arch-card {
+        max-width: 380px;
+    }
+}
+
+@media (max-width: 640px) {
+    .arch-heading {
+        font-size: 1.6rem;
+    }
+
+    .arch-card {
+        width: 95%;
+    }
+
+    .arch-col-stack {
+        min-height: 400px;
+    }
 }
